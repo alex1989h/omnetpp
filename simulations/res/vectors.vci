@@ -1,0 +1,30 @@
+file 11075 1504863569                                           
+version 2
+run Experiment1-0-20170908-11:39:04-15323
+attr configname Experiment1
+attr datetime 20170908-11:39:04
+attr experiment Ballwerfen
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Playground
+attr processid 15323
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 6  Playground  anzahl-wuerfe-boy  ETV
+vector 0  Playground  anzahl-wuerfe-gesamt  ETV
+vector 1  Playground  anzahl-wuerfe-girl  ETV
+vector 4  Playground  anzahl-wuerfe-gesamt  ETV
+vector 7  Playground  anzahl-wuerfe-lost  ETV
+vector 3  Playground  anzahl-wuerfe-lost  ETV
+0	658 2364 1 789 0 889 180 1 180 16290 1960230
+1	3022 2612 2 790 1 890 198 1 198 19701 2607099
+3	5634 232 57 793 50 900 19 1 19 190 2470
+4	5866 2362 3 787 1 887 180 1 180 16290 1960230
+6	8228 2624 0 792 0 900 199 1 199 19900 2646700
+7	10852 223 31 791 22 890 18 1 18 171 2109
