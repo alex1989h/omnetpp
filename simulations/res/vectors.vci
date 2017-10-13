@@ -1,26 +1,26 @@
-file 6614 1507892948                                            
+file 6662 1507893106                                            
 version 2
-run Experiment1-FIX-0-20171013-13:08:56-8506
+run Experiment1-FIX-0-20171013-13:11:39-8705
 attr configname Experiment1-FIX
-attr datetime 20171013-13:08:56
+attr datetime 20171013-13:11:39
 attr experiment Ballwerfen
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=0
 attr measurement ""
 attr network Playground
-attr processid 8506
+attr processid 8705
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
 
-vector 1  Playground.boy  #anzahl-wuerfe  ETV
+vector 2  Playground.boy  #anzahl-wuerfe  ETV
 vector 0  Playground.girl  #anzahl-wuerfe  ETV
-vector 2  Playground.girl  ""  ETV
-vector 3  Playground.boy  ""  ETV
-0	547 2844 2 854 1 897 214 1 214 23005 3289715
-1	3391 2855 0 856 0 899 215 1 215 23220 3335940
-2	6246 215 5 857 3 899 18 1 18 171 2109
-3	6461 153 23 803 34 841 13 1 13 91 819
+vector 1  Playground.girl  #anzahl--verlorener-wuerfe  ETV
+vector 3  Playground.boy  #anzahl--verlorener-wuerfe  ETV
+0	595 2844 2 854 1 897 214 1 214 23005 3289715
+1	3439 215 5 857 3 899 18 1 18 171 2109
+2	3654 2855 0 856 0 899 215 1 215 23220 3335940
+3	6509 153 23 803 34 841 13 1 13 91 819
