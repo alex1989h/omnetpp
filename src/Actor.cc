@@ -82,7 +82,7 @@ void Actor::initialize(){
 
 
     v_cnt.setName("#anzahl-wuerfe");
-
+    v_lost.setName("#anzahl--verlorener-wuerfe");
     cnt = 0;
     cnt_lost = 0;
 
