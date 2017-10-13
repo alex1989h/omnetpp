@@ -23,13 +23,11 @@
 
 class Actor: public omnetpp::cSimpleModule {
 protected:
-    omnetpp::cOutVector wuerfe_girl;
-    omnetpp::cOutVector wuerfe_boy;
-    omnetpp::cOutVector wuerfe_lost;
+    omnetpp::cOutVector v_cnt;
+    omnetpp::cOutVector v_lost;
 
-    int cnt_wuerfe_girl;
-    int cnt_wuerfe_boy;
-    int cnt_wuerfe_lost;
+    int cnt;
+    int cnt_lost;
 public:
     Actor();
     virtual ~Actor();

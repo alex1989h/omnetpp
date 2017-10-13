@@ -36,14 +36,13 @@ void Actor::finish()
 {
     // This function is called by OMNeT++ at the end of the simulation.
 //    EV << "Gesamt:     "            << cnt_wuerfe_ges << endl;
-    EV << "Junge: "                 << cnt_wuerfe_boy << endl;
-    EV << "Mädchen:    "            << cnt_wuerfe_girl << endl;
-    EV << "Fallen gelassen :    "   << cnt_wuerfe_lost << endl;
+    EV << getFullName() << " gefangen:" << cnt << endl;
+
+    EV << getFullName() <<" fallen gelassen :"   << cnt_lost << endl;
 
 
-    recordScalar("#cnt_wuerfe_maedchen", cnt_wuerfe_girl);
-    recordScalar("#cnt_wuerfe_junge", cnt_wuerfe_boy);
-    recordScalar("#cnt_wuerfe_verloren", cnt_wuerfe_lost);
+    recordScalar("#cnt_wuerfe_maedchen", cnt);
+    recordScalar("#cnt_wuerfe_verloren", cnt_lost);
 }
 
 void Actor::handleMessage(omnetpp::cMessage *msg){
@@ -51,14 +50,8 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
 
     if(msg->isSelfMessage()){
         omnetpp::cMessage *ball = new omnetpp::cMessage("ball");
-        if(strcmp("boy",msg->getOwner()->getFullName()) == 0){
-            cnt_wuerfe_boy++;
-            wuerfe_boy.record(cnt_wuerfe_boy);
-        }
-        else{
-            cnt_wuerfe_girl++;
-            wuerfe_girl.record(cnt_wuerfe_girl);
-        }
+        cnt++;
+        v_cnt.record(cnt);
         send(ball,"out");
         delete msg;
     }
@@ -66,8 +59,8 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
         omnetpp::cMessage *self = new omnetpp::cMessage("self");
         // Fallen lassen
         if (uniform(0, 1) < 0.1) { // 10% der Bälle
-              cnt_wuerfe_lost++;
-              wuerfe_lost.record(cnt_wuerfe_lost);
+              cnt_lost++;
+              v_lost.record(cnt_lost);
               EV << "\"Ball \"fällt\n";
               scheduleAt(simTime()+WORKING_TIME_FALLEN,self);
         }
@@ -88,18 +81,15 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
 void Actor::initialize(){
 
 
-    wuerfe_girl.setName("#anzahl-wuerfe-maedchen");
-    wuerfe_boy.setName("#anzahl-wuerfe-junge");
-    wuerfe_lost.setName("#anzahl-wuerfe-verloren");
+    v_cnt.setName("#anzahl-wuerfe");
 
-    cnt_wuerfe_girl = 0;
-    cnt_wuerfe_boy = 0;
-    cnt_wuerfe_lost = 0;
+    cnt = 0;
+    cnt_lost = 0;
 
     EV << "Init " << this->getFullName() << std::endl;
     if(strcmp("boy",this->getFullName()) == 0){
-        cnt_wuerfe_boy++;
-        wuerfe_boy.record(cnt_wuerfe_boy);
+        cnt++;
+        v_cnt.record(cnt);
         EV << "First Message " << this->getFullName() << std::endl;
         omnetpp::cMessage *ball = new omnetpp::cMessage("ball");
         send(ball,"out");
