@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for Ballwerfen
+# OMNeT++/OMNEST Makefile for ballwerfen
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -I..
+#  opp_makemake -f --deep
 #
 
 # Name of target to be created (-o option)
-TARGET = Ballwerfen$(EXE_SUFFIX)
+TARGET = ballwerfen$(EXE_SUFFIX)
 
 # User interface (uncomment one) (-u option)
 USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(QTENV_LIBS) $(CMDENV_LIBS)
@@ -15,7 +15,7 @@ USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(QTENV_LIBS) $(CMDENV_LI
 #USERIF_LIBS = $(QTENV_LIBS)
 
 # C++ include paths (with -I)
-INCLUDE_PATH = -I.. -I. -Iimg
+INCLUDE_PATH = -I. -Iimg
 
 # Additional object and library files to link with
 EXTRA_OBJS =
@@ -114,7 +114,7 @@ smheaders: $(SMFILES:.sm=_sm.h)
 clean:
 	$(qecho) Cleaning...
 	$(Q)-rm -rf $O
-	$(Q)-rm -f Ballwerfen Ballwerfen.exe libBallwerfen.so libBallwerfen.a libBallwerfen.dll libBallwerfen.dylib
+	$(Q)-rm -f ballwerfen ballwerfen.exe libballwerfen.so libballwerfen.a libballwerfen.dll libballwerfen.dylib
 	$(Q)-rm -f ./*_m.cc ./*_m.h ./*_sm.cc ./*_sm.h
 	$(Q)-rm -f img/*_m.cc img/*_m.h img/*_sm.cc img/*_sm.h
 

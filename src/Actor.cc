@@ -13,7 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include <src/Actor.h>
+#include "Actor.h"
 #include <stdio.h>
 #include <string.h>
 #include <omnetpp.h>
@@ -26,14 +26,6 @@ using namespace omnetpp;
 #define WORKING_TIME_FALLEN 10.0
 
 Actor::Actor() {
-    wuerfe_ges.setName("anzahl-wuerfe-gesamt");
-    wuerfe_girl.setName("anzahl-wuerfe-girl");
-    wuerfe_boy.setName("anzahl-wuerfe-boy");
-    wuerfe_lost.setName("anzahl-wuerfe-lost");
-    cnt_wuerfe_ges = 0;
-    cnt_wuerfe_girl = 0;
-    cnt_wuerfe_boy = 0;
-    cnt_wuerfe_lost = 0;
 }
 
 Actor::~Actor() {
@@ -43,15 +35,15 @@ Actor::~Actor() {
 void Actor::finish()
 {
     // This function is called by OMNeT++ at the end of the simulation.
-    EV << "Gesamt:     "            << cnt_wuerfe_ges << endl;
+//    EV << "Gesamt:     "            << cnt_wuerfe_ges << endl;
     EV << "Junge: "                 << cnt_wuerfe_boy << endl;
     EV << "Mädchen:    "            << cnt_wuerfe_girl << endl;
     EV << "Fallen gelassen :    "   << cnt_wuerfe_lost << endl;
 
-    recordScalar("#cnt_wuerfe_ges", cnt_wuerfe_ges);
-    recordScalar("#cnt_wuerfe_girl", cnt_wuerfe_girl);
-    recordScalar("#cnt_wuerfe_boy", cnt_wuerfe_boy);
-    recordScalar("#cnt_wuerfe_lost", cnt_wuerfe_lost);
+
+    recordScalar("#cnt_wuerfe_maedchen", cnt_wuerfe_girl);
+    recordScalar("#cnt_wuerfe_junge", cnt_wuerfe_boy);
+    recordScalar("#cnt_wuerfe_verloren", cnt_wuerfe_lost);
 }
 
 void Actor::handleMessage(omnetpp::cMessage *msg){
@@ -80,8 +72,7 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
               scheduleAt(simTime()+WORKING_TIME_FALLEN,self);
         }
         else{
-            cnt_wuerfe_ges++;
-            wuerfe_ges.record(cnt_wuerfe_ges);
+
             EV << "\"Ball \"gefangen\n";
             if(strcmp("boy",this->getFullName()) == 0){
                 scheduleAt(simTime()+WORKING_TIME_BOY,self);
@@ -95,6 +86,16 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
 }
 
 void Actor::initialize(){
+
+
+    wuerfe_girl.setName("#anzahl-wuerfe-maedchen");
+    wuerfe_boy.setName("#anzahl-wuerfe-junge");
+    wuerfe_lost.setName("#anzahl-wuerfe-verloren");
+
+    cnt_wuerfe_girl = 0;
+    cnt_wuerfe_boy = 0;
+    cnt_wuerfe_lost = 0;
+
     EV << "Init " << this->getFullName() << std::endl;
     if(strcmp("boy",this->getFullName()) == 0){
         cnt_wuerfe_boy++;

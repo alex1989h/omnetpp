@@ -1,25 +1,23 @@
 version 2
-run Experiment1-0-20170908-11:39:04-15323
-attr configname Experiment1
-attr datetime 20170908-11:39:04
+run Experiment1-FIX-0-20171013-12:44:36-7888
+attr configname Experiment1-FIX
+attr datetime 20171013-12:44:36
 attr experiment Ballwerfen
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=0
 attr measurement ""
 attr network Playground
-attr processid 15323
+attr processid 7888
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
 
-scalar Playground.girl 	#cnt_wuerfe_ges 	705576
-scalar Playground.girl 	#cnt_wuerfe_girl 	784065
-scalar Playground.girl 	#cnt_wuerfe_boy 	0
-scalar Playground.girl 	#cnt_wuerfe_lost 	78489
-scalar Playground.boy 	#cnt_wuerfe_ges 	705730
-scalar Playground.boy 	#cnt_wuerfe_girl 	0
-scalar Playground.boy 	#cnt_wuerfe_boy 	784065
-scalar Playground.boy 	#cnt_wuerfe_lost 	78334
+scalar Playground.girl 	#cnt_wuerfe_maedchen 	846976
+scalar Playground.girl 	#cnt_wuerfe_junge 	0
+scalar Playground.girl 	#cnt_wuerfe_verloren 	84639
+scalar Playground.boy 	#cnt_wuerfe_maedchen 	0
+scalar Playground.boy 	#cnt_wuerfe_junge 	846977
+scalar Playground.boy 	#cnt_wuerfe_verloren 	84393

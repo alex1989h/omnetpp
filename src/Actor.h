@@ -23,12 +23,10 @@
 
 class Actor: public omnetpp::cSimpleModule {
 protected:
-    omnetpp::cOutVector wuerfe_ges;
     omnetpp::cOutVector wuerfe_girl;
     omnetpp::cOutVector wuerfe_boy;
     omnetpp::cOutVector wuerfe_lost;
 
-    int cnt_wuerfe_ges;
     int cnt_wuerfe_girl;
     int cnt_wuerfe_boy;
     int cnt_wuerfe_lost;
