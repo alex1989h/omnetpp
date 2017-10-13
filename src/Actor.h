@@ -25,9 +25,14 @@ class Actor: public omnetpp::cSimpleModule {
 protected:
     omnetpp::cOutVector v_cnt;
     omnetpp::cOutVector v_lost;
+    static omnetpp::cOutVector* v_cnt_all;
 
     int cnt;
     int cnt_lost;
+
+    static int cnt_all;
+    static bool statsAlreadyRecorded;
+    static bool globalAlreadyInitialized;
 public:
     Actor();
     virtual ~Actor();

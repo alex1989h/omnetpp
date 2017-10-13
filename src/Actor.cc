@@ -25,7 +25,17 @@ using namespace omnetpp;
 #define WORKING_TIME_GIRL 1.0
 #define WORKING_TIME_FALLEN 10.0
 
+
+int Actor::cnt_all;
+cOutVector* Actor::v_cnt_all;
+bool Actor::statsAlreadyRecorded;
+bool Actor::globalAlreadyInitialized = false;
+
 Actor::Actor() {
+    if(!globalAlreadyInitialized){
+        v_cnt_all = new cOutVector("#anzahl-wuerfe-gesamt");
+        globalAlreadyInitialized = true;
+    }
 }
 
 Actor::~Actor() {
@@ -35,14 +45,18 @@ Actor::~Actor() {
 void Actor::finish()
 {
     // This function is called by OMNeT++ at the end of the simulation.
-//    EV << "Gesamt:     "            << cnt_wuerfe_ges << endl;
+    if (!statsAlreadyRecorded) {
+        EV << "Gesamt: " << cnt_all << endl;
+        recordScalar("Total: ", cnt_all);
+        statsAlreadyRecorded = true;
+    }
+
     EV << getFullName() << " gefangen:" << cnt << endl;
-
     EV << getFullName() <<" fallen gelassen :"   << cnt_lost << endl;
-
 
     recordScalar("#cnt_wuerfe_maedchen", cnt);
     recordScalar("#cnt_wuerfe_verloren", cnt_lost);
+
 }
 
 void Actor::handleMessage(omnetpp::cMessage *msg){
@@ -52,6 +66,8 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
         omnetpp::cMessage *ball = new omnetpp::cMessage("ball");
         cnt++;
         v_cnt.record(cnt);
+        cnt_all++;
+        v_cnt_all->record(cnt_all);
         send(ball,"out");
         delete msg;
     }
@@ -83,8 +99,12 @@ void Actor::initialize(){
 
     v_cnt.setName("#anzahl-wuerfe");
     v_lost.setName("#anzahl-verlorener-wuerfe");
+
     cnt = 0;
     cnt_lost = 0;
+
+    statsAlreadyRecorded = false;
+    cnt_all = 0;
 
     EV << "Init " << this->getFullName() << std::endl;
     if(strcmp("boy",this->getFullName()) == 0){
