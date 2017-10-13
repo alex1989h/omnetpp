@@ -87,7 +87,7 @@ void Actor::handleMessage(omnetpp::cMessage *msg) {
     else{
         omnetpp::cMessage *self = new omnetpp::cMessage("self");
 
-        if (uniform(0, 1) < 0.1) { // 10% der Bälle
+        if (uniform(0, 1) < 0.1) { // 10% der Bälle //uniform(0, 1, 0) alternative für festlegung rng  = 0
               cnt_lost++;
               v_lost.record(cnt_lost);
               EV << "\"Ball \"fällt\n";
