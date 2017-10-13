@@ -16,20 +16,24 @@
 #ifndef ACTOR_H_
 #define ACTOR_H_
 
-#include <stdio.h>
-#include <string.h>
+
 #include <omnetpp.h>
 
-
+/**
+ * Simple example class
+ */
 class Actor: public omnetpp::cSimpleModule {
 protected:
     omnetpp::cOutVector v_cnt;
     omnetpp::cOutVector v_lost;
-    static omnetpp::cOutVector* v_cnt_all;
 
     int cnt;
     int cnt_lost;
 
+    // static  @workaround
+    static omnetpp::cOutVector* v_cnt_all;
+
+    // static members for static cOutVector
     static int cnt_all;
     static bool statsAlreadyRecorded;
     static bool globalAlreadyInitialized;

@@ -18,14 +18,16 @@
 #include <string.h>
 #include <omnetpp.h>
 
+// For the NED files
 Define_Module(Actor);
 using namespace omnetpp;
 
+// Symbols
 #define WORKING_TIME_BOY  2.0
 #define WORKING_TIME_GIRL 1.0
 #define WORKING_TIME_FALLEN 10.0
 
-
+// Static members
 int Actor::cnt_all;
 cOutVector* Actor::v_cnt_all;
 bool Actor::statsAlreadyRecorded;
@@ -39,13 +41,15 @@ Actor::Actor() {
 }
 
 Actor::~Actor() {
-    // TODO Auto-generated destructor stub
     if(NULL != v_cnt_all){
         delete v_cnt_all;
         v_cnt_all = NULL;
     }
 }
 
+/**
+ * Finalize
+ */
 void Actor::finish()
 {
     // This function is called by OMNeT++ at the end of the simulation.
@@ -56,13 +60,16 @@ void Actor::finish()
     }
 
     EV << getFullName() << " gefangen:" << cnt << endl;
-    EV << getFullName() <<" fallen gelassen :"   << cnt_lost << endl;
+    EV << getFullName() << " fallen gelassen :"   << cnt_lost << endl;
 
     recordScalar("#cnt_wuerfe_maedchen", cnt);
     recordScalar("#cnt_wuerfe_verloren", cnt_lost);
 
 }
 
+/**
+ * Perform
+ */
 void Actor::handleMessage(omnetpp::cMessage *msg){
     EV << "Versuche Ball zu fangen" << std::endl;
 
@@ -78,7 +85,7 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
     }
     else{
         omnetpp::cMessage *self = new omnetpp::cMessage("self");
-        // Fallen lassen
+
         if (uniform(0, 1) < 0.1) { // 10% der Bälle
               cnt_lost++;
               v_lost.record(cnt_lost);
@@ -89,6 +96,7 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
 
             EV << "\"Ball \"gefangen\n";
             if(strcmp("boy",this->getFullName()) == 0){
+            // MORE GENERIC APPROACH --> if(this->getIndex()%2){
                 scheduleAt(simTime()+WORKING_TIME_BOY,self);
             }
             else{
@@ -99,8 +107,10 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
     }
 }
 
+/**
+ * Initialize
+ */
 void Actor::initialize(){
-
 
     v_cnt.setName("#anzahl-wuerfe");
     v_lost.setName("#anzahl-verlorener-wuerfe");
@@ -119,7 +129,7 @@ void Actor::initialize(){
         cnt_all++;
         v_cnt_all->record(cnt_all);
 
-        EV << "First Message " << this->getFullName() << std::endl;
+        EV << "Erste Nachricht " << this->getFullName() << std::endl;
         omnetpp::cMessage *ball = new omnetpp::cMessage("ball");
         send(ball,"out");
     }
