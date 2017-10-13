@@ -40,6 +40,10 @@ Actor::Actor() {
 
 Actor::~Actor() {
     // TODO Auto-generated destructor stub
+    if(NULL != v_cnt_all){
+        delete v_cnt_all;
+        v_cnt_all = NULL;
+    }
 }
 
 void Actor::finish()
@@ -66,6 +70,7 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
         omnetpp::cMessage *ball = new omnetpp::cMessage("ball");
         cnt++;
         v_cnt.record(cnt);
+
         cnt_all++;
         v_cnt_all->record(cnt_all);
         send(ball,"out");
@@ -110,6 +115,10 @@ void Actor::initialize(){
     if(strcmp("boy",this->getFullName()) == 0){
         cnt++;
         v_cnt.record(cnt);
+
+        cnt_all++;
+        v_cnt_all->record(cnt_all);
+
         EV << "First Message " << this->getFullName() << std::endl;
         omnetpp::cMessage *ball = new omnetpp::cMessage("ball");
         send(ball,"out");
