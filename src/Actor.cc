@@ -29,8 +29,8 @@ using namespace omnetpp;
 
 // Static members
 int Actor::cnt_all;
-cOutVector* Actor::v_cnt_all;
-bool Actor::statsAlreadyRecorded;
+cOutVector* Actor::v_cnt_all = 0;
+bool Actor::statsAlreadyRecorded = false;
 bool Actor::globalAlreadyInitialized = false;
 
 Actor::Actor() {
