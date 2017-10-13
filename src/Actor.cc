@@ -50,8 +50,8 @@ Actor::~Actor() {
 /**
  * Finalize
  */
-void Actor::finish()
-{
+void Actor::finish() {
+
     // This function is called by OMNeT++ at the end of the simulation.
     if (!statsAlreadyRecorded) {
         EV << "Gesamt: " << cnt_all << endl;
@@ -70,7 +70,8 @@ void Actor::finish()
 /**
  * Perform
  */
-void Actor::handleMessage(omnetpp::cMessage *msg){
+void Actor::handleMessage(omnetpp::cMessage *msg) {
+
     EV << "Versuche Ball zu fangen" << std::endl;
 
     if(msg->isSelfMessage()){
@@ -110,7 +111,7 @@ void Actor::handleMessage(omnetpp::cMessage *msg){
 /**
  * Initialize
  */
-void Actor::initialize(){
+void Actor::initialize() {
 
     v_cnt.setName("#anzahl-wuerfe");
     v_lost.setName("#anzahl-verlorener-wuerfe");
