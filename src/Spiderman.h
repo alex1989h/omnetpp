@@ -37,6 +37,8 @@ public:
     virtual void handleMessage(omnetpp::cMessage *msg) override;
     virtual void initialize() override;
     virtual void finish() override;
+private:
+    int currentBallCount;
 };
 
 #endif /* SPIDERMAN_H_ */

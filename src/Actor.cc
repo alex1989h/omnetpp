@@ -77,9 +77,6 @@ void Actor::finish() {
  * Perform
  */
 void Actor::handleMessage(omnetpp::cMessage *msg) {
-
-    EV << "Versuche Ball zu fangen" << std::endl;
-
     if (msg->isSelfMessage()) {
         omnetpp::cMessage *ball = new omnetpp::cMessage(this->getFullName());
         cnt++;
@@ -90,43 +87,36 @@ void Actor::handleMessage(omnetpp::cMessage *msg) {
 
         send(ball, "out");
         currentBallCount--;
-
-//        if (currentBallCount > 0) {
-//            omnetpp::cMessage *self = new omnetpp::cMessage(this->getFullName());
-//            if (strcmp("boy", this->getFullName()) == 0) {
-//                scheduleAt(simTime() + AUFSAMMELN_TIME_BOY, self);
-//            } else {
-//                scheduleAt(simTime() + AUFSAMMELN_TIME_GIRL, self);
-//            }
-//        }
+        EV << this->getFullName() << ": \"Ball\" geworfen, hab noch "<< currentBallCount <<" \"Bälle\"" << std::endl;
         delete msg;
     } else {
         omnetpp::cMessage *self = new omnetpp::cMessage(msg->getFullName());
 
         if (strcmp("ERROR", msg->getFullName()) == 0) { //Bekommt eine Nachricht vom Spiderman "Ball nicht gefange"
-            if (strcmp("boy", this->getFullName()) == 0) {
-                scheduleAt(simTime() + AUFSAMMELN_TIME_BOY, self);
+            EV << this->getFullName() << ": Spiderman hat den \"Ball\" nicht gefangen, ich muss ihn aufsammeln" << std::endl;
+            if (strcmp("boy", this->getFullName()) == 0 || strcmp("boy2", this->getFullName()) == 0) {
+                scheduleAt(simTime() + WORKING_TIME_FALLEN, self);
             } else {
-                scheduleAt(simTime() + AUFSAMMELN_TIME_GIRL, self);
+                scheduleAt(simTime() + WORKING_TIME_FALLEN, self);
             }
         } else { //Bekommt einen Ball vom Spiderman
-            if (currentBallCount < MAX_BALL_COUNT) {//Ist noch Platz frei
-                if (strcmp("boy", this->getFullName()) == 0) {
+            if (currentBallCount < MAX_BALL_COUNT) { //Ist noch Platz frei
+                EV << this->getFullName() << ": \"Ball\" gefangen\"" << std::endl;
+                if (strcmp("boy", this->getFullName()) == 0 || strcmp("boy2", this->getFullName()) == 0) {
                     scheduleAt(simTime() + WORKING_TIME_BOY, self);
                 } else {
                     scheduleAt(simTime() + WORKING_TIME_GIRL, self);
                 }
-                EV << "\"Ball \"gefangen\n";
-            } else {//Kein Paltz frei
-                if (strcmp("boy", this->getFullName()) == 0) {
-                    scheduleAt(simTime() + AUFSAMMELN_TIME_BOY, self);
+            } else { //Kein Paltz frei
+                EV << this->getFullName() << ": \"Ball\" fallen gelassen" << std::endl;
+                if (strcmp("boy", this->getFullName()) == 0 || strcmp("boy2", this->getFullName()) == 0) {
+                    scheduleAt(simTime() + WORKING_TIME_FALLEN, self);
                 } else {
-                    scheduleAt(simTime() + AUFSAMMELN_TIME_GIRL, self);
+                    scheduleAt(simTime() + WORKING_TIME_FALLEN, self);
                 }
             }
         }
         currentBallCount++;
-
         delete msg;
     }
 }
@@ -146,18 +136,7 @@ void Actor::initialize() {
     cnt_all = 0;
 
     EV << "Init " << this->getFullName() << std::endl;
-    if (strcmp("boy", this->getFullName()) == 0) {
-        cnt++;
-        v_cnt.record(cnt);
-
-        cnt_all++;
-        v_cnt_all->record(cnt_all);
-
-        EV << "Erste Nachricht " << this->getFullName() << std::endl;
-        omnetpp::cMessage *ball = new omnetpp::cMessage(this->getFullName());
-        send(ball, "out");
-    }
-    if (strcmp("boy2", this->getFullName()) == 0) {
+    if (strcmp("boy", this->getFullName()) == 0 || strcmp("boy2", this->getFullName()) == 0 || strcmp("girl", this->getFullName()) == 0) {
         cnt++;
         v_cnt.record(cnt);
 

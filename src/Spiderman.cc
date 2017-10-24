@@ -19,8 +19,13 @@ using namespace omnetpp;
 #define WORKING_TIME_BOY  2.0
 #define WORKING_TIME_GIRL 1.0
 #define WORKING_TIME_FALLEN 10.0
+
+#define WORKING_TIME_SPIDERMAN 4.0
+
+#define MAX_BALL_COUNT 2
+
 Spiderman::Spiderman() {
-    // TODO Auto-generated constructor stub
+    currentBallCount = 0;
 
 }
 
@@ -29,48 +34,58 @@ Spiderman::~Spiderman() {
 }
 
 void Spiderman::handleMessage(omnetpp::cMessage *msg) {
-    EV << "Versuche Ball zu fangen" << std::endl;
-
     if (msg->isSelfMessage()) {
-        omnetpp::cMessage *ball = new omnetpp::cMessage(
-                msg->getOwner()->getFullName());
-        if (strcmp("girl", msg->getFullName()) == 0
-                || strcmp("girl2", msg->getFullName()) == 0) {
+        omnetpp::cMessage *ball = new omnetpp::cMessage(msg->getOwner()->getFullName());
+        currentBallCount--;
+        if (strcmp("girl", msg->getFullName()) == 0 || strcmp("girl2", msg->getFullName()) == 0) {
 //            cnt_wuerfe_boy++;
 //            wuerfe_boy.record(cnt_wuerfe_boy);
-            EV << "IsSelfMessage " << msg->getFullName() << std::endl;
             if (uniform(0, 1) < 0.5) {
                 send(ball, "out2");
             } else {
                 send(ball, "out4");
             }
-        } else if (strcmp("boy", msg->getFullName()) == 0
-                || strcmp("boy2", msg->getFullName()) == 0) {
+            EV << this->getFullName() << ": Werfe \"Ball\" zum Jungen, hab noch "<< currentBallCount <<" \"Bälle\"" << std::endl;
+        } else if (strcmp("boy", msg->getFullName()) == 0 || strcmp("boy2", msg->getFullName()) == 0) {
 //            cnt_wuerfe_boy++;
 //            wuerfe_boy.record(cnt_wuerfe_boy);
-            EV << "IsSelfMessage " << msg->getFullName() << std::endl;
             if (uniform(0, 1) < 0.5) {
                 send(ball, "out");
             } else {
                 send(ball, "out3");
             }
+            EV << this->getFullName() << ": Werfe \"Ball\" zum Mädchen, hab noch "<< currentBallCount <<" \"Bälle\"" << std::endl;
         } else {
-            EV << "Spiderman: unbekanne Nachricht " << msg->getFullName()
+            EV << this->getFullName() << ": unbekanne Nachricht " << msg->getFullName()
                       << std::endl;
         }
+
         delete msg;
     } else {
-        EV << "Nicht Eigentümer " << msg->getFullName() << std::endl;
-        omnetpp::cMessage *self = new omnetpp::cMessage(msg->getFullName());
+        omnetpp::cMessage *self = NULL;
         cnt_wuerfe_ges++;
         wuerfe_ges.record(cnt_wuerfe_ges);
-        EV << "\"Ball \"gefangen\n";
-        if (strcmp("boy", this->getFullName()) == 0) {
-            scheduleAt(simTime() + WORKING_TIME_BOY, self);
-        } else {
-            scheduleAt(simTime() + WORKING_TIME_GIRL, self);
-        }
 
+        if (currentBallCount < MAX_BALL_COUNT) {//Spiderman hat genug Plätze
+            EV << this->getFullName() << " \"Ball\" gefangen vom " << msg->getFullName() << std::endl;;
+            self = new omnetpp::cMessage(msg->getFullName());
+            scheduleAt(simTime() + WORKING_TIME_SPIDERMAN, self);
+            currentBallCount++;
+        } else {//Kann nicht fangen senden ERROR zu Absender
+            EV << this->getFullName() << ": \"Ball\" fallen gelassen, " << msg->getFullName() << " bescheid geben " << std::endl;;
+            self = new omnetpp::cMessage("ERROR");
+            if (strcmp("boy", msg->getFullName()) == 0) {
+                send(self, "outCom");
+            } else if (strcmp("boy2", msg->getFullName()) == 0) {
+                send(self, "out2Com");
+            } else if (strcmp("girl", msg->getFullName()) == 0) {
+                send(self, "out3Com");
+            } else if (strcmp("girl2", msg->getFullName()) == 0) {
+                send(self, "out4Com");
+            } else {
+                EV << "Spiderman: unbekanne Nachricht " << msg->getFullName() << std::endl;
+            }
+        }
         delete msg;
     }
 }
