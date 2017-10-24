@@ -13,40 +13,30 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef ACTOR_H_
-#define ACTOR_H_
+#ifndef SPIDERMAN_H_
+#define SPIDERMAN_H_
 
-
+#include <stdio.h>
+#include <string.h>
 #include <omnetpp.h>
-#include <iostream>
-#include <queue>
-/**
- * Simple example class
- */
-class Actor: public omnetpp::cSimpleModule {
+
+class Spiderman  : public omnetpp::cSimpleModule{
 protected:
-    omnetpp::cOutVector v_cnt;
-    omnetpp::cOutVector v_lost;
+        omnetpp::cOutVector wuerfe_ges;
+        omnetpp::cOutVector wuerfe_girl;
+        omnetpp::cOutVector wuerfe_boy;
+        omnetpp::cOutVector wuerfe_lost;
 
-    int cnt;
-    int cnt_lost;
-
-    // static  @workaround
-    static omnetpp::cOutVector* v_cnt_all;
-
-    // static members for static cOutVector
-    static int cnt_all;
-    static bool statsAlreadyRecorded;
-    static bool globalAlreadyInitialized;
+        int cnt_wuerfe_ges;
+        int cnt_wuerfe_girl;
+        int cnt_wuerfe_boy;
+        int cnt_wuerfe_lost;
 public:
-    Actor();
-    virtual ~Actor();
+    Spiderman();
+    virtual ~Spiderman();
     virtual void handleMessage(omnetpp::cMessage *msg) override;
     virtual void initialize() override;
     virtual void finish() override;
-private:
-    int currentBallCount;
-    std::queue<omnetpp::cMessage> queue;
 };
 
-#endif /* ACTOR_H_ */
+#endif /* SPIDERMAN_H_ */
