@@ -129,5 +129,5 @@ void Spiderman::gefangenCounter() {
 
 void Spiderman::verlorenCounter() {
     cnt_lost++;
-    v_cnt_catch.record(cnt_lost);
+    v_cnt_lost.record(cnt_lost);
 }

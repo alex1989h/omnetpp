@@ -143,7 +143,7 @@ void Actor::gefangenCounter() {
 
 void Actor::verlorenCounter() {
     cnt_lost++;
-    v_cnt_catch.record(cnt_lost);
+    v_cnt_lost.record(cnt_lost);
 }
 
 int Actor::getWorkingTimeFallen(){
