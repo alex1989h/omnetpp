@@ -91,14 +91,14 @@ void Actor::handleMessage(omnetpp::cMessage *msg) {
         send(ball, "out");
         currentBallCount--;
 
-        if (currentBallCount > 0) {
-            omnetpp::cMessage *self = new omnetpp::cMessage(this->getFullName());
-            if (strcmp("boy", this->getFullName()) == 0) {
-                scheduleAt(simTime() + AUFSAMMELN_TIME_BOY, self);
-            } else {
-                scheduleAt(simTime() + AUFSAMMELN_TIME_GIRL, self);
-            }
-        }
+//        if (currentBallCount > 0) {
+//            omnetpp::cMessage *self = new omnetpp::cMessage(this->getFullName());
+//            if (strcmp("boy", this->getFullName()) == 0) {
+//                scheduleAt(simTime() + AUFSAMMELN_TIME_BOY, self);
+//            } else {
+//                scheduleAt(simTime() + AUFSAMMELN_TIME_GIRL, self);
+//            }
+//        }
         delete msg;
     } else {
         omnetpp::cMessage *self = new omnetpp::cMessage(msg->getFullName());
