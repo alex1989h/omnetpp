@@ -24,18 +24,19 @@
  * Simple example class
  */
 class Actor: public omnetpp::cSimpleModule {
-protected:
-    omnetpp::cOutVector v_cnt;
-    omnetpp::cOutVector v_lost;
+public:
+    omnetpp::cOutVector v_cnt_catch;
+    omnetpp::cOutVector v_cnt_lost;
 
-    int cnt;
+    int cnt_catch;
     int cnt_lost;
 
     // static  @workaround
-    static omnetpp::cOutVector* v_cnt_all;
+    static omnetpp::cOutVector* v_cnt_all_catch;
 
     // static members for static cOutVector
-    static int cnt_all;
+    static int cnt_all_catch;
+
     static bool statsAlreadyRecorded;
     static bool globalAlreadyInitialized;
 public:
@@ -44,9 +45,12 @@ public:
     virtual void handleMessage(omnetpp::cMessage *msg) override;
     virtual void initialize() override;
     virtual void finish() override;
+    void gefangenCounter(void);
+    void verlorenCounter(void);
 private:
+    int getWorkingTimeFallen(void);
+    int workingTimeSum;
     int currentBallCount;
-    std::queue<omnetpp::cMessage> queue;
 };
 
 #endif /* ACTOR_H_ */

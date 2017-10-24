@@ -14,6 +14,7 @@
 // 
 
 #include <src/Spiderman.h>
+#include <src/Actor.h>
 Define_Module(Spiderman);
 using namespace omnetpp;
 #define WORKING_TIME_BOY  2.0
@@ -24,7 +25,13 @@ using namespace omnetpp;
 
 #define MAX_BALL_COUNT 2
 
+#define MAX_CNT_CATCH 1000
+
 Spiderman::Spiderman() {
+    if (!Actor::globalAlreadyInitialized) {
+        Actor::v_cnt_all_catch = new cOutVector("#anzahl-gefangen-gesamt");
+        Actor::globalAlreadyInitialized = true;
+    }
     currentBallCount = 0;
 
 }
@@ -34,12 +41,14 @@ Spiderman::~Spiderman() {
 }
 
 void Spiderman::handleMessage(omnetpp::cMessage *msg) {
+    if(cnt_catch >= MAX_CNT_CATCH){//Hier sollte er dann keine Event erstellen
+        delete msg;
+        return;
+    }
     if (msg->isSelfMessage()) {
         omnetpp::cMessage *ball = new omnetpp::cMessage(msg->getOwner()->getFullName());
         currentBallCount--;
         if (strcmp("girl", msg->getFullName()) == 0 || strcmp("girl2", msg->getFullName()) == 0) {
-//            cnt_wuerfe_boy++;
-//            wuerfe_boy.record(cnt_wuerfe_boy);
             if (uniform(0, 1) < 0.5) {
                 send(ball, "out2");
             } else {
@@ -47,8 +56,6 @@ void Spiderman::handleMessage(omnetpp::cMessage *msg) {
             }
             EV << this->getFullName() << ": Werfe \"Ball\" zum Jungen, hab noch "<< currentBallCount <<" \"Bälle\"" << std::endl;
         } else if (strcmp("boy", msg->getFullName()) == 0 || strcmp("boy2", msg->getFullName()) == 0) {
-//            cnt_wuerfe_boy++;
-//            wuerfe_boy.record(cnt_wuerfe_boy);
             if (uniform(0, 1) < 0.5) {
                 send(ball, "out");
             } else {
@@ -59,20 +66,21 @@ void Spiderman::handleMessage(omnetpp::cMessage *msg) {
             EV << this->getFullName() << ": unbekanne Nachricht " << msg->getFullName()
                       << std::endl;
         }
-
-        delete msg;
     } else {
         omnetpp::cMessage *self = NULL;
-        cnt_wuerfe_ges++;
-        wuerfe_ges.record(cnt_wuerfe_ges);
-
         if (currentBallCount < MAX_BALL_COUNT) {//Spiderman hat genug Plätze
-            EV << this->getFullName() << " \"Ball\" gefangen vom " << msg->getFullName() << std::endl;;
+            EV << this->getFullName() << " \"Ball\" gefangen vom " << msg->getFullName() << std::endl;
+
+            gefangenCounter();
+
             self = new omnetpp::cMessage(msg->getFullName());
             scheduleAt(simTime() + WORKING_TIME_SPIDERMAN, self);
             currentBallCount++;
         } else {//Kann nicht fangen senden ERROR zu Absender
             EV << this->getFullName() << ": \"Ball\" fallen gelassen, " << msg->getFullName() << " bescheid geben " << std::endl;;
+
+            verlorenCounter();
+
             self = new omnetpp::cMessage("ERROR");
             if (strcmp("boy", msg->getFullName()) == 0) {
                 send(self, "outCom");
@@ -86,15 +94,40 @@ void Spiderman::handleMessage(omnetpp::cMessage *msg) {
                 EV << "Spiderman: unbekanne Nachricht " << msg->getFullName() << std::endl;
             }
         }
-        delete msg;
     }
+        delete msg;
 }
 
 void Spiderman::initialize() {
+    v_cnt_catch.setName("#v_cnt_wuerfe_gefangen");
+    v_cnt_lost.setName("#v_cnt_wuerfe_verloren");
 
+    cnt_catch = 0;
+    cnt_lost = 0;
 }
 
 void Spiderman::finish() {
+    // This function is called by OMNeT++ at the end of the simulation.
+        if (!Actor::statsAlreadyRecorded) {
+            EV << "Gesamt: " << Actor::cnt_all_catch << endl;
+            recordScalar("Total: ", Actor::cnt_all_catch);
+            Actor::statsAlreadyRecorded = true;
+        }
 
+        EV << this->getFullName() << " gefangen:" << cnt_catch << endl;
+        EV << this->getFullName() << " fallen gelassen :" << cnt_lost << endl;
+
+        recordScalar("#cnt_wuerfe_gefangen", cnt_catch);
+        recordScalar("#cnt_wuerfe_verloren", cnt_lost);
+}
+void Spiderman::gefangenCounter() {
+    cnt_catch++;
+    Actor::cnt_all_catch++;
+    v_cnt_catch.record(cnt_catch);
+    Actor::v_cnt_all_catch->record(Actor::cnt_all_catch);
 }
 
+void Spiderman::verlorenCounter() {
+    cnt_lost++;
+    v_cnt_catch.record(cnt_lost);
+}
