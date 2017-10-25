@@ -17,22 +17,26 @@
 #include <src/Actor.h>
 Define_Module(Spiderman);
 using namespace omnetpp;
-#define WORKING_TIME_BOY  2.0
-#define WORKING_TIME_GIRL 1.0
-#define WORKING_TIME_FALLEN 10.0
 
-#define WORKING_TIME_SPIDERMAN 4.0
+#define WORKING_TIME_SPIDERMAN_MEAN 4.0
+#define WORKING_TIME_SPIDERMAN_STDDEV 1.0
 
 #define MAX_BALL_COUNT 2
 
-#define MAX_CNT_CATCH 1000
-#define STOP false
+#define MAX_CNT_THROW 1000
+#define STOP_IF_REACH_MAX_THROW false
+
+#define DOF 1
+
+
 Spiderman::Spiderman() {
     if (!Actor::globalAlreadyInitialized) {
         Actor::v_cnt_all_throw = new cOutVector("#anzahl-geworfen-gesamt");
         Actor::globalAlreadyInitialized = true;
     }
     currentBallCount = 0;
+    workingTimeThrow = 0;
+    workingTimeThrowSum = 0;
 
 }
 
@@ -41,7 +45,7 @@ Spiderman::~Spiderman() {
 }
 
 void Spiderman::handleMessage(omnetpp::cMessage *msg) {
-    if(cnt_throw >= MAX_CNT_CATCH && STOP){//Hier sollte er dann keine Event erstellen
+    if(cnt_throw >= MAX_CNT_THROW && STOP_IF_REACH_MAX_THROW){//Hier sollte er dann keine Event erstellen
         delete msg;
         return;
     }
@@ -73,7 +77,7 @@ void Spiderman::handleMessage(omnetpp::cMessage *msg) {
         if (currentBallCount < MAX_BALL_COUNT) {//Spiderman hat genug Plätze
             EV << this->getFullName() << " \"Ball\" gefangen vom " << msg->getFullName() << std::endl;
             self = new omnetpp::cMessage(msg->getFullName());
-            scheduleAt(simTime() + WORKING_TIME_SPIDERMAN, self);
+            scheduleAt(simTime() + getWorkingTimeThrow(Actor::verteilungNumber,WORKING_TIME_SPIDERMAN_MEAN,WORKING_TIME_SPIDERMAN_STDDEV), self);
             currentBallCount++;
         } else {//Kann nicht fangen senden ERROR zu Absender
             EV << this->getFullName() << ": \"Ball\" fallen gelassen, " << msg->getFullName() << " bescheid geben " << std::endl;;
@@ -98,9 +102,27 @@ void Spiderman::handleMessage(omnetpp::cMessage *msg) {
 }
 
 void Spiderman::initialize() {
+    WATCH(workingTimeThrow);
+    WATCH(workingTimeThrowSum);
+
     v_cnt_throw.setName("#v_cnt_baelle_geworfen");
     v_cnt_lost.setName("#v_cnt_baelle_verloren");
     EV << "Init " << this->getFullName() << std::endl;
+    EV << "Verteilung für \"Ball\" hollen: ";
+    switch (Actor::verteilungNumber) {//Ausgabe welche Verteilung genommen wurde
+        case 1:
+            EV << "Normalverteilung" << std::endl;
+            break;
+        case 2:
+            EV << "Exponentialverteilung" << std::endl;
+            break;
+        case 3:
+            EV << "Student-Verteilung" << std::endl;
+            break;
+        default:
+            EV << "Keine Verteilung" << std::endl;
+            break;
+        }
     cnt_throw = 0;
     cnt_lost = 0;
 }
@@ -129,4 +151,22 @@ void Spiderman::geworfenCounter() {
 void Spiderman::verlorenCounter() {
     cnt_lost++;
     v_cnt_lost.record(cnt_lost);
+}
+
+double Spiderman::getWorkingTimeThrow(int number, double mean, double stddev) {
+    switch (number) {
+    case 1:
+        workingTimeThrow = truncnormal(mean, stddev);
+        break;
+    case 2:
+        workingTimeThrow = exponential(mean);
+        break;
+    case 3:
+        workingTimeThrow = fabs(student_t(DOF) + mean);
+        break;
+    default:
+        workingTimeThrow = mean;
+        break;
+    }
+    return workingTimeThrowSum += workingTimeThrow;
 }

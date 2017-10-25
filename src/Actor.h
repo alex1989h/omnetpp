@@ -50,8 +50,13 @@ public:
     void geworfenCounter(void);
     void verlorenCounter(void);
 private:
-    int getWorkingTimeFallen(int);
-    int workingTimeSum;
+    double getWorkingTimeFallen(int,double,double);
+    double getWorkingTimeThrow(int,double,double);
+    double workingTimeFallen;
+    double workingTimeFallenSum;
+    double workingTimeThrow;
+    double workingTimeThrowSum;
+
     int currentBallCount;
 };
 

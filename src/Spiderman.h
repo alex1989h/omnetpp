@@ -36,6 +36,10 @@ public:
     void geworfenCounter(void);
     void verlorenCounter(void);
 private:
+    double getWorkingTimeThrow(int,double,double);
+    double workingTimeThrow;
+    double workingTimeThrowSum;
+
     int currentBallCount;
 };
 

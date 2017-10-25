@@ -22,15 +22,17 @@
 Define_Module(Actor);
 using namespace omnetpp;
 
-// Symbols
-#define WORKING_TIME_BOY  2.0
-#define WORKING_TIME_GIRL 1.0
-#define WORKING_TIME_FALLEN 10.0
+#define WORKING_TIME_BOY_MEAN  2.0
+#define WORKING_TIME_BOY_STDDEV 0.2
 
-#define MEAN 5
-#define STDDEV 2.5
-#define DOF 4
-//Max SIZES
+#define WORKING_TIME_GIRL_MEAN 1.0
+#define WORKING_TIME_GIRL_STDDEV 0.2
+
+#define WORKING_TIME_FALLEN_MEAN 10.0
+#define WORKING_TIME_FALLEN_STDDEV 3.0
+
+#define DOF 1
+
 #define MAX_BALL_COUNT 1
 
 // Static members
@@ -46,7 +48,11 @@ Actor::Actor() {
         globalAlreadyInitialized = true;
             }
     currentBallCount = 0;
-    workingTimeSum = 0;
+
+    workingTimeFallen = 0;
+    workingTimeFallenSum = 0;
+    workingTimeThrow = 0;
+    workingTimeThrowSum = 0;
 }
 
 Actor::~Actor() {
@@ -93,22 +99,22 @@ void Actor::handleMessage(omnetpp::cMessage *msg) {
         if (strcmp("ERROR", msg->getFullName()) == 0) { //Bekommt eine Nachricht vom Spiderman "Ball nicht gefange"
             EV << this->getFullName() << ": Spiderman hat den \"Ball\" nicht gefangen, ich muss ihn aufsammeln" << std::endl;
 
-            scheduleAt(simTime() + getWorkingTimeFallen(verteilungNumber), self);
+            scheduleAt(simTime() + getWorkingTimeFallen(verteilungNumber,WORKING_TIME_FALLEN_MEAN, WORKING_TIME_FALLEN_STDDEV), self);
 
         } else { //Bekommt einen Ball vom Spiderman
             if (currentBallCount < MAX_BALL_COUNT) { //Ist noch Platz frei
                 EV << this->getFullName() << ": \"Ball\" gefangen\"" << std::endl;
                 if (strcmp("boy", this->getFullName()) == 0 || strcmp("boy2", this->getFullName()) == 0) {
-                    scheduleAt(simTime() + WORKING_TIME_BOY, self);
+                    scheduleAt(simTime() + getWorkingTimeThrow(verteilungNumber, WORKING_TIME_BOY_MEAN, WORKING_TIME_BOY_STDDEV), self);
                 } else {
-                    scheduleAt(simTime() + WORKING_TIME_GIRL, self);
+                    scheduleAt(simTime() +getWorkingTimeThrow(verteilungNumber, WORKING_TIME_GIRL_MEAN, WORKING_TIME_GIRL_STDDEV), self);
                 }
             } else { //Kein Paltz frei
                 EV << this->getFullName() << ": \"Ball\" fallen gelassen" << std::endl;
 
                 verlorenCounter();   ///Hier zählt er die nicht gefangenen Bälle
 
-                scheduleAt(simTime() + getWorkingTimeFallen(verteilungNumber), self);
+                scheduleAt(simTime() + getWorkingTimeFallen(verteilungNumber,WORKING_TIME_FALLEN_MEAN,WORKING_TIME_FALLEN_STDDEV), self);
             }
         }
         currentBallCount++;
@@ -120,6 +126,11 @@ void Actor::handleMessage(omnetpp::cMessage *msg) {
  * Initialize
  */
 void Actor::initialize() {
+    WATCH(workingTimeThrow);
+    WATCH(workingTimeThrowSum);
+    WATCH(workingTimeFallen);
+    WATCH(workingTimeFallenSum);
+
     verteilungNumber = par("verteilungNumber");
     v_cnt_throw.setName("#v_cnt_baelle_geworfen");
     v_cnt_lost.setName("#v_cnt_baelle_verloren");
@@ -133,17 +144,17 @@ void Actor::initialize() {
     EV << "Init " << this->getFullName() << std::endl;
     EV << "Verteilung für \"Ball\" hollen: ";
     switch (verteilungNumber) {//Ausgabe welche Verteilung genommen wurde
-    case 0:
+    case 1:
         EV << "Normalverteilung" << std::endl;
         break;
-    case 1:
+    case 2:
         EV << "Exponentialverteilung" << std::endl;
         break;
-    case 2:
+    case 3:
         EV << "Student-Verteilung" << std::endl;
         break;
     default:
-        EV << "unbekannte Verteilung" << std::endl;
+        EV << "Keine Verteilung" << std::endl;
         break;
     }
     if (strcmp("boy", this->getFullName()) == 0 || strcmp("boy2", this->getFullName()) == 0) {
@@ -165,17 +176,34 @@ void Actor::verlorenCounter() {
     v_cnt_lost.record(cnt_lost);
 }
 
-int Actor::getWorkingTimeFallen(int number){
-
+double Actor::getWorkingTimeFallen(int number, double mean, double stddev){
     switch (number) {
-    case 0:workingTimeSum += truncnormal(MEAN,STDDEV);
+    case 1:workingTimeFallen = truncnormal(mean,stddev);
         break;
-    case 1:workingTimeSum += exponential(MEAN);
+    case 2:workingTimeFallen = exponential(mean);
         break;
-    case 2:workingTimeSum += fabs(student_t(DOF));
+    case 3:workingTimeFallen = fabs(student_t(DOF)+mean);
         break;
-    default:workingTimeSum = MEAN;
+    default:workingTimeFallen = mean;
         break;
     }
-    return workingTimeSum;
+    return workingTimeFallenSum += workingTimeFallen;
+}
+
+double Actor::getWorkingTimeThrow(int number, double mean, double stddev){
+    switch (number) {
+    case 1:
+        workingTimeThrow = truncnormal(mean, stddev);
+        break;
+    case 2:
+        workingTimeThrow = exponential(mean);
+        break;
+    case 3:
+        workingTimeThrow = fabs(student_t(DOF) + mean);
+        break;
+    default:
+        workingTimeThrow = mean;
+        break;
+    }
+    return workingTimeThrowSum += workingTimeThrow;
 }
