@@ -26,10 +26,10 @@ using namespace omnetpp;
 #define MAX_BALL_COUNT 2
 
 #define MAX_CNT_CATCH 1000
-
+#define STOP false
 Spiderman::Spiderman() {
     if (!Actor::globalAlreadyInitialized) {
-        Actor::v_cnt_all_catch = new cOutVector("#anzahl-gefangen-gesamt");
+        Actor::v_cnt_all_throw = new cOutVector("#anzahl-geworfen-gesamt");
         Actor::globalAlreadyInitialized = true;
     }
     currentBallCount = 0;
@@ -41,12 +41,14 @@ Spiderman::~Spiderman() {
 }
 
 void Spiderman::handleMessage(omnetpp::cMessage *msg) {
-    if(cnt_catch >= MAX_CNT_CATCH){//Hier sollte er dann keine Event erstellen
+    if(cnt_throw >= MAX_CNT_CATCH && STOP){//Hier sollte er dann keine Event erstellen
         delete msg;
         return;
     }
     if (msg->isSelfMessage()) {
         omnetpp::cMessage *ball = new omnetpp::cMessage(msg->getOwner()->getFullName());
+        geworfenCounter();
+
         currentBallCount--;
         if (strcmp("girl", msg->getFullName()) == 0 || strcmp("girl2", msg->getFullName()) == 0) {
             if (uniform(0, 1) < 0.5) {
@@ -70,9 +72,6 @@ void Spiderman::handleMessage(omnetpp::cMessage *msg) {
         omnetpp::cMessage *self = NULL;
         if (currentBallCount < MAX_BALL_COUNT) {//Spiderman hat genug Plätze
             EV << this->getFullName() << " \"Ball\" gefangen vom " << msg->getFullName() << std::endl;
-
-            gefangenCounter();
-
             self = new omnetpp::cMessage(msg->getFullName());
             scheduleAt(simTime() + WORKING_TIME_SPIDERMAN, self);
             currentBallCount++;
@@ -99,32 +98,32 @@ void Spiderman::handleMessage(omnetpp::cMessage *msg) {
 }
 
 void Spiderman::initialize() {
-    v_cnt_catch.setName("#v_cnt_wuerfe_gefangen");
-    v_cnt_lost.setName("#v_cnt_wuerfe_verloren");
-
-    cnt_catch = 0;
+    v_cnt_throw.setName("#v_cnt_baelle_geworfen");
+    v_cnt_lost.setName("#v_cnt_baelle_verloren");
+    EV << "Init " << this->getFullName() << std::endl;
+    cnt_throw = 0;
     cnt_lost = 0;
 }
 
 void Spiderman::finish() {
     // This function is called by OMNeT++ at the end of the simulation.
         if (!Actor::statsAlreadyRecorded) {
-            EV << "Gesamt: " << Actor::cnt_all_catch << endl;
-            recordScalar("Total: ", Actor::cnt_all_catch);
+            EV << "Gesamt: " << Actor::cnt_all_throw << endl;
+            recordScalar("Total: ", Actor::cnt_all_throw);
             Actor::statsAlreadyRecorded = true;
         }
 
-        EV << this->getFullName() << " gefangen:" << cnt_catch << endl;
+        EV << this->getFullName() << " geworfen:" << cnt_throw << endl;
         EV << this->getFullName() << " fallen gelassen :" << cnt_lost << endl;
 
-        recordScalar("#cnt_wuerfe_gefangen", cnt_catch);
-        recordScalar("#cnt_wuerfe_verloren", cnt_lost);
+        recordScalar("#cnt_baelle_geworfen", cnt_throw);
+        recordScalar("#cnt_baelle_verloren", cnt_lost);
 }
-void Spiderman::gefangenCounter() {
-    cnt_catch++;
-    Actor::cnt_all_catch++;
-    v_cnt_catch.record(cnt_catch);
-    Actor::v_cnt_all_catch->record(Actor::cnt_all_catch);
+void Spiderman::geworfenCounter() {
+    cnt_throw++;
+    Actor::cnt_all_throw++;
+    v_cnt_throw.record(cnt_throw);
+    Actor::v_cnt_all_throw->record(Actor::cnt_all_throw);
 }
 
 void Spiderman::verlorenCounter() {

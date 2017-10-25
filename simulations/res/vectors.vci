@@ -1,32 +1,37 @@
-file 12224 1508872584                                           
+file 12633 1508954292                                           
 version 2
-run Experiment1-FIX-0-20171024-21:16:17-11908
-attr configname Experiment1-FIX
-attr datetime 20171024-21:16:17
+run Studentverteilung-0-20171025-19:58:00-5777
+attr configname Studentverteilung
+attr datetime 20171025-19:58:00
 attr experiment Ballwerfen
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Playground
-attr processid 11908
+attr processid 5777
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
+param **.verteilungNumber 2
 
-vector 9  Playground.spiderman  #v_cnt_wuerfe_gefangen  ETV
-vector 0  Playground  #anzahl-gefangen-gesamt  ETV
-vector 1  Playground.girl  #v_cnt_wuerfe_gefangen  ETV
-vector 2  Playground.girl  #v_cnt_wuerfe_verloren  ETV
-vector 5  Playground.boy  #v_cnt_wuerfe_gefangen  ETV
-vector 7  Playground.boy2  #v_cnt_wuerfe_gefangen  ETV
-vector 3  Playground.girl2  #v_cnt_wuerfe_gefangen  ETV
-0	762 5853 1 870 0 600 435 1 435 94830 27532310
-1	6615 680 5 849 4 587 54 1 54 1485 53955
-2	7295 8 6 6 4 4 1 1 1 1 1
-3	7303 675 26 865 21 598 54 1 54 1485 53955
-5	7978 624 10 834 9 576 50 1 50 1275 42925
-7	8602 732 17 866 15 598 58 1 58 1711 66729
-9	9334 2890 1 870 0 600 219 1 219 24090 3525170
+vector 9  Playground.spiderman  #v_cnt_baelle_geworfen  ETV
+vector 0  Playground  #anzahl-geworfen-gesamt  ETV
+vector 4  Playground.girl2  #v_cnt_baelle_verloren  ETV
+vector 3  Playground.girl2  #v_cnt_baelle_geworfen  ETV
+vector 8  Playground.boy2  #v_cnt_baelle_verloren  ETV
+vector 7  Playground.boy2  #v_cnt_baelle_geworfen  ETV
+vector 1  Playground.girl  #v_cnt_baelle_geworfen  ETV
+vector 5  Playground.boy  #v_cnt_baelle_geworfen  ETV
+vector 6  Playground.boy  #v_cnt_baelle_verloren  ETV
+0	902 5930 3 883 4 600 441 1 441 97461 28686021
+1	6832 660 22 873 14 592 53 1 53 1431 51039
+3	7492 716 7 857 4 581 57 1 57 1653 63365
+4	8208 20 6 278 4 183 2 1 2 3 5
+5	8228 658 33 881 21 598 52 1 52 1378 48230
+6	8886 57 46 430 30 287 5 1 5 15 55
+7	8943 723 15 865 9 587 58 1 58 1711 66729
+8	9666 50 14 110 9 70 5 1 5 15 55
+9	9716 2917 3 883 4 600 221 1 221 24531 3622411

@@ -25,30 +25,32 @@
  */
 class Actor: public omnetpp::cSimpleModule {
 public:
-    omnetpp::cOutVector v_cnt_catch;
+    omnetpp::cOutVector v_cnt_throw;
     omnetpp::cOutVector v_cnt_lost;
 
-    int cnt_catch;
+    int cnt_throw;
     int cnt_lost;
 
     // static  @workaround
-    static omnetpp::cOutVector* v_cnt_all_catch;
+    static omnetpp::cOutVector* v_cnt_all_throw;
 
     // static members for static cOutVector
-    static int cnt_all_catch;
+    static int cnt_all_throw;
 
     static bool statsAlreadyRecorded;
     static bool globalAlreadyInitialized;
+
+    static int verteilungNumber;
 public:
     Actor();
     virtual ~Actor();
     virtual void handleMessage(omnetpp::cMessage *msg) override;
     virtual void initialize() override;
     virtual void finish() override;
-    void gefangenCounter(void);
+    void geworfenCounter(void);
     void verlorenCounter(void);
 private:
-    int getWorkingTimeFallen(void);
+    int getWorkingTimeFallen(int);
     int workingTimeSum;
     int currentBallCount;
 };

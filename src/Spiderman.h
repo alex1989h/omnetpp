@@ -22,10 +22,10 @@
 
 class Spiderman  : public omnetpp::cSimpleModule{
 protected:
-        omnetpp::cOutVector v_cnt_catch;
+        omnetpp::cOutVector v_cnt_throw;
         omnetpp::cOutVector v_cnt_lost;
 
-        int cnt_catch;
+        int cnt_throw;
         int cnt_lost;
 public:
     Spiderman();
@@ -33,7 +33,7 @@ public:
     virtual void handleMessage(omnetpp::cMessage *msg) override;
     virtual void initialize() override;
     virtual void finish() override;
-    void gefangenCounter(void);
+    void geworfenCounter(void);
     void verlorenCounter(void);
 private:
     int currentBallCount;

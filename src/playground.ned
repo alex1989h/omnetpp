@@ -4,6 +4,8 @@ import ned.DelayChannel;
 
 simple Actor
 {
+    parameters:
+        int verteilungNumber = default(0);
     gates:
         input in;
         output out;

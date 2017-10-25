@@ -27,28 +27,32 @@ using namespace omnetpp;
 #define WORKING_TIME_GIRL 1.0
 #define WORKING_TIME_FALLEN 10.0
 
+#define MEAN 5
+#define STDDEV 2.5
+#define DOF 4
 //Max SIZES
 #define MAX_BALL_COUNT 1
 
 // Static members
-int Actor::cnt_all_catch;
-cOutVector* Actor::v_cnt_all_catch = 0;
+int Actor::cnt_all_throw;
+cOutVector* Actor::v_cnt_all_throw = 0;
 bool Actor::statsAlreadyRecorded = false;
 bool Actor::globalAlreadyInitialized = false;
+int Actor::verteilungNumber = 0;
 
 Actor::Actor() {
     if (!globalAlreadyInitialized) {
-        v_cnt_all_catch = new cOutVector("#anzahl-gefangen-gesamt");
+        v_cnt_all_throw = new cOutVector("#anzahl-geworfen-gesamt");
         globalAlreadyInitialized = true;
-    }
+            }
     currentBallCount = 0;
     workingTimeSum = 0;
 }
 
 Actor::~Actor() {
-    if (NULL != v_cnt_all_catch) {
-        delete v_cnt_all_catch;
-        v_cnt_all_catch = NULL;
+    if (NULL != v_cnt_all_throw) {
+        delete v_cnt_all_throw;
+        v_cnt_all_throw = NULL;
     }
 }
 
@@ -59,16 +63,16 @@ void Actor::finish() {
 
     // This function is called by OMNeT++ at the end of the simulation.
     if (!statsAlreadyRecorded) {
-        EV << "Gesamt: " << cnt_all_catch << endl;
-        recordScalar("Total: ", cnt_all_catch);
+        EV << "Gesamt: " << cnt_all_throw << endl;
+        recordScalar("Total: ", cnt_all_throw);
         statsAlreadyRecorded = true;
     }
 
-    EV << this->getFullName() << " gefangen:" << cnt_catch << endl;
-    EV << this->getFullName() << " fallen gelassen :" << cnt_lost << endl;
+    EV << this->getFullName() << " geworfen: " << cnt_throw << endl;
+    EV << this->getFullName() << " fallen gelassen: " << cnt_lost << endl;
 
-    recordScalar("#cnt_wuerfe_gefangen", cnt_catch);
-    recordScalar("#cnt_wuerfe_verloren", cnt_lost);
+    recordScalar("#cnt_baelle_geworfen", cnt_throw);
+    recordScalar("#cnt_baelle_verloren", cnt_lost);
 
 }
 
@@ -78,6 +82,8 @@ void Actor::finish() {
 void Actor::handleMessage(omnetpp::cMessage *msg) {
     if (msg->isSelfMessage()) {
         omnetpp::cMessage *ball = new omnetpp::cMessage(this->getFullName());
+        geworfenCounter();      ///Hier zählt er die geworfenen Bälle
+
         send(ball, "out");
         currentBallCount--;
         EV << this->getFullName() << ": \"Ball\" geworfen, hab noch "<< currentBallCount <<" \"Bälle\"" << std::endl;
@@ -87,14 +93,11 @@ void Actor::handleMessage(omnetpp::cMessage *msg) {
         if (strcmp("ERROR", msg->getFullName()) == 0) { //Bekommt eine Nachricht vom Spiderman "Ball nicht gefange"
             EV << this->getFullName() << ": Spiderman hat den \"Ball\" nicht gefangen, ich muss ihn aufsammeln" << std::endl;
 
-            scheduleAt(simTime() + getWorkingTimeFallen(), self);
+            scheduleAt(simTime() + getWorkingTimeFallen(verteilungNumber), self);
 
         } else { //Bekommt einen Ball vom Spiderman
             if (currentBallCount < MAX_BALL_COUNT) { //Ist noch Platz frei
                 EV << this->getFullName() << ": \"Ball\" gefangen\"" << std::endl;
-
-                gefangenCounter();      ///Hier zält er die gefangenen Bälle
-
                 if (strcmp("boy", this->getFullName()) == 0 || strcmp("boy2", this->getFullName()) == 0) {
                     scheduleAt(simTime() + WORKING_TIME_BOY, self);
                 } else {
@@ -105,7 +108,7 @@ void Actor::handleMessage(omnetpp::cMessage *msg) {
 
                 verlorenCounter();   ///Hier zählt er die nicht gefangenen Bälle
 
-                scheduleAt(simTime() + getWorkingTimeFallen(), self);
+                scheduleAt(simTime() + getWorkingTimeFallen(verteilungNumber), self);
             }
         }
         currentBallCount++;
@@ -117,16 +120,32 @@ void Actor::handleMessage(omnetpp::cMessage *msg) {
  * Initialize
  */
 void Actor::initialize() {
-    v_cnt_catch.setName("#v_cnt_wuerfe_gefangen");
-    v_cnt_lost.setName("#v_cnt_wuerfe_verloren");
+    verteilungNumber = par("verteilungNumber");
+    v_cnt_throw.setName("#v_cnt_baelle_geworfen");
+    v_cnt_lost.setName("#v_cnt_baelle_verloren");
 
-    cnt_catch = 0;
+    cnt_throw = 0;
     cnt_lost = 0;
 
     statsAlreadyRecorded = false;
-    cnt_all_catch = 0;
+    cnt_all_throw = 0;
 
     EV << "Init " << this->getFullName() << std::endl;
+    EV << "Verteilung für \"Ball\" hollen: ";
+    switch (verteilungNumber) {//Ausgabe welche Verteilung genommen wurde
+    case 0:
+        EV << "Normalverteilung" << std::endl;
+        break;
+    case 1:
+        EV << "Exponentialverteilung" << std::endl;
+        break;
+    case 2:
+        EV << "Student-Verteilung" << std::endl;
+        break;
+    default:
+        EV << "unbekannte Verteilung" << std::endl;
+        break;
+    }
     if (strcmp("boy", this->getFullName()) == 0 || strcmp("boy2", this->getFullName()) == 0) {
         EV << "Erste Nachricht " << this->getFullName() << std::endl;
         omnetpp::cMessage *ball = new omnetpp::cMessage(this->getFullName());
@@ -134,11 +153,11 @@ void Actor::initialize() {
     }
 }
 
-void Actor::gefangenCounter() {
-    cnt_catch++;
-    cnt_all_catch++;
-    v_cnt_catch.record(cnt_catch);
-    v_cnt_all_catch->record(cnt_all_catch);
+void Actor::geworfenCounter() {
+    cnt_throw++;
+    cnt_all_throw++;
+    v_cnt_throw.record(cnt_throw);
+    v_cnt_all_throw->record(cnt_all_throw);
 }
 
 void Actor::verlorenCounter() {
@@ -146,7 +165,17 @@ void Actor::verlorenCounter() {
     v_cnt_lost.record(cnt_lost);
 }
 
-int Actor::getWorkingTimeFallen(){
-    workingTimeSum += uniform(0, WORKING_TIME_FALLEN);
+int Actor::getWorkingTimeFallen(int number){
+
+    switch (number) {
+    case 0:workingTimeSum += truncnormal(MEAN,STDDEV);
+        break;
+    case 1:workingTimeSum += exponential(MEAN);
+        break;
+    case 2:workingTimeSum += fabs(student_t(DOF));
+        break;
+    default:workingTimeSum = MEAN;
+        break;
+    }
     return workingTimeSum;
 }

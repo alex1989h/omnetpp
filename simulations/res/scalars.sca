@@ -1,28 +1,29 @@
 version 2
-run Experiment1-FIX-0-20171024-21:16:17-11908
-attr configname Experiment1-FIX
-attr datetime 20171024-21:16:17
+run Studentverteilung-0-20171025-19:58:00-5777
+attr configname Studentverteilung
+attr datetime 20171025-19:58:00
 attr experiment Ballwerfen
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Playground
-attr processid 11908
+attr processid 5777
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
+param **.verteilungNumber 2
 
-scalar Playground.girl 	"Total: " 	1998
-scalar Playground.girl 	#cnt_wuerfe_gefangen 	255
-scalar Playground.girl 	#cnt_wuerfe_verloren 	1
-scalar Playground.girl2 	#cnt_wuerfe_gefangen 	244
-scalar Playground.girl2 	#cnt_wuerfe_verloren 	0
-scalar Playground.boy 	#cnt_wuerfe_gefangen 	244
-scalar Playground.boy 	#cnt_wuerfe_verloren 	0
-scalar Playground.boy2 	#cnt_wuerfe_gefangen 	255
-scalar Playground.boy2 	#cnt_wuerfe_verloren 	0
-scalar Playground.spiderman 	#cnt_wuerfe_gefangen 	1000
-scalar Playground.spiderman 	#cnt_wuerfe_verloren 	0
+scalar Playground.girl 	"Total: " 	294015
+scalar Playground.girl 	#cnt_baelle_geworfen 	36672
+scalar Playground.girl 	#cnt_baelle_verloren 	0
+scalar Playground.girl2 	#cnt_baelle_geworfen 	36832
+scalar Playground.girl2 	#cnt_baelle_verloren 	2
+scalar Playground.boy 	#cnt_baelle_geworfen 	36897
+scalar Playground.boy 	#cnt_baelle_verloren 	5
+scalar Playground.boy2 	#cnt_baelle_geworfen 	36606
+scalar Playground.boy2 	#cnt_baelle_verloren 	5
+scalar Playground.spiderman 	#cnt_baelle_geworfen 	147008
+scalar Playground.spiderman 	#cnt_baelle_verloren 	0
