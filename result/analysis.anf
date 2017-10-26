@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
   <inputs>
-    <inputs name="/Ballwerfen/simulations/res/scalars.sca"/>
-    <inputs name="/Ballwerfen/simulations/res/vectors.vec"/>
+    <inputs name="/Ballwerfen/result/scalars.sca"/>
+    <inputs name="/Ballwerfen/result/vectors.vec"/>
   </inputs>
   <datasets/>
   <chartSheets/>
