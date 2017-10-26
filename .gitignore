@@ -34,6 +34,7 @@ out/
 # Neue erstellte Dateien
 *.sca
 *.vec
+*.vci
 
 #language.settings.xml nervt
 .settings/language.settings.xml
