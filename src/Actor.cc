@@ -157,7 +157,7 @@ void Actor::initialize() {
         EV << "Keine Verteilung" << std::endl;
         break;
     }
-    if (strcmp("boy", this->getFullName()) == 0 || strcmp("boy2", this->getFullName()) == 0) {
+    if (strcmp("boy", this->getFullName()) == 0 || strcmp("boy2", this->getFullName()) == 0 || strcmp("girl", this->getFullName()) == 0) {
         EV << "Erste Nachricht " << this->getFullName() << std::endl;
         omnetpp::cMessage *ball = new omnetpp::cMessage(this->getFullName());
         send(ball, "out");

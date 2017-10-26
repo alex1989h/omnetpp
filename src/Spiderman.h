@@ -41,6 +41,8 @@ private:
     double workingTimeThrowSum;
 
     int currentBallCount;
+    int MAX_THROW_LIMIT;
+    bool THROW_LIMIT_ON;
 };
 
 #endif /* SPIDERMAN_H_ */

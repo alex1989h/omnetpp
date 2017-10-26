@@ -15,6 +15,9 @@ simple Actor
 
 simple Spiderman
 {
+    parameters:
+        int throwLimit = default(100);
+        bool throwLimitOn = default(false);
     gates:
         input in;
         output out;

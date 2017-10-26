@@ -45,7 +45,7 @@ Spiderman::~Spiderman() {
 }
 
 void Spiderman::handleMessage(omnetpp::cMessage *msg) {
-    if(cnt_throw >= MAX_CNT_THROW && STOP_IF_REACH_MAX_THROW){//Hier sollte er dann keine Event erstellen
+    if(cnt_throw >= MAX_THROW_LIMIT && THROW_LIMIT_ON){//Hier sollte er dann keine Event erstellen
         delete msg;
         return;
     }
@@ -109,6 +109,9 @@ void Spiderman::initialize() {
     v_cnt_lost.setName("#v_cnt_baelle_verloren");
     EV << "Init " << this->getFullName() << std::endl;
     EV << "Verteilung für \"Ball\" hollen: ";
+    MAX_THROW_LIMIT = par("throwLimit");
+    THROW_LIMIT_ON = par("throwLimitOn");
+
     switch (Actor::verteilungNumber) {//Ausgabe welche Verteilung genommen wurde
         case 1:
             EV << "Normalverteilung" << std::endl;
