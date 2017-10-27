@@ -1,0 +1,189 @@
+version 2
+run Etwas-0-20171027-11:27:11-8697
+attr configname Etwas
+attr datetime 20171027-11:27:11
+attr experiment Etwas
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Ping
+attr processid 8697
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.Alex.numPingApps 1
+param *.Alex.pingApp[*].count 1
+param *.Alex.pingApp[*].destAddr "\"Artur\""
+param *.configurator.dumpAddresses true
+param *.configurator.dumpLinks true
+param *.configurator.dumpRoutes true
+param *.configurator.dumpTopology true
+
+vector 264  Ping.Alex.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 265  Ping.Alex.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 285  Ping.Artur.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 286  Ping.Artur.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 301  Ping.Marvin.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 302  Ping.Marvin.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 312  Ping.Marvin.ppp[1].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 313  Ping.Marvin.ppp[1].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 275  Ping.Alex.pingApp[0]  pingTxSeq:vector  ETV
+attr interpolationmode  none
+attr title  "ping tx seq, vector"
+vector 261  Ping.Alex.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 263  Ping.Alex.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 270  Ping.Alex.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 266  Ping.Alex.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 304  Ping.Marvin.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 308  Ping.Marvin.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 309  Ping.Marvin.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 311  Ping.Marvin.ppp[1].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 318  Ping.Marvin.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 314  Ping.Marvin.ppp[1].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 288  Ping.Artur.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 292  Ping.Artur.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 282  Ping.Artur.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 284  Ping.Artur.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 291  Ping.Artur.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 287  Ping.Artur.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 315  Ping.Marvin.ppp[1].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 319  Ping.Marvin.ppp[1].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 298  Ping.Marvin.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 300  Ping.Marvin.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 307  Ping.Marvin.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 303  Ping.Marvin.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 267  Ping.Alex.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 271  Ping.Alex.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 276  Ping.Alex.pingApp[0]  pingRxSeq:vector  ETV
+attr interpolationmode  none
+attr title  "ping rx seq, vector"
+vector 272  Ping.Alex.pingApp[0]  rtt:vector  ETV
+attr interpolationmode  none
+attr title  "ping round-trip time, vector"
+attr unit  s
+261	10	0.548813502304	84
+263	10	0.548813502304	0
+264	0	0	0
+265	0	0	0
+265	11	0.548813502304	1
+265	12	0.549541502304	0
+266	11	0.548813502304	91
+267	31	2.151725502304	91
+270	11	0.548813502304	84
+271	31	2.151725502304	84
+272	34	2.151725502304	1.602912
+275	7	0.548813502304	0
+276	34	2.151725502304	0
+282	22	1.350269502304	84
+284	22	1.350269502304	0
+285	0	0	0
+286	0	0	0
+286	23	1.350269502304	1
+286	24	1.350997502304	0
+287	23	1.350269502304	91
+288	18	1.350269502304	91
+291	23	1.350269502304	84
+292	18	1.350269502304	84
+298	28	1.750997502304	84
+300	28	1.750997502304	0
+301	0	0	0
+302	0	0	0
+302	29	1.750997502304	1
+302	30	1.751725502304	0
+303	29	1.750997502304	91
+304	13	0.949541502304	91
+307	29	1.750997502304	84
+308	13	0.949541502304	84
+309	15	0.949541502304	84
+311	15	0.949541502304	0
+312	0	0	0
+313	0	0	0
+313	16	0.949541502304	1
+313	17	0.950269502304	0
+314	16	0.949541502304	91
+315	26	1.750997502304	91
+318	16	0.949541502304	84
+319	26	1.750997502304	84
