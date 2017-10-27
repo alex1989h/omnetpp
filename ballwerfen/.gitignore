@@ -35,6 +35,8 @@ out/
 *.sca
 *.vec
 *.vci
+src/ballwerfen
+src/Ballwerfen
 
 #language.settings.xml nervt
 .settings/language.settings.xml

@@ -13,8 +13,8 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include <src/Spiderman.h>
-#include <src/Actor.h>
+#include "Spiderman.h"
+#include "Actor.h"
 Define_Module(Spiderman);
 using namespace omnetpp;
 
