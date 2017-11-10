@@ -1,0 +1,1247 @@
+version 2
+run Etwas-0-20171110-11:37:44-6408
+attr configname Etwas
+attr datetime 20171110-11:37:44
+attr experiment Etwas
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network tcpApp
+attr processid 6408
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.*.tcpApp[*].tOpen 0.2s
+param **.*.tcpApp[*].tSend 0.4s
+param **.ppp[*].ppp.mtu "1500 B"
+param **.ppp[*].queue.frameCapacity 10
+param **.ppp[*].queueType "\"DropTailQueue\""
+param *.AlexTcp.numTcpApps 1
+param *.AlexTcp.tcpApp[*].connectAddress "\"MarvinTcp\""
+param *.AlexTcp.tcpApp[*].typename "\"TCPSessionApp\""
+param *.AlexTcp.tcpApp[0].connectPort 6666
+param *.AlexTcp.tcpApp[0].sendBytes 1000000B
+param *.ArturTcp.numTcpApps 1
+param *.ArturTcp.tcpApp[*].connectAddress "\"WilhelmTcp\""
+param *.ArturTcp.tcpApp[*].typename "\"TCPSessionApp\""
+param *.ArturTcp.tcpApp[0].connectPort 6666
+param *.ArturTcp.tcpApp[0].sendBytes 1000000B
+param *.MarvinTcp.numTcpApps 1
+param *.MarvinTcp.tcpApp[*].typename "\"TCPEchoApp\""
+param *.MarvinTcp.tcpApp[0].echoFactor 2.0
+param *.MarvinTcp.tcpApp[0].localPort 6666
+param *.WilhelmTcp.numTcpApps 1
+param *.WilhelmTcp.tcpApp[*].typename "\"TCPEchoApp\""
+param *.WilhelmTcp.tcpApp[0].echoFactor 2.0
+param *.WilhelmTcp.tcpApp[0].localPort 6666
+param *.configurator.dumpAddresses true
+param *.configurator.dumpLinks true
+param *.configurator.dumpRoutes true
+param *.configurator.dumpTopology true
+
+vector 8  tcpApp.AlexTcp.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 9  tcpApp.AlexTcp.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 27  tcpApp.Marvin.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 28  tcpApp.Marvin.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 38  tcpApp.Marvin.ppp[1].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 39  tcpApp.Marvin.ppp[1].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 49  tcpApp.Marvin.ppp[2].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 50  tcpApp.Marvin.ppp[2].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 65  tcpApp.ArturTcp.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 66  tcpApp.ArturTcp.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 84  tcpApp.Marvin2.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 85  tcpApp.Marvin2.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 95  tcpApp.Marvin2.ppp[1].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 96  tcpApp.Marvin2.ppp[1].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 106  tcpApp.Marvin2.ppp[2].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 107  tcpApp.Marvin2.ppp[2].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 122  tcpApp.WilhelmTcp.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 123  tcpApp.WilhelmTcp.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 141  tcpApp.MarvinTcp.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 142  tcpApp.MarvinTcp.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 215  tcpApp.AlexTcp.tcp  tcpRcvQueueBytes  ETV
+vector 202  tcpApp.AlexTcp.tcp  "advertised window"  ETV
+vector 201  tcpApp.AlexTcp.tcp  "receive window"  ETV
+vector 204  tcpApp.AlexTcp.tcp  "sent ack"  ETV
+vector 239  tcpApp.ArturTcp.tcp  tcpRcvQueueBytes  ETV
+vector 226  tcpApp.ArturTcp.tcp  "advertised window"  ETV
+vector 225  tcpApp.ArturTcp.tcp  "receive window"  ETV
+vector 228  tcpApp.ArturTcp.tcp  "sent ack"  ETV
+vector 5  tcpApp.AlexTcp.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 7  tcpApp.AlexTcp.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 62  tcpApp.ArturTcp.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 64  tcpApp.ArturTcp.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 14  tcpApp.AlexTcp.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 10  tcpApp.AlexTcp.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 71  tcpApp.ArturTcp.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 67  tcpApp.ArturTcp.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 30  tcpApp.Marvin.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 34  tcpApp.Marvin.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 52  tcpApp.Marvin.ppp[2].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 56  tcpApp.Marvin.ppp[2].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 35  tcpApp.Marvin.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 37  tcpApp.Marvin.ppp[1].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 44  tcpApp.Marvin.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 40  tcpApp.Marvin.ppp[1].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 87  tcpApp.Marvin2.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 91  tcpApp.Marvin2.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 103  tcpApp.Marvin2.ppp[2].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 105  tcpApp.Marvin2.ppp[2].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 112  tcpApp.Marvin2.ppp[2].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 108  tcpApp.Marvin2.ppp[2].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 144  tcpApp.MarvinTcp.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 148  tcpApp.MarvinTcp.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 92  tcpApp.Marvin2.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 94  tcpApp.Marvin2.ppp[1].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 181  tcpApp.MarvinTcp.tcp  "rcvd seq"  ETV
+vector 182  tcpApp.MarvinTcp.tcp  "rcvd ack"  ETV
+vector 178  tcpApp.MarvinTcp.tcp  "advertised window"  ETV
+vector 176  tcpApp.MarvinTcp.tcp  "send window"  ETV
+vector 191  tcpApp.MarvinTcp.tcp  tcpRcvQueueBytes  ETV
+vector 177  tcpApp.MarvinTcp.tcp  "receive window"  ETV
+vector 180  tcpApp.MarvinTcp.tcp  "sent ack"  ETV
+vector 101  tcpApp.Marvin2.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 97  tcpApp.Marvin2.ppp[1].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 138  tcpApp.MarvinTcp.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 140  tcpApp.MarvinTcp.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 147  tcpApp.MarvinTcp.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 143  tcpApp.MarvinTcp.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 125  tcpApp.WilhelmTcp.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 129  tcpApp.WilhelmTcp.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 109  tcpApp.Marvin2.ppp[2].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 113  tcpApp.Marvin2.ppp[2].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 157  tcpApp.WilhelmTcp.tcp  "rcvd seq"  ETV
+vector 158  tcpApp.WilhelmTcp.tcp  "rcvd ack"  ETV
+vector 154  tcpApp.WilhelmTcp.tcp  "advertised window"  ETV
+vector 152  tcpApp.WilhelmTcp.tcp  "send window"  ETV
+vector 167  tcpApp.WilhelmTcp.tcp  tcpRcvQueueBytes  ETV
+vector 153  tcpApp.WilhelmTcp.tcp  "receive window"  ETV
+vector 156  tcpApp.WilhelmTcp.tcp  "sent ack"  ETV
+vector 81  tcpApp.Marvin2.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 83  tcpApp.Marvin2.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 90  tcpApp.Marvin2.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 86  tcpApp.Marvin2.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 119  tcpApp.WilhelmTcp.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 121  tcpApp.WilhelmTcp.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 128  tcpApp.WilhelmTcp.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 124  tcpApp.WilhelmTcp.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 41  tcpApp.Marvin.ppp[1].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 45  tcpApp.Marvin.ppp[1].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 98  tcpApp.Marvin2.ppp[1].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 102  tcpApp.Marvin2.ppp[1].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 24  tcpApp.Marvin.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 26  tcpApp.Marvin.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 33  tcpApp.Marvin.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 29  tcpApp.Marvin.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 46  tcpApp.Marvin.ppp[2].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 48  tcpApp.Marvin.ppp[2].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 55  tcpApp.Marvin.ppp[2].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 51  tcpApp.Marvin.ppp[2].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 11  tcpApp.AlexTcp.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 15  tcpApp.AlexTcp.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 205  tcpApp.AlexTcp.tcp  "rcvd seq"  ETV
+vector 206  tcpApp.AlexTcp.tcp  "rcvd ack"  ETV
+vector 200  tcpApp.AlexTcp.tcp  "send window"  ETV
+vector 68  tcpApp.ArturTcp.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 72  tcpApp.ArturTcp.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 229  tcpApp.ArturTcp.tcp  "rcvd seq"  ETV
+vector 230  tcpApp.ArturTcp.tcp  "rcvd ack"  ETV
+vector 224  tcpApp.ArturTcp.tcp  "send window"  ETV
+vector 183  tcpApp.MarvinTcp.tcp  "unacked bytes"  ETV
+vector 159  tcpApp.WilhelmTcp.tcp  "unacked bytes"  ETV
+vector 17  tcpApp.AlexTcp.tcpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 74  tcpApp.ArturTcp.tcpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 203  tcpApp.AlexTcp.tcp  "sent seq"  ETV
+vector 207  tcpApp.AlexTcp.tcp  "unacked bytes"  ETV
+vector 227  tcpApp.ArturTcp.tcp  "sent seq"  ETV
+vector 231  tcpApp.ArturTcp.tcp  "unacked bytes"  ETV
+vector 184  tcpApp.MarvinTcp.tcp  "rcvd dupAcks"  ETV
+vector 149  tcpApp.MarvinTcp.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 151  tcpApp.MarvinTcp.tcpApp[0]  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, vector"
+attr unit  s
+vector 150  tcpApp.MarvinTcp.tcpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 179  tcpApp.MarvinTcp.tcp  "sent seq"  ETV
+vector 160  tcpApp.WilhelmTcp.tcp  "rcvd dupAcks"  ETV
+vector 130  tcpApp.WilhelmTcp.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 132  tcpApp.WilhelmTcp.tcpApp[0]  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, vector"
+attr unit  s
+vector 131  tcpApp.WilhelmTcp.tcpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 155  tcpApp.WilhelmTcp.tcp  "sent seq"  ETV
+vector 219  tcpApp.AlexTcp.tcp  "measured RTT"  ETV
+vector 220  tcpApp.AlexTcp.tcp  "smoothed RTT"  ETV
+vector 221  tcpApp.AlexTcp.tcp  RTTVAR  ETV
+vector 222  tcpApp.AlexTcp.tcp  RTO  ETV
+vector 217  tcpApp.AlexTcp.tcp  cwnd  ETV
+vector 208  tcpApp.AlexTcp.tcp  "rcvd dupAcks"  ETV
+vector 243  tcpApp.ArturTcp.tcp  "measured RTT"  ETV
+vector 244  tcpApp.ArturTcp.tcp  "smoothed RTT"  ETV
+vector 245  tcpApp.ArturTcp.tcp  RTTVAR  ETV
+vector 246  tcpApp.ArturTcp.tcp  RTO  ETV
+vector 241  tcpApp.ArturTcp.tcp  cwnd  ETV
+vector 232  tcpApp.ArturTcp.tcp  "rcvd dupAcks"  ETV
+vector 16  tcpApp.AlexTcp.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 18  tcpApp.AlexTcp.tcpApp[0]  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, vector"
+attr unit  s
+vector 73  tcpApp.ArturTcp.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 75  tcpApp.ArturTcp.tcpApp[0]  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, vector"
+attr unit  s
+vector 195  tcpApp.MarvinTcp.tcp  "measured RTT"  ETV
+vector 196  tcpApp.MarvinTcp.tcp  "smoothed RTT"  ETV
+vector 197  tcpApp.MarvinTcp.tcp  RTTVAR  ETV
+vector 198  tcpApp.MarvinTcp.tcp  RTO  ETV
+vector 193  tcpApp.MarvinTcp.tcp  cwnd  ETV
+5	25	0.2	44
+5	90	0.212448	40
+5	135	0.4	576
+5	208	0.42512	576
+5	209	0.42512	576
+5	254	0.43836	40
+5	362	0.45024	576
+5	363	0.45024	576
+5	401	0.454904	576
+5	402	0.454904	576
+7	25	0.2	0
+7	90	0.212448	0
+7	135	0.4	0
+7	208	0.42512	0
+7	228	0.429784	0.004664
+7	254	0.43836	0
+7	362	0.45024	0
+7	395	0.454904	0.004664
+8	0	0	0
+8	209	0.42512	1
+8	228	0.429784	0
+8	363	0.45024	1
+8	395	0.454904	0
+8	401	0.454904	1
+8	402	0.454904	2
+9	0	0	0
+9	27	0.2	1
+9	29	0.200408	0
+9	91	0.212448	1
+9	92	0.212824	0
+9	137	0.4	1
+9	139	0.404664	0
+9	210	0.42512	1
+9	228	0.429784	0
+9	229	0.429784	1
+9	237	0.434448	0
+9	255	0.43836	1
+9	257	0.438736	0
+9	364	0.45024	1
+9	395	0.454904	0
+9	397	0.454904	1
+10	27	0.2	51
+10	91	0.212448	47
+10	137	0.4	583
+10	210	0.42512	583
+10	229	0.429784	583
+10	255	0.43836	47
+10	364	0.45024	583
+10	397	0.454904	583
+11	85	0.212448	51
+11	203	0.42512	47
+11	249	0.43836	583
+11	357	0.45024	47
+11	394	0.454904	47
+14	27	0.2	44
+14	91	0.212448	40
+14	137	0.4	576
+14	210	0.42512	576
+14	229	0.429784	576
+14	255	0.43836	40
+14	364	0.45024	576
+14	397	0.454904	576
+15	85	0.212448	44
+15	203	0.42512	40
+15	249	0.43836	576
+15	357	0.45024	40
+15	394	0.454904	40
+16	252	0.43836	536
+17	129	0.4	1000000
+18	252	0.43836	0
+24	74	0.20704	44
+24	179	0.419744	40
+24	219	0.428696	576
+24	312	0.444864	40
+24	354	0.449528	40
+26	74	0.20704	0
+26	179	0.419744	0
+26	219	0.428696	0
+26	312	0.444864	0
+26	354	0.449528	0
+27	0	0	0
+28	0	0	0
+28	76	0.20704	1
+28	78	0.207448	0
+28	180	0.419744	1
+28	181	0.42012	0
+28	220	0.428696	1
+28	230	0.43336	0
+28	313	0.444864	1
+28	314	0.44524	0
+28	355	0.449528	1
+28	356	0.449904	0
+29	76	0.20704	51
+29	180	0.419744	47
+29	220	0.428696	583
+29	313	0.444864	47
+29	355	0.449528	47
+30	31	0.205408	51
+30	101	0.217824	47
+30	141	0.409664	583
+30	245	0.434784	583
+30	260	0.439448	583
+30	275	0.443736	47
+33	76	0.20704	44
+33	180	0.419744	40
+33	220	0.428696	576
+33	313	0.444864	40
+33	355	0.449528	40
+34	31	0.205408	44
+34	101	0.217824	40
+34	141	0.409664	576
+34	245	0.434784	576
+34	260	0.439448	576
+34	275	0.443736	40
+35	35	0.205408	44
+35	36	0.205408	44
+35	103	0.217824	40
+35	112	0.218232	40
+35	145	0.409664	576
+35	146	0.409664	576
+35	247	0.434784	576
+35	265	0.439448	576
+35	277	0.443736	40
+35	289	0.444112	576
+35	321	0.448776	576
+35	340	0.449152	40
+37	35	0.205408	0
+37	39	0.205816	0.000408
+37	103	0.217824	0
+37	112	0.218232	0
+37	145	0.409664	0
+37	149	0.414328	0.004664
+37	247	0.434784	0
+37	265	0.439448	0
+37	282	0.444112	0.000376
+37	300	0.444488	0.000376
+37	330	0.449152	0.000376
+37	366	0.453816	0.004664
+38	0	0	0
+38	36	0.205408	1
+38	39	0.205816	0
+38	146	0.409664	1
+38	149	0.414328	0
+38	277	0.443736	1
+38	282	0.444112	0
+38	289	0.444112	1
+38	300	0.444488	0
+38	321	0.448776	1
+38	330	0.449152	0
+38	340	0.449152	1
+38	366	0.453816	0
+39	0	0	0
+39	37	0.205408	1
+39	39	0.205816	0
+39	41	0.205816	1
+39	45	0.206224	0
+39	104	0.217824	1
+39	106	0.2182	0
+39	113	0.218232	1
+39	120	0.218608	0
+39	147	0.409664	1
+39	149	0.414328	0
+39	151	0.414328	1
+39	155	0.418992	0
+39	248	0.434784	1
+39	262	0.439448	0
+39	267	0.439448	1
+39	282	0.444112	0
+39	287	0.444112	1
+39	300	0.444488	0
+39	304	0.444488	1
+39	330	0.449152	0
+39	337	0.449152	1
+39	366	0.453816	0
+39	372	0.453816	1
+39	387	0.454192	0
+40	37	0.205408	51
+40	41	0.205816	51
+40	104	0.217824	47
+40	113	0.218232	47
+40	147	0.409664	583
+40	151	0.414328	583
+40	248	0.434784	583
+40	267	0.439448	583
+40	287	0.444112	47
+40	304	0.444488	583
+40	337	0.449152	583
+40	372	0.453816	47
+41	68	0.20704	51
+41	79	0.207448	51
+41	176	0.419744	47
+41	213	0.428696	583
+41	221	0.429072	47
+41	231	0.433736	583
+41	309	0.444864	47
+41	351	0.449528	47
+44	37	0.205408	44
+44	41	0.205816	44
+44	104	0.217824	40
+44	113	0.218232	40
+44	147	0.409664	576
+44	151	0.414328	576
+44	248	0.434784	576
+44	267	0.439448	576
+44	287	0.444112	40
+44	304	0.444488	576
+44	337	0.449152	576
+44	372	0.453816	40
+45	68	0.20704	44
+45	79	0.207448	44
+45	176	0.419744	40
+45	213	0.428696	576
+45	221	0.429072	40
+45	231	0.433736	576
+45	309	0.444864	40
+45	351	0.449528	40
+46	82	0.207448	44
+46	225	0.429072	40
+46	234	0.433736	576
+48	82	0.207448	0
+48	225	0.429072	0
+48	234	0.433736	0
+49	0	0	0
+50	0	0	0
+50	83	0.207448	1
+50	84	0.207856	0
+50	226	0.429072	1
+50	227	0.429448	0
+50	235	0.433736	1
+50	256	0.4384	0
+51	83	0.207448	51
+51	226	0.429072	47
+51	235	0.433736	583
+52	32	0.205408	51
+52	110	0.218232	47
+52	142	0.409664	583
+52	280	0.444112	583
+52	315	0.448776	583
+52	328	0.449152	47
+55	83	0.207448	44
+55	226	0.429072	40
+55	235	0.433736	576
+56	32	0.205408	44
+56	110	0.218232	40
+56	142	0.409664	576
+56	280	0.444112	576
+56	315	0.448776	576
+56	328	0.449152	40
+62	26	0.2	44
+62	98	0.212856	40
+62	136	0.4	576
+62	242	0.434448	576
+62	243	0.434448	576
+62	274	0.4434	40
+64	26	0.2	0
+64	98	0.212856	0
+64	136	0.4	0
+64	242	0.434448	0
+64	258	0.439112	0.004664
+64	278	0.443776	0.000376
+65	0	0	0
+65	243	0.434448	1
+65	258	0.439112	0
+65	274	0.4434	1
+65	278	0.443776	0
+66	0	0	0
+66	28	0.2	1
+66	30	0.200408	0
+66	99	0.212856	1
+66	100	0.213232	0
+66	138	0.4	1
+66	140	0.404664	0
+66	244	0.434448	1
+66	258	0.439112	0
+66	259	0.439112	1
+66	278	0.443776	0
+66	279	0.443776	1
+66	298	0.444152	0
+67	28	0.2	51
+67	99	0.212856	47
+67	138	0.4	583
+67	244	0.434448	583
+67	259	0.439112	583
+67	279	0.443776	47
+68	93	0.212856	51
+68	236	0.434448	47
+68	269	0.4434	583
+71	28	0.2	44
+71	99	0.212856	40
+71	138	0.4	576
+71	244	0.434448	576
+71	259	0.439112	576
+71	279	0.443776	40
+72	93	0.212856	44
+72	236	0.434448	40
+72	269	0.4434	576
+73	272	0.4434	536
+74	130	0.4	1000000
+75	272	0.4434	0
+81	63	0.206632	44
+81	75	0.20704	44
+81	174	0.419368	40
+81	200	0.424032	576
+81	201	0.424032	40
+81	218	0.428696	576
+81	307	0.444488	40
+81	343	0.449152	40
+81	378	0.453816	576
+81	393	0.454192	40
+83	63	0.206632	0
+83	75	0.20704	0
+83	174	0.419368	0
+83	200	0.424032	0
+83	214	0.428696	0.004664
+83	222	0.429072	0.000376
+83	307	0.444488	0
+83	343	0.449152	0
+83	378	0.453816	0
+84	0	0	0
+84	201	0.424032	1
+84	214	0.428696	0
+84	218	0.428696	1
+84	222	0.429072	0
+84	393	0.454192	1
+85	0	0	0
+85	65	0.206632	1
+85	69	0.20704	0
+85	77	0.20704	1
+85	80	0.207448	0
+85	175	0.419368	1
+85	177	0.419744	0
+85	202	0.424032	1
+85	214	0.428696	0
+85	217	0.428696	1
+85	222	0.429072	0
+85	224	0.429072	1
+85	232	0.433736	0
+85	308	0.444488	1
+85	310	0.444864	0
+85	347	0.449152	1
+85	352	0.449528	0
+85	382	0.453816	1
+86	65	0.206632	51
+86	77	0.20704	51
+86	175	0.419368	47
+86	202	0.424032	583
+86	217	0.428696	47
+86	224	0.429072	583
+86	308	0.444488	47
+86	347	0.449152	47
+86	382	0.453816	583
+87	38	0.205816	51
+87	44	0.206224	51
+87	105	0.2182	47
+87	119	0.218608	47
+87	148	0.414328	583
+87	154	0.418992	583
+87	261	0.439448	583
+87	281	0.444112	583
+87	299	0.444488	47
+87	329	0.449152	583
+87	365	0.453816	583
+87	386	0.454192	47
+90	65	0.206632	44
+90	77	0.20704	44
+90	175	0.419368	40
+90	202	0.424032	576
+90	217	0.428696	40
+90	224	0.429072	576
+90	308	0.444488	40
+90	347	0.449152	40
+90	382	0.453816	576
+91	38	0.205816	44
+91	44	0.206224	44
+91	105	0.2182	40
+91	119	0.218608	40
+91	148	0.414328	576
+91	154	0.418992	576
+91	261	0.439448	576
+91	281	0.444112	576
+91	299	0.444488	40
+91	329	0.449152	576
+91	365	0.453816	576
+91	386	0.454192	40
+92	50	0.206224	44
+92	122	0.218608	40
+92	160	0.418992	576
+92	341	0.449152	576
+92	376	0.453816	576
+92	392	0.454192	40
+94	50	0.206224	0
+94	122	0.218608	0
+94	160	0.418992	0
+94	341	0.449152	0
+94	376	0.453816	0
+95	0	0	0
+95	392	0.454192	1
+96	0	0	0
+96	52	0.206224	1
+96	57	0.206632	0
+96	123	0.218608	1
+96	125	0.218984	0
+96	162	0.418992	1
+96	183	0.423656	0
+96	344	0.449152	1
+96	368	0.453816	0
+96	379	0.453816	1
+97	52	0.206224	51
+97	123	0.218608	47
+97	162	0.418992	583
+97	344	0.449152	583
+97	379	0.453816	583
+98	70	0.20704	51
+98	195	0.424032	47
+98	211	0.428696	583
+98	388	0.454192	47
+101	52	0.206224	44
+101	123	0.218608	40
+101	162	0.418992	576
+101	344	0.449152	576
+101	379	0.453816	576
+102	70	0.20704	44
+102	195	0.424032	40
+102	211	0.428696	576
+102	388	0.454192	40
+103	42	0.205816	44
+103	108	0.2182	40
+103	152	0.414328	576
+103	266	0.439448	576
+103	290	0.444112	576
+103	306	0.444488	40
+105	42	0.205816	0
+105	108	0.2182	0
+105	152	0.414328	0
+105	266	0.439448	0
+105	290	0.444112	0
+105	317	0.448776	0.004288
+106	0	0	0
+106	306	0.444488	1
+106	317	0.448776	0
+107	0	0	0
+107	43	0.205816	1
+107	47	0.206224	0
+107	109	0.2182	1
+107	115	0.218576	0
+107	153	0.414328	1
+107	157	0.418992	0
+107	268	0.439448	1
+107	284	0.444112	0
+107	292	0.444112	1
+107	317	0.448776	0
+107	320	0.448776	1
+107	332	0.449152	0
+108	43	0.205816	51
+108	109	0.2182	47
+108	153	0.414328	583
+108	268	0.439448	583
+108	292	0.444112	583
+108	320	0.448776	47
+109	58	0.206632	51
+109	170	0.419368	47
+109	193	0.424032	583
+109	301	0.444488	47
+109	333	0.449152	47
+109	369	0.453816	583
+112	43	0.205816	44
+112	109	0.2182	40
+112	153	0.414328	576
+112	268	0.439448	576
+112	292	0.444112	576
+112	320	0.448776	40
+113	58	0.206632	44
+113	170	0.419368	40
+113	193	0.424032	576
+113	301	0.444488	40
+113	333	0.449152	40
+113	369	0.453816	576
+119	66	0.206632	44
+119	189	0.423656	40
+119	192	0.423656	576
+119	384	0.453816	40
+121	66	0.206632	0
+121	189	0.423656	0
+121	196	0.424032	0.000376
+121	384	0.453816	0
+122	0	0	0
+122	192	0.423656	1
+122	196	0.424032	0
+123	0	0	0
+123	67	0.206632	1
+123	71	0.20704	0
+123	191	0.423656	1
+123	196	0.424032	0
+123	199	0.424032	1
+123	212	0.428696	0
+123	385	0.453816	1
+123	389	0.454192	0
+124	67	0.206632	51
+124	191	0.423656	47
+124	199	0.424032	583
+124	385	0.453816	47
+125	56	0.206632	51
+125	124	0.218984	47
+125	182	0.423656	583
+125	367	0.453816	583
+128	67	0.206632	44
+128	191	0.423656	40
+128	199	0.424032	576
+128	385	0.453816	40
+129	56	0.206632	44
+129	124	0.218984	40
+129	182	0.423656	576
+129	367	0.453816	576
+130	186	0.423656	536
+130	380	0.453816	536
+131	186	0.423656	1072
+131	380	0.453816	1072
+132	186	0.423656	0
+132	380	0.453816	0
+138	54	0.206224	44
+138	166	0.418992	40
+138	169	0.418992	576
+138	296	0.444112	40
+138	326	0.448776	40
+138	348	0.449152	576
+138	349	0.449152	576
+140	54	0.206224	0
+140	166	0.418992	0
+140	171	0.419368	0.000376
+140	296	0.444112	0
+140	326	0.448776	0
+140	348	0.449152	0
+140	370	0.453816	0.004664
+141	0	0	0
+141	169	0.418992	1
+141	171	0.419368	0
+141	349	0.449152	1
+141	370	0.453816	0
+142	0	0	0
+142	55	0.206224	1
+142	59	0.206632	0
+142	168	0.418992	1
+142	171	0.419368	0
+142	173	0.419368	1
+142	194	0.424032	0
+142	297	0.444112	1
+142	302	0.444488	0
+142	327	0.448776	1
+142	334	0.449152	0
+142	350	0.449152	1
+142	370	0.453816	0
+142	375	0.453816	1
+143	55	0.206224	51
+143	168	0.418992	47
+143	173	0.419368	583
+143	297	0.444112	47
+143	327	0.448776	47
+143	350	0.449152	583
+143	375	0.453816	583
+144	46	0.206224	51
+144	114	0.218576	47
+144	156	0.418992	583
+144	283	0.444112	583
+144	316	0.448776	583
+144	331	0.449152	47
+147	55	0.206224	44
+147	168	0.418992	40
+147	173	0.419368	576
+147	297	0.444112	40
+147	327	0.448776	40
+147	350	0.449152	576
+147	375	0.453816	576
+148	46	0.206224	44
+148	114	0.218576	40
+148	156	0.418992	576
+148	283	0.444112	576
+148	316	0.448776	576
+148	331	0.449152	40
+149	163	0.418992	536
+149	293	0.444112	536
+149	323	0.448776	536
+150	163	0.418992	1072
+150	293	0.444112	1072
+150	323	0.448776	1072
+151	163	0.418992	0
+151	293	0.444112	0
+151	323	0.448776	0
+152	62	0.206632	7504
+152	127	0.218984	7504
+153	62	0.206632	7504
+153	185	0.423656	7504
+153	188	0.423656	7504
+153	377	0.453816	7504
+154	62	0.206632	57504
+154	62	0.206632	57504
+154	185	0.423656	58040
+154	188	0.423656	58040
+154	377	0.453816	58576
+155	188	0.423656	51658
+156	62	0.206632	50000
+156	185	0.423656	50536
+156	188	0.423656	50536
+156	377	0.453816	51072
+157	62	0.206632	49999
+157	127	0.218984	50000
+157	185	0.423656	50000
+157	377	0.453816	50536
+158	62	0.206632	0
+158	127	0.218984	51658
+158	185	0.423656	51658
+158	377	0.453816	51658
+159	127	0.218984	0
+159	188	0.423656	536
+160	185	0.423656	0
+160	377	0.453816	0
+167	62	0.206632	0
+167	185	0.423656	0
+167	185	0.423656	0
+167	188	0.423656	0
+167	377	0.453816	0
+167	377	0.453816	0
+176	51	0.206224	7504
+176	117	0.218576	7504
+176	342	0.449152	7504
+177	51	0.206224	7504
+177	161	0.418992	7504
+177	165	0.418992	7504
+177	291	0.444112	7504
+177	322	0.448776	7504
+177	342	0.449152	7504
+177	342	0.449152	7504
+178	51	0.206224	57504
+178	51	0.206224	57504
+178	161	0.418992	58040
+178	165	0.418992	58040
+178	291	0.444112	58576
+178	322	0.448776	59112
+178	342	0.449152	59112
+178	342	0.449152	59112
+179	165	0.418992	51557
+179	342	0.449152	52093
+179	342	0.449152	52629
+180	51	0.206224	50000
+180	161	0.418992	50536
+180	165	0.418992	50536
+180	291	0.444112	51072
+180	322	0.448776	51608
+180	342	0.449152	51608
+180	342	0.449152	51608
+181	51	0.206224	49999
+181	117	0.218576	50000
+181	161	0.418992	50000
+181	291	0.444112	50536
+181	322	0.448776	51072
+181	342	0.449152	51608
+182	51	0.206224	0
+182	117	0.218576	51557
+182	161	0.418992	51557
+182	291	0.444112	51557
+182	322	0.448776	51557
+182	342	0.449152	52093
+183	117	0.218576	0
+183	165	0.418992	536
+183	342	0.449152	0
+183	342	0.449152	1072
+184	161	0.418992	0
+184	291	0.444112	0
+184	322	0.448776	0
+184	342	0.449152	0
+191	51	0.206224	0
+191	161	0.418992	0
+191	161	0.418992	0
+191	165	0.418992	0
+191	291	0.444112	0
+191	291	0.444112	0
+191	322	0.448776	0
+191	322	0.448776	0
+191	342	0.449152	0
+191	342	0.449152	0
+193	342	0.449152	1072
+195	342	0.449152	0.03016
+196	342	0.449152	0.00377
+197	342	0.449152	0.66002
+198	342	0.449152	2.64385
+200	87	0.212448	7504
+200	205	0.42512	7504
+200	359	0.45024	7504
+200	398	0.454904	7504
+201	21	0.2	7504
+201	87	0.212448	7504
+201	131	0.4	7504
+201	205	0.42512	7504
+201	205	0.42512	7504
+201	251	0.43836	7504
+201	359	0.45024	7504
+201	359	0.45024	7504
+201	398	0.454904	7504
+201	398	0.454904	7504
+202	21	0.2	7504
+202	87	0.212448	59061
+202	87	0.212448	59061
+202	131	0.4	59061
+202	205	0.42512	59061
+202	205	0.42512	59061
+202	251	0.43836	59597
+202	359	0.45024	59597
+202	359	0.45024	59597
+202	398	0.454904	59597
+202	398	0.454904	59597
+203	131	0.4	50000
+203	205	0.42512	50536
+203	205	0.42512	51072
+203	359	0.45024	51608
+203	359	0.45024	52144
+203	398	0.454904	52680
+203	398	0.454904	53216
+204	21	0.2	0
+204	87	0.212448	51557
+204	131	0.4	51557
+204	205	0.42512	51557
+204	205	0.42512	51557
+204	251	0.43836	52093
+204	359	0.45024	52093
+204	359	0.45024	52093
+204	398	0.454904	52093
+204	398	0.454904	52093
+205	87	0.212448	51556
+205	205	0.42512	51557
+205	251	0.43836	51557
+205	359	0.45024	52093
+205	398	0.454904	52093
+206	87	0.212448	50000
+206	205	0.42512	50536
+206	251	0.43836	50536
+206	359	0.45024	51072
+206	398	0.454904	51608
+207	131	0.4	536
+207	205	0.42512	0
+207	205	0.42512	1072
+207	359	0.45024	536
+207	359	0.45024	1608
+207	398	0.454904	1072
+207	398	0.454904	2144
+208	205	0.42512	0
+208	251	0.43836	0
+208	359	0.45024	0
+208	398	0.454904	0
+215	21	0.2	0
+215	87	0.212448	0
+215	131	0.4	0
+215	205	0.42512	0
+215	205	0.42512	0
+215	251	0.43836	0
+215	251	0.43836	0
+215	359	0.45024	0
+215	359	0.45024	0
+215	398	0.454904	0
+215	398	0.454904	0
+217	205	0.42512	1072
+217	359	0.45024	1608
+217	398	0.454904	2144
+219	205	0.42512	0.02512
+219	359	0.45024	0.02512
+220	205	0.42512	0.00314
+220	359	0.45024	0.0058875
+221	205	0.42512	0.65939
+221	359	0.45024	0.57971375
+222	205	0.42512	2.6407
+222	359	0.45024	2.3247425
+224	95	0.212856	7504
+224	239	0.434448	7504
+225	22	0.2	7504
+225	95	0.212856	7504
+225	132	0.4	7504
+225	239	0.434448	7504
+225	239	0.434448	7504
+225	271	0.4434	7504
+226	22	0.2	7504
+226	95	0.212856	59162
+226	95	0.212856	59162
+226	132	0.4	59162
+226	239	0.434448	59162
+226	239	0.434448	59162
+226	271	0.4434	59698
+227	132	0.4	50000
+227	239	0.434448	50536
+227	239	0.434448	51072
+228	22	0.2	0
+228	95	0.212856	51658
+228	132	0.4	51658
+228	239	0.434448	51658
+228	239	0.434448	51658
+228	271	0.4434	52194
+229	95	0.212856	51657
+229	239	0.434448	51658
+229	271	0.4434	51658
+230	95	0.212856	50000
+230	239	0.434448	50536
+230	271	0.4434	50536
+231	132	0.4	536
+231	239	0.434448	0
+231	239	0.434448	1072
+232	239	0.434448	0
+232	271	0.4434	0
+239	22	0.2	0
+239	95	0.212856	0
+239	132	0.4	0
+239	239	0.434448	0
+239	239	0.434448	0
+239	271	0.4434	0
+239	271	0.4434	0
+241	239	0.434448	1072
+243	239	0.434448	0.034448
+244	239	0.434448	0.004306
+245	239	0.434448	0.660556
+246	239	0.434448	2.64653

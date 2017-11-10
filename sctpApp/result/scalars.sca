@@ -1,0 +1,1602 @@
+version 2
+run Etwas-0-20171110-10:34:54-25461
+attr configname Etwas
+attr datetime 20171110-10:34:54
+attr experiment Etwas
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network sctpApp
+attr processid 25461
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.ppp[*].ppp.mtu "1500 B"
+param **.ppp[*].queue.frameCapacity 10
+param **.ppp[*].queueType "\"DropTailQueue\""
+param *.AlexSctp.numSctpApps 1
+param *.AlexSctp.sctpApp[*].connectAddress "\"MarvinSctp\""
+param *.AlexSctp.sctpApp[*].localAddress "\"AlexSctp\""
+param *.AlexSctp.sctpApp[0].connectPort 6666
+param *.AlexSctp.sctpApp[0].numRequestsPerSession 14600
+param *.AlexSctp.sctpApp[0].typename "\"SCTPClient\""
+param *.ArturSctp.numSctpApps 1
+param *.ArturSctp.sctpApp[*].connectAddress "\"WilhelmSctp\""
+param *.ArturSctp.sctpApp[*].localAddress "\"ArturSctp\""
+param *.ArturSctp.sctpApp[0].connectPort 6666
+param *.ArturSctp.sctpApp[0].numRequestsPerSession 14600
+param *.ArturSctp.sctpApp[0].typename "\"SCTPClient\""
+param *.MarvinSctp.numSctpApps 1
+param *.MarvinSctp.sctpApp[*].localAddress "\"MarvinSctp\""
+param *.MarvinSctp.sctpApp[0].localPort 6666
+param *.MarvinSctp.sctpApp[0].typename "\"SCTPServer\""
+param *.WilhelmSctp.numSctpApps 1
+param *.WilhelmSctp.sctpApp[*].localAddress "\"WilhelmSctp\""
+param *.WilhelmSctp.sctpApp[0].localPort 6666
+param *.WilhelmSctp.sctpApp[0].typename "\"SCTPServer\""
+param *.configurator.dumpAddresses true
+param *.configurator.dumpLinks true
+param *.configurator.dumpRoutes true
+param *.configurator.dumpTopology true
+
+scalar sctpApp.AlexSctp.sctpApp[0] 	ums 	1452
+scalar sctpApp.ArturSctp.sctpApp[0] 	ums 	1452
+scalar sctpApp.ArturSctp.sctp 	"Number of Fast Retransmissions 2:10.0.0.14" 	298
+scalar sctpApp.ArturSctp.sctp 	"Number of Timer-Based Retransmissions 2:10.0.0.14" 	89
+scalar sctpApp.ArturSctp.sctp 	"Number of Heartbeats Sent 2:10.0.0.14" 	0
+scalar sctpApp.ArturSctp.sctp 	"Number of Heartbeats Received 2:10.0.0.14" 	7
+scalar sctpApp.ArturSctp.sctp 	"Number of Heartbeat ACKs Sent 2:10.0.0.14" 	7
+scalar sctpApp.ArturSctp.sctp 	"Number of Heartbeat ACKs Received 2:10.0.0.14" 	0
+scalar sctpApp.ArturSctp.sctp 	"Number of Duplicates 2:10.0.0.14" 	0
+scalar sctpApp.ArturSctp.sctp 	"Number of Bytes received from 2:10.0.0.14" 	0
+scalar sctpApp.ArturSctp.sctp 	"Bytes received on stream 0 of assoc 2" 	0
+scalar sctpApp.ArturSctp.sctp 	"Blocking TSNs Moved" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Number of Fast Retransmissions 6:10.0.0.10" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Number of Timer-Based Retransmissions 6:10.0.0.10" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Number of Heartbeats Sent 6:10.0.0.10" 	7
+scalar sctpApp.WilhelmSctp.sctp 	"Number of Heartbeats Received 6:10.0.0.10" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Number of Heartbeat ACKs Sent 6:10.0.0.10" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Number of Heartbeat ACKs Received 6:10.0.0.10" 	6
+scalar sctpApp.WilhelmSctp.sctp 	"Number of Duplicates 6:10.0.0.10" 	14
+scalar sctpApp.WilhelmSctp.sctp 	"Number of Bytes received from 6:10.0.0.10" 	21219528
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 0 of assoc 6" 	21780
+scalar sctpApp.WilhelmSctp.sctp 	"Blocking TSNs Moved" 	0
+scalar sctpApp.AlexSctp.sctp 	"Number of Fast Retransmissions 1:10.0.0.18" 	482
+scalar sctpApp.AlexSctp.sctp 	"Number of Timer-Based Retransmissions 1:10.0.0.18" 	310
+scalar sctpApp.AlexSctp.sctp 	"Number of Heartbeats Sent 1:10.0.0.18" 	0
+scalar sctpApp.AlexSctp.sctp 	"Number of Heartbeats Received 1:10.0.0.18" 	6
+scalar sctpApp.AlexSctp.sctp 	"Number of Heartbeat ACKs Sent 1:10.0.0.18" 	6
+scalar sctpApp.AlexSctp.sctp 	"Number of Heartbeat ACKs Received 1:10.0.0.18" 	0
+scalar sctpApp.AlexSctp.sctp 	"Number of Duplicates 1:10.0.0.18" 	0
+scalar sctpApp.AlexSctp.sctp 	"Number of Bytes received from 1:10.0.0.18" 	0
+scalar sctpApp.AlexSctp.sctp 	"Bytes received on stream 0 of assoc 1" 	0
+scalar sctpApp.AlexSctp.sctp 	"Blocking TSNs Moved" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Number of Fast Retransmissions 5:10.0.0.1" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Number of Timer-Based Retransmissions 5:10.0.0.1" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Number of Heartbeats Sent 5:10.0.0.1" 	6
+scalar sctpApp.MarvinSctp.sctp 	"Number of Heartbeats Received 5:10.0.0.1" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Number of Heartbeat ACKs Sent 5:10.0.0.1" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Number of Heartbeat ACKs Received 5:10.0.0.1" 	1
+scalar sctpApp.MarvinSctp.sctp 	"Number of Duplicates 5:10.0.0.1" 	7
+scalar sctpApp.MarvinSctp.sctp 	"Number of Bytes received from 5:10.0.0.1" 	21209364
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 0 of assoc 5" 	119064
+scalar sctpApp.MarvinSctp.sctp 	"Blocking TSNs Moved" 	0
+scalar sctpApp.AlexSctp.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar sctpApp.AlexSctp.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar sctpApp.AlexSctp.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar sctpApp.AlexSctp.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar sctpApp.AlexSctp.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar sctpApp.AlexSctp.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.AlexSctp.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.AlexSctp.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.AlexSctp.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.AlexSctp.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.AlexSctp.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic sctpApp.AlexSctp.ppp[0].queue 	queueingTime:histogram
+field count 15281
+field mean 0.04478072691578
+field stddev 0.035492170675501
+field sum 684.29428800003
+field sqrsum 49.891322700033
+field min 0
+field max 0.111952
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.018084	0
+bin	-0.0156728	0
+bin	-0.0132616	0
+bin	-0.0108504	0
+bin	-0.0084392	0
+bin	-0.006028	0
+bin	-0.0036168	0
+bin	-0.0012056	2651
+bin	0.0012056	0
+bin	0.0036168	1
+bin	0.006028	0
+bin	0.0084392	1
+bin	0.0108504	2295
+bin	0.0132616	0
+bin	0.0156728	0
+bin	0.018084	0
+bin	0.0204952	1
+bin	0.0229064	1534
+bin	0.0253176	0
+bin	0.0277288	1
+bin	0.03014	1
+bin	0.0325512	0
+bin	0.0349624	1419
+bin	0.0373736	0
+bin	0.0397848	0
+bin	0.042196	0
+bin	0.0446072	0
+bin	0.0470184	1522
+bin	0.0494296	0
+bin	0.0518408	0
+bin	0.054252	5855
+scalar sctpApp.AlexSctp.ppp[0].queue 	dropPk:count 	110
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar sctpApp.AlexSctp.ppp[0].queue 	dropPk:sum(packetBytes) 	165000
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar sctpApp.AlexSctp.ppp[0].queue 	queueLength:max 	10
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar sctpApp.AlexSctp.ppp[0].queue 	queueLength:timeavg 	1.9262214164145
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar sctpApp.AlexSctp.ppp[0].queue 	rcvdPk:count 	15391
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar sctpApp.AlexSctp.ppp[0].queue 	rcvdPk:sum(packetBytes) 	23072048
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	txState:timeavg 	0.5182575900232
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	droppedPkBitError:count 	115
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	6549
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	rxPkOk:count 	9189
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	524135
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	txPk:count 	15281
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	txPk:sum(packetBytes) 	23014015
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	rcvdPkFromHL:count 	15281
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	22907048
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	passedUpPk:count 	9189
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.AlexSctp.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	459812
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar sctpApp.AlexSctp.sctpApp[0] 	echoedPk:count 	0
+attr interpolationmode  none
+attr source  echoedPk
+attr title  "packets echoed, count"
+scalar sctpApp.AlexSctp.sctpApp[0] 	echoedPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  echoedPk
+attr title  "packets echoed, sum(packetBytes)"
+scalar sctpApp.AlexSctp.sctpApp[0] 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar sctpApp.AlexSctp.sctpApp[0] 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar sctpApp.AlexSctp.sctpApp[0] 	sentPk:count 	14600
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar sctpApp.AlexSctp.sctpApp[0] 	sentPk:sum(packetBytes) 	21199200
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar sctpApp.AlexSctp.sctp 	"Association Lifetime" 	354.216608
+scalar sctpApp.AlexSctp.sctp 	"Acked Bytes" 	21199200
+scalar sctpApp.AlexSctp.sctp 	"Throughput [bit/s]" 	478785.00377938
+scalar sctpApp.AlexSctp.sctp 	"Transmitted Bytes" 	22333212
+scalar sctpApp.AlexSctp.sctp 	"Fast RTX" 	482
+scalar sctpApp.AlexSctp.sctp 	"Timer-Based RTX" 	310
+scalar sctpApp.AlexSctp.sctp 	"Duplicate Acks" 	7
+scalar sctpApp.AlexSctp.sctp 	"Packets Received" 	9189
+scalar sctpApp.AlexSctp.sctp 	"Packets Dropped" 	0
+scalar sctpApp.AlexSctp.sctp 	"Sum of R Gap Ranges" 	36094
+scalar sctpApp.AlexSctp.sctp 	"Sum of NR Gap Ranges" 	0
+scalar sctpApp.AlexSctp.sctp 	"Overfull SACKs" 	0
+scalar sctpApp.AlexSctp.sctp 	"Drops Because New TSN Greater Than Highest TSN" 	0
+scalar sctpApp.AlexSctp.sctp 	"Drops Because No Room In Buffer" 	0
+scalar sctpApp.AlexSctp.sctp 	"Chunks Reneged" 	0
+scalar sctpApp.AlexSctp.sctp 	sackPeriod 	0.2
+scalar sctpApp.AlexSctp.sctp 	"Number of AUTH chunks sent" 	0
+scalar sctpApp.AlexSctp.sctp 	"Number of AUTH chunks accepted" 	0
+scalar sctpApp.AlexSctp.sctp 	"Number of AUTH chunks rejected" 	0
+scalar sctpApp.AlexSctp.sctp 	"Number of StreamReset requests sent" 	0
+scalar sctpApp.AlexSctp.sctp 	"Number of StreamReset requests performed" 	0
+scalar sctpApp.AlexSctp.sctp 	"Number of PacketDrop Reports" 	0
+scalar sctpApp.AlexSctp.sctp 	RTXMethod 	0
+scalar sctpApp.Marvin.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar sctpApp.Marvin.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar sctpApp.Marvin.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar sctpApp.Marvin.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar sctpApp.Marvin.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar sctpApp.Marvin.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.Marvin.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.Marvin.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.Marvin.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.Marvin.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.Marvin.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic sctpApp.Marvin.ppp[0].queue 	queueingTime:histogram
+field count 9304
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	9304
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar sctpApp.Marvin.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar sctpApp.Marvin.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[0].queue 	queueLength:max 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar sctpApp.Marvin.ppp[0].queue 	queueLength:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar sctpApp.Marvin.ppp[0].queue 	rcvdPk:count 	9304
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar sctpApp.Marvin.ppp[0].queue 	rcvdPk:sum(packetBytes) 	465556
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[0].ppp 	txState:timeavg 	0.011950587974496
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar sctpApp.Marvin.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar sctpApp.Marvin.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[0].ppp 	droppedPkBitError:count 	159
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.Marvin.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	239613
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[0].ppp 	rxPkOk:count 	15122
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar sctpApp.Marvin.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	22774402
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[0].ppp 	txPk:count 	9304
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar sctpApp.Marvin.ppp[0].ppp 	txPk:sum(packetBytes) 	530684
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[0].ppp 	rcvdPkFromHL:count 	9304
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.Marvin.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	465556
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[0].ppp 	passedUpPk:count 	15122
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.Marvin.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	22668548
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic sctpApp.Marvin.ppp[1].queue 	queueingTime:histogram
+field count 29236
+field mean 0.06106513876043
+field stddev 0.045335287446125
+field sum 1785.3003967999
+field sqrsum 169.10596955413
+field min 0
+field max 0.11852
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.05462	0
+bin	-0.047337333333333	0
+bin	-0.040054666666667	0
+bin	-0.032772	0
+bin	-0.025489333333333	0
+bin	-0.018206666666667	0
+bin	-0.010924	0
+bin	-0.0036413333333333	9267
+bin	0.0036413333333333	2
+bin	0.010924	58
+bin	0.018206666666667	50
+bin	0.025489333333333	1
+bin	0.032772	390
+bin	0.040054666666667	1
+bin	0.047337333333333	1591
+bin	0.05462	1559
+bin	0.061902666666667	18
+bin	0.069185333333333	2474
+bin	0.076468	11
+bin	0.083750666666667	1892
+bin	0.091033333333333	4171
+bin	0.098316	20
+bin	0.10559866666667	7700
+bin	0.11288133333333	31
+bin	0.120164	0
+bin	0.12744666666667	0
+bin	0.13472933333333	0
+bin	0.142012	0
+bin	0.14929466666667	0
+bin	0.15657733333333	0
+bin	0.16386	0
+scalar sctpApp.Marvin.ppp[1].queue 	dropPk:count 	836
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar sctpApp.Marvin.ppp[1].queue 	dropPk:sum(packetBytes) 	1245288
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[1].queue 	queueLength:max 	10
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar sctpApp.Marvin.ppp[1].queue 	queueLength:timeavg 	5.0254458050509
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar sctpApp.Marvin.ppp[1].queue 	rcvdPk:count 	30072
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar sctpApp.Marvin.ppp[1].queue 	rcvdPk:sum(packetBytes) 	45077644
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[1].ppp 	txState:timeavg 	0.99167892425107
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar sctpApp.Marvin.ppp[1].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar sctpApp.Marvin.ppp[1].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[1].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.Marvin.ppp[1].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[1].ppp 	rxPkOk:count 	18054
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar sctpApp.Marvin.ppp[1].ppp 	rxPkOk:sum(packetBytes) 	1024786
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[1].ppp 	txPk:count 	29236
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar sctpApp.Marvin.ppp[1].ppp 	txPk:sum(packetBytes) 	44037008
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[1].ppp 	rcvdPkFromHL:count 	29236
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.Marvin.ppp[1].ppp 	rcvdPkFromHL:sum(packetBytes) 	43832356
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[1].ppp 	passedUpPk:count 	18054
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.Marvin.ppp[1].ppp 	passedUpPk:sum(packetBytes) 	898408
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic sctpApp.Marvin.ppp[2].queue 	queueingTime:histogram
+field count 8750
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	8750
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar sctpApp.Marvin.ppp[2].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar sctpApp.Marvin.ppp[2].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[2].queue 	queueLength:max 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar sctpApp.Marvin.ppp[2].queue 	queueLength:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar sctpApp.Marvin.ppp[2].queue 	rcvdPk:count 	8750
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar sctpApp.Marvin.ppp[2].queue 	rcvdPk:sum(packetBytes) 	432852
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[2].ppp 	txState:timeavg 	0.011126789990606
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar sctpApp.Marvin.ppp[2].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar sctpApp.Marvin.ppp[2].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[2].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.Marvin.ppp[2].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[2].ppp 	rxPkOk:count 	14950
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar sctpApp.Marvin.ppp[2].ppp 	rxPkOk:sum(packetBytes) 	22513746
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[2].ppp 	txPk:count 	8750
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar sctpApp.Marvin.ppp[2].ppp 	txPk:sum(packetBytes) 	494102
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[2].ppp 	rcvdPkFromHL:count 	8750
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.Marvin.ppp[2].ppp 	rcvdPkFromHL:sum(packetBytes) 	432852
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.Marvin.ppp[2].ppp 	passedUpPk:count 	14950
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.Marvin.ppp[2].ppp 	passedUpPk:sum(packetBytes) 	22409096
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar sctpApp.ArturSctp.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar sctpApp.ArturSctp.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar sctpApp.ArturSctp.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar sctpApp.ArturSctp.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar sctpApp.ArturSctp.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar sctpApp.ArturSctp.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.ArturSctp.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.ArturSctp.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.ArturSctp.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.ArturSctp.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.ArturSctp.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic sctpApp.ArturSctp.ppp[0].queue 	queueingTime:histogram
+field count 14950
+field mean 0.040874493645482
+field stddev 0.038321593159463
+field sum 611.07367999996
+field sqrsum 46.930599014654
+field min 0
+field max 0.12056
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.018084	0
+bin	-0.0156728	0
+bin	-0.0132616	0
+bin	-0.0108504	0
+bin	-0.0084392	0
+bin	-0.006028	0
+bin	-0.0036168	0
+bin	-0.0012056	3329
+bin	0.0012056	0
+bin	0.0036168	1
+bin	0.006028	0
+bin	0.0084392	0
+bin	0.0108504	2738
+bin	0.0132616	0
+bin	0.0156728	0
+bin	0.018084	1
+bin	0.0204952	0
+bin	0.0229064	1790
+bin	0.0253176	0
+bin	0.0277288	0
+bin	0.03014	0
+bin	0.0325512	0
+bin	0.0349624	978
+bin	0.0373736	0
+bin	0.0397848	0
+bin	0.042196	0
+bin	0.0446072	0
+bin	0.0470184	987
+bin	0.0494296	0
+bin	0.0518408	0
+bin	0.054252	5126
+scalar sctpApp.ArturSctp.ppp[0].queue 	dropPk:count 	40
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar sctpApp.ArturSctp.ppp[0].queue 	dropPk:sum(packetBytes) 	60000
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar sctpApp.ArturSctp.ppp[0].queue 	queueLength:max 	10
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar sctpApp.ArturSctp.ppp[0].queue 	queueLength:timeavg 	1.7201125744647
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar sctpApp.ArturSctp.ppp[0].queue 	rcvdPk:count 	14990
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar sctpApp.ArturSctp.ppp[0].queue 	rcvdPk:sum(packetBytes) 	22469096
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	txState:timeavg 	0.50699192402345
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	rxPkOk:count 	8750
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	494102
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	txPk:count 	14950
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	txPk:sum(packetBytes) 	22513746
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	rcvdPkFromHL:count 	14950
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	22409096
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	passedUpPk:count 	8750
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.ArturSctp.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	432852
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar sctpApp.ArturSctp.sctpApp[0] 	echoedPk:count 	0
+attr interpolationmode  none
+attr source  echoedPk
+attr title  "packets echoed, count"
+scalar sctpApp.ArturSctp.sctpApp[0] 	echoedPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  echoedPk
+attr title  "packets echoed, sum(packetBytes)"
+scalar sctpApp.ArturSctp.sctpApp[0] 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar sctpApp.ArturSctp.sctpApp[0] 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar sctpApp.ArturSctp.sctpApp[0] 	sentPk:count 	14600
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar sctpApp.ArturSctp.sctpApp[0] 	sentPk:sum(packetBytes) 	21199200
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar sctpApp.ArturSctp.sctp 	"Association Lifetime" 	244.4196
+scalar sctpApp.ArturSctp.sctp 	"Acked Bytes" 	21199200
+scalar sctpApp.ArturSctp.sctp 	"Throughput [bit/s]" 	693862.52166357
+scalar sctpApp.ArturSctp.sctp 	"Transmitted Bytes" 	21749508
+scalar sctpApp.ArturSctp.sctp 	"Fast RTX" 	298
+scalar sctpApp.ArturSctp.sctp 	"Timer-Based RTX" 	89
+scalar sctpApp.ArturSctp.sctp 	"Duplicate Acks" 	14
+scalar sctpApp.ArturSctp.sctp 	"Packets Received" 	8750
+scalar sctpApp.ArturSctp.sctp 	"Packets Dropped" 	0
+scalar sctpApp.ArturSctp.sctp 	"Sum of R Gap Ranges" 	34556
+scalar sctpApp.ArturSctp.sctp 	"Sum of NR Gap Ranges" 	0
+scalar sctpApp.ArturSctp.sctp 	"Overfull SACKs" 	0
+scalar sctpApp.ArturSctp.sctp 	"Drops Because New TSN Greater Than Highest TSN" 	0
+scalar sctpApp.ArturSctp.sctp 	"Drops Because No Room In Buffer" 	0
+scalar sctpApp.ArturSctp.sctp 	"Chunks Reneged" 	0
+scalar sctpApp.ArturSctp.sctp 	sackPeriod 	0.2
+scalar sctpApp.ArturSctp.sctp 	"Number of AUTH chunks sent" 	0
+scalar sctpApp.ArturSctp.sctp 	"Number of AUTH chunks accepted" 	0
+scalar sctpApp.ArturSctp.sctp 	"Number of AUTH chunks rejected" 	0
+scalar sctpApp.ArturSctp.sctp 	"Number of StreamReset requests sent" 	0
+scalar sctpApp.ArturSctp.sctp 	"Number of StreamReset requests performed" 	0
+scalar sctpApp.ArturSctp.sctp 	"Number of PacketDrop Reports" 	0
+scalar sctpApp.ArturSctp.sctp 	RTXMethod 	0
+scalar sctpApp.Marvin2.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar sctpApp.Marvin2.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar sctpApp.Marvin2.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar sctpApp.Marvin2.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar sctpApp.Marvin2.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar sctpApp.Marvin2.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.Marvin2.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.Marvin2.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.Marvin2.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.Marvin2.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.Marvin2.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic sctpApp.Marvin2.ppp[0].queue 	queueingTime:histogram
+field count 18054
+field mean 4.5197740112994e-08
+field stddev 4.9398930703458e-06
+field sum 0.000816
+field sqrsum 4.40576e-07
+field min 0
+field max 0.00064
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.00032	0
+bin	-0.00027733333333333	0
+bin	-0.00023466666666667	0
+bin	-0.000192	0
+bin	-0.00014933333333333	0
+bin	-0.00010666666666667	0
+bin	-6.4e-05	0
+bin	-2.1333333333333e-05	18052
+bin	2.1333333333333e-05	0
+bin	6.4e-05	0
+bin	0.00010666666666667	0
+bin	0.00014933333333333	1
+bin	0.000192	0
+bin	0.00023466666666667	0
+bin	0.00027733333333333	0
+bin	0.00032	0
+bin	0.00036266666666667	0
+bin	0.00040533333333333	0
+bin	0.000448	0
+bin	0.00049066666666667	0
+bin	0.00053333333333333	0
+bin	0.000576	0
+bin	0.00061866666666667	1
+bin	0.00066133333333333	0
+bin	0.000704	0
+bin	0.00074666666666667	0
+bin	0.00078933333333333	0
+bin	0.000832	0
+bin	0.00087466666666667	0
+bin	0.00091733333333333	0
+bin	0.00096	0
+scalar sctpApp.Marvin2.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar sctpApp.Marvin2.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[0].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar sctpApp.Marvin2.ppp[0].queue 	queueLength:timeavg 	2.296960099416e-06
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar sctpApp.Marvin2.ppp[0].queue 	rcvdPk:count 	18054
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar sctpApp.Marvin2.ppp[0].queue 	rcvdPk:sum(packetBytes) 	898408
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[0].ppp 	txState:timeavg 	0.023077377965106
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar sctpApp.Marvin2.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar sctpApp.Marvin2.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.Marvin2.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[0].ppp 	rxPkOk:count 	29236
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar sctpApp.Marvin2.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	44037008
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[0].ppp 	txPk:count 	18054
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar sctpApp.Marvin2.ppp[0].ppp 	txPk:sum(packetBytes) 	1024786
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[0].ppp 	rcvdPkFromHL:count 	18054
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.Marvin2.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	898408
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[0].ppp 	passedUpPk:count 	29236
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.Marvin2.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	43832356
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic sctpApp.Marvin2.ppp[1].queue 	queueingTime:histogram
+field count 14624
+field mean 2.382932166302e-06
+field stddev 0.00016636211770636
+field sum 0.034848
+field sqrsum 0.000404794368
+field min 0
+field max 0.011616
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	14624
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar sctpApp.Marvin2.ppp[1].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar sctpApp.Marvin2.ppp[1].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[1].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar sctpApp.Marvin2.ppp[1].queue 	queueLength:timeavg 	9.8093707775061e-05
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar sctpApp.Marvin2.ppp[1].queue 	rcvdPk:count 	14624
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar sctpApp.Marvin2.ppp[1].queue 	rcvdPk:sum(packetBytes) 	21921548
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[1].ppp 	txState:timeavg 	0.49596133612642
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar sctpApp.Marvin2.ppp[1].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar sctpApp.Marvin2.ppp[1].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[1].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.Marvin2.ppp[1].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[1].ppp 	rxPkOk:count 	8750
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar sctpApp.Marvin2.ppp[1].ppp 	rxPkOk:sum(packetBytes) 	494102
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[1].ppp 	txPk:count 	14624
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar sctpApp.Marvin2.ppp[1].ppp 	txPk:sum(packetBytes) 	22023916
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[1].ppp 	rcvdPkFromHL:count 	14624
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.Marvin2.ppp[1].ppp 	rcvdPkFromHL:sum(packetBytes) 	21921548
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[1].ppp 	passedUpPk:count 	8750
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.Marvin2.ppp[1].ppp 	passedUpPk:sum(packetBytes) 	432852
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic sctpApp.Marvin2.ppp[2].queue 	queueingTime:histogram
+field count 14612
+field mean 7.9496304407336e-07
+field stddev 9.6095216946299e-05
+field sum 0.011616
+field sqrsum 0.000134931456
+field min 0
+field max 0.011616
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	14612
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar sctpApp.Marvin2.ppp[2].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar sctpApp.Marvin2.ppp[2].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[2].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar sctpApp.Marvin2.ppp[2].queue 	queueLength:timeavg 	3.2697902591687e-05
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar sctpApp.Marvin2.ppp[2].queue 	rcvdPk:count 	14612
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar sctpApp.Marvin2.ppp[2].queue 	rcvdPk:sum(packetBytes) 	21910808
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[2].ppp 	txState:timeavg 	0.49571758812528
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar sctpApp.Marvin2.ppp[2].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar sctpApp.Marvin2.ppp[2].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[2].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.Marvin2.ppp[2].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[2].ppp 	rxPkOk:count 	9304
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar sctpApp.Marvin2.ppp[2].ppp 	rxPkOk:sum(packetBytes) 	530684
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[2].ppp 	txPk:count 	14612
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar sctpApp.Marvin2.ppp[2].ppp 	txPk:sum(packetBytes) 	22013092
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[2].ppp 	rcvdPkFromHL:count 	14612
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.Marvin2.ppp[2].ppp 	rcvdPkFromHL:sum(packetBytes) 	21910808
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.Marvin2.ppp[2].ppp 	passedUpPk:count 	9304
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.Marvin2.ppp[2].ppp 	passedUpPk:sum(packetBytes) 	465556
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar sctpApp.WilhelmSctp.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar sctpApp.WilhelmSctp.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar sctpApp.WilhelmSctp.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar sctpApp.WilhelmSctp.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar sctpApp.WilhelmSctp.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.WilhelmSctp.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.WilhelmSctp.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.WilhelmSctp.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic sctpApp.WilhelmSctp.ppp[0].queue 	queueingTime:histogram
+field count 8750
+field mean 2.6605714285714e-07
+field stddev 1.2995073751951e-05
+field sum 0.002328
+field sqrsum 1.47808e-06
+field min 0
+field max 0.00088
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.00044	0
+bin	-0.00038133333333333	0
+bin	-0.00032266666666667	0
+bin	-0.000264	0
+bin	-0.00020533333333333	0
+bin	-0.00014666666666667	0
+bin	-8.8e-05	0
+bin	-2.9333333333333e-05	8746
+bin	2.9333333333333e-05	0
+bin	8.8e-05	0
+bin	0.00014666666666667	0
+bin	0.00020533333333333	0
+bin	0.000264	0
+bin	0.00032266666666667	0
+bin	0.00038133333333333	0
+bin	0.00044	2
+bin	0.00049866666666667	1
+bin	0.00055733333333333	0
+bin	0.000616	0
+bin	0.00067466666666667	0
+bin	0.00073333333333333	0
+bin	0.000792	0
+bin	0.00085066666666667	1
+bin	0.00090933333333333	0
+bin	0.000968	0
+bin	0.0010266666666667	0
+bin	0.0010853333333333	0
+bin	0.001144	0
+bin	0.0012026666666667	0
+bin	0.0012613333333333	0
+bin	0.00132	0
+scalar sctpApp.WilhelmSctp.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar sctpApp.WilhelmSctp.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.ppp[0].queue 	queueLength:max 	2
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar sctpApp.WilhelmSctp.ppp[0].queue 	queueLength:timeavg 	6.553092048334e-06
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar sctpApp.WilhelmSctp.ppp[0].queue 	rcvdPk:count 	8750
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar sctpApp.WilhelmSctp.ppp[0].queue 	rcvdPk:sum(packetBytes) 	432852
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	txState:timeavg 	0.011126789990606
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	rxPkOk:count 	14624
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	22023916
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	txPk:count 	8750
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	txPk:sum(packetBytes) 	494102
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	rcvdPkFromHL:count 	8750
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	432852
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	passedUpPk:count 	14624
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.WilhelmSctp.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	21921548
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar sctpApp.WilhelmSctp.sctpApp[0] 	"bytes rcvd" 	21199200
+scalar sctpApp.WilhelmSctp.sctpApp[0] 	throughput 	693957.89631295
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 0 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 1 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 2 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 3 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 4 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 5 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 6 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 7 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 8 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 9 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 10 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 11 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 12 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 13 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 14 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 15 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Bytes received on stream 16 of assoc 3" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Blocking TSNs Moved" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Association Lifetime" 	244.444024
+scalar sctpApp.WilhelmSctp.sctp 	"Acked Bytes" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Throughput [bit/s]" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Transmitted Bytes" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Fast RTX" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Timer-Based RTX" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Duplicate Acks" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Packets Received" 	14624
+scalar sctpApp.WilhelmSctp.sctp 	"Packets Dropped" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Sum of R Gap Ranges" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Sum of NR Gap Ranges" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Overfull SACKs" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Drops Because New TSN Greater Than Highest TSN" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Drops Because No Room In Buffer" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Chunks Reneged" 	0
+scalar sctpApp.WilhelmSctp.sctp 	sackPeriod 	0.2
+scalar sctpApp.WilhelmSctp.sctp 	"Number of AUTH chunks sent" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Number of AUTH chunks accepted" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Number of AUTH chunks rejected" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Number of StreamReset requests sent" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Number of StreamReset requests performed" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Number of PacketDrop Reports" 	0
+scalar sctpApp.WilhelmSctp.sctp 	"Average End to End Delay" 	0.1050104
+scalar sctpApp.WilhelmSctp.sctp 	RTXMethod 	0
+scalar sctpApp.MarvinSctp.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar sctpApp.MarvinSctp.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar sctpApp.MarvinSctp.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar sctpApp.MarvinSctp.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar sctpApp.MarvinSctp.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar sctpApp.MarvinSctp.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.MarvinSctp.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.MarvinSctp.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.MarvinSctp.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.MarvinSctp.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.MarvinSctp.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic sctpApp.MarvinSctp.ppp[0].queue 	queueingTime:histogram
+field count 9304
+field mean 2.0292347377472e-07
+field stddev 9.785141432283e-06
+field sum 0.001888
+field sqrsum 8.91136e-07
+field min 0
+field max 0.000472
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.000236	0
+bin	-0.00020453333333333	0
+bin	-0.00017306666666667	0
+bin	-0.0001416	0
+bin	-0.00011013333333333	0
+bin	-7.8666666666667e-05	0
+bin	-4.72e-05	0
+bin	-1.5733333333333e-05	9300
+bin	1.5733333333333e-05	0
+bin	4.72e-05	0
+bin	7.8666666666667e-05	0
+bin	0.00011013333333333	0
+bin	0.0001416	0
+bin	0.00017306666666667	0
+bin	0.00020453333333333	0
+bin	0.000236	0
+bin	0.00026746666666667	0
+bin	0.00029893333333333	0
+bin	0.0003304	0
+bin	0.00036186666666667	0
+bin	0.00039333333333333	0
+bin	0.0004248	0
+bin	0.00045626666666667	4
+bin	0.00048773333333333	0
+bin	0.0005192	0
+bin	0.00055066666666667	0
+bin	0.00058213333333333	0
+bin	0.0006136	0
+bin	0.00064506666666667	0
+bin	0.00067653333333333	0
+bin	0.000708	0
+scalar sctpApp.MarvinSctp.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar sctpApp.MarvinSctp.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar sctpApp.MarvinSctp.ppp[0].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar sctpApp.MarvinSctp.ppp[0].queue 	queueLength:timeavg 	5.3145351319822e-06
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar sctpApp.MarvinSctp.ppp[0].queue 	rcvdPk:count 	9304
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar sctpApp.MarvinSctp.ppp[0].queue 	rcvdPk:sum(packetBytes) 	465556
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	txState:timeavg 	0.011950587974496
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	rxPkOk:count 	14612
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	22013092
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	txPk:count 	9304
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	txPk:sum(packetBytes) 	530684
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	rcvdPkFromHL:count 	9304
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	465556
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	passedUpPk:count 	14612
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar sctpApp.MarvinSctp.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	21910808
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar sctpApp.MarvinSctp.sctpApp[0] 	"bytes rcvd" 	21199200
+scalar sctpApp.MarvinSctp.sctpApp[0] 	throughput 	478832.50087119
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 0 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 1 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 2 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 3 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 4 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 5 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 6 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 7 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 8 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 9 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 10 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 11 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 12 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 13 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 14 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 15 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Bytes received on stream 16 of assoc 4" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Blocking TSNs Moved" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Association Lifetime" 	354.228672
+scalar sctpApp.MarvinSctp.sctp 	"Acked Bytes" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Throughput [bit/s]" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Transmitted Bytes" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Fast RTX" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Timer-Based RTX" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Duplicate Acks" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Packets Received" 	14612
+scalar sctpApp.MarvinSctp.sctp 	"Packets Dropped" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Sum of R Gap Ranges" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Sum of NR Gap Ranges" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Overfull SACKs" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Drops Because New TSN Greater Than Highest TSN" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Drops Because No Room In Buffer" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Chunks Reneged" 	0
+scalar sctpApp.MarvinSctp.sctp 	sackPeriod 	0.2
+scalar sctpApp.MarvinSctp.sctp 	"Number of AUTH chunks sent" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Number of AUTH chunks accepted" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Number of AUTH chunks rejected" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Number of StreamReset requests sent" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Number of StreamReset requests performed" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Number of PacketDrop Reports" 	0
+scalar sctpApp.MarvinSctp.sctp 	"Average End to End Delay" 	0.094656
+scalar sctpApp.MarvinSctp.sctp 	RTXMethod 	0

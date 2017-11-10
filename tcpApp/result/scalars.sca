@@ -1,0 +1,1626 @@
+version 2
+run Etwas-0-20171110-11:37:44-6408
+attr configname Etwas
+attr datetime 20171110-11:37:44
+attr experiment Etwas
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network tcpApp
+attr processid 6408
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.*.tcpApp[*].tOpen 0.2s
+param **.*.tcpApp[*].tSend 0.4s
+param **.ppp[*].ppp.mtu "1500 B"
+param **.ppp[*].queue.frameCapacity 10
+param **.ppp[*].queueType "\"DropTailQueue\""
+param *.AlexTcp.numTcpApps 1
+param *.AlexTcp.tcpApp[*].connectAddress "\"MarvinTcp\""
+param *.AlexTcp.tcpApp[*].typename "\"TCPSessionApp\""
+param *.AlexTcp.tcpApp[0].connectPort 6666
+param *.AlexTcp.tcpApp[0].sendBytes 1000000B
+param *.ArturTcp.numTcpApps 1
+param *.ArturTcp.tcpApp[*].connectAddress "\"WilhelmTcp\""
+param *.ArturTcp.tcpApp[*].typename "\"TCPSessionApp\""
+param *.ArturTcp.tcpApp[0].connectPort 6666
+param *.ArturTcp.tcpApp[0].sendBytes 1000000B
+param *.MarvinTcp.numTcpApps 1
+param *.MarvinTcp.tcpApp[*].typename "\"TCPEchoApp\""
+param *.MarvinTcp.tcpApp[0].echoFactor 2.0
+param *.MarvinTcp.tcpApp[0].localPort 6666
+param *.WilhelmTcp.numTcpApps 1
+param *.WilhelmTcp.tcpApp[*].typename "\"TCPEchoApp\""
+param *.WilhelmTcp.tcpApp[0].echoFactor 2.0
+param *.WilhelmTcp.tcpApp[0].localPort 6666
+param *.configurator.dumpAddresses true
+param *.configurator.dumpLinks true
+param *.configurator.dumpRoutes true
+param *.configurator.dumpTopology true
+
+scalar tcpApp.AlexTcp.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar tcpApp.AlexTcp.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar tcpApp.AlexTcp.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar tcpApp.AlexTcp.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar tcpApp.AlexTcp.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar tcpApp.AlexTcp.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.AlexTcp.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.AlexTcp.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.AlexTcp.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.AlexTcp.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.AlexTcp.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic tcpApp.AlexTcp.ppp[0].queue 	queueingTime:histogram
+field count 8
+field mean 0.001166
+field stddev 0.0021590124726696
+field sum 0.009328
+field sqrsum 4.3505792e-05
+field min 0
+field max 0.004664
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.002332	0
+bin	-0.0020210666666667	0
+bin	-0.0017101333333333	0
+bin	-0.0013992	0
+bin	-0.0010882666666667	0
+bin	-0.00077733333333333	0
+bin	-0.0004664	0
+bin	-0.00015546666666667	6
+bin	0.00015546666666667	0
+bin	0.0004664	0
+bin	0.00077733333333333	0
+bin	0.0010882666666667	0
+bin	0.0013992	0
+bin	0.0017101333333333	0
+bin	0.0020210666666667	0
+bin	0.002332	0
+bin	0.0026429333333333	0
+bin	0.0029538666666667	0
+bin	0.0032648	0
+bin	0.0035757333333333	0
+bin	0.0038866666666667	0
+bin	0.0041976	0
+bin	0.0045085333333333	2
+bin	0.0048194666666667	0
+bin	0.0051304	0
+bin	0.0054413333333333	0
+bin	0.0057522666666667	0
+bin	0.0060632	0
+bin	0.0063741333333333	0
+bin	0.0066850666666667	0
+bin	0.006996	0
+scalar tcpApp.AlexTcp.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar tcpApp.AlexTcp.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar tcpApp.AlexTcp.ppp[0].queue 	queueLength:max 	2
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar tcpApp.AlexTcp.ppp[0].queue 	queueLength:timeavg 	0.029565763007078
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar tcpApp.AlexTcp.ppp[0].queue 	rcvdPk:count 	10
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar tcpApp.AlexTcp.ppp[0].queue 	rcvdPk:sum(packetBytes) 	4156
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	txState:timeavg 	0.047938553543914
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	rxPkOk:count 	5
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	775
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	txPk:count 	8
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	txPk:sum(packetBytes) 	3060
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	rcvdPkFromHL:count 	8
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	3004
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	passedUpPk:count 	5
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.AlexTcp.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	740
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar tcpApp.AlexTcp.tcpApp[0] 	bytesRcvd 	536
+scalar tcpApp.AlexTcp.tcpApp[0] 	bytesSent 	1000000
+scalar tcpApp.AlexTcp.tcpApp[0] 	rcvdPk:count 	1
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar tcpApp.AlexTcp.tcpApp[0] 	rcvdPk:sum(packetBytes) 	536
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic tcpApp.AlexTcp.tcpApp[0] 	endToEndDelay:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar tcpApp.AlexTcp.tcpApp[0] 	sentPk:count 	1
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar tcpApp.AlexTcp.tcpApp[0] 	sentPk:sum(packetBytes) 	1000000
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar tcpApp.Marvin.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar tcpApp.Marvin.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar tcpApp.Marvin.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar tcpApp.Marvin.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar tcpApp.Marvin.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar tcpApp.Marvin.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.Marvin.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.Marvin.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.Marvin.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.Marvin.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.Marvin.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic tcpApp.Marvin.ppp[0].queue 	queueingTime:histogram
+field count 5
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	5
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar tcpApp.Marvin.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar tcpApp.Marvin.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[0].queue 	queueLength:max 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar tcpApp.Marvin.ppp[0].queue 	queueLength:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar tcpApp.Marvin.ppp[0].queue 	rcvdPk:count 	5
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar tcpApp.Marvin.ppp[0].queue 	rcvdPk:sum(packetBytes) 	740
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[0].ppp 	txState:timeavg 	0.013566866859182
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar tcpApp.Marvin.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar tcpApp.Marvin.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.Marvin.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[0].ppp 	rxPkOk:count 	6
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar tcpApp.Marvin.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	1894
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[0].ppp 	txPk:count 	5
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar tcpApp.Marvin.ppp[0].ppp 	txPk:sum(packetBytes) 	775
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[0].ppp 	rcvdPkFromHL:count 	5
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.Marvin.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	740
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[0].ppp 	passedUpPk:count 	6
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.Marvin.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	1852
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic tcpApp.Marvin.ppp[1].queue 	queueingTime:histogram
+field count 12
+field mean 0.00090533333333333
+field stddev 0.0017648291873737
+field sum 0.010864
+field sqrsum 4.4096384e-05
+field min 0
+field max 0.004664
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.002332	0
+bin	-0.0020210666666667	0
+bin	-0.0017101333333333	0
+bin	-0.0013992	0
+bin	-0.0010882666666667	0
+bin	-0.00077733333333333	0
+bin	-0.0004664	0
+bin	-0.00015546666666667	6
+bin	0.00015546666666667	4
+bin	0.0004664	0
+bin	0.00077733333333333	0
+bin	0.0010882666666667	0
+bin	0.0013992	0
+bin	0.0017101333333333	0
+bin	0.0020210666666667	0
+bin	0.002332	0
+bin	0.0026429333333333	0
+bin	0.0029538666666667	0
+bin	0.0032648	0
+bin	0.0035757333333333	0
+bin	0.0038866666666667	0
+bin	0.0041976	0
+bin	0.0045085333333333	2
+bin	0.0048194666666667	0
+bin	0.0051304	0
+bin	0.0054413333333333	0
+bin	0.0057522666666667	0
+bin	0.0060632	0
+bin	0.0063741333333333	0
+bin	0.0066850666666667	0
+bin	0.006996	0
+scalar tcpApp.Marvin.ppp[1].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar tcpApp.Marvin.ppp[1].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[1].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar tcpApp.Marvin.ppp[1].queue 	queueLength:timeavg 	0.023772651864218
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar tcpApp.Marvin.ppp[1].queue 	rcvdPk:count 	12
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar tcpApp.Marvin.ppp[1].queue 	rcvdPk:sum(packetBytes) 	3704
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[1].ppp 	txState:timeavg 	0.06631134408075
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar tcpApp.Marvin.ppp[1].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar tcpApp.Marvin.ppp[1].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[1].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.Marvin.ppp[1].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[1].ppp 	rxPkOk:count 	8
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar tcpApp.Marvin.ppp[1].ppp 	rxPkOk:sum(packetBytes) 	1456
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[1].ppp 	txPk:count 	12
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar tcpApp.Marvin.ppp[1].ppp 	txPk:sum(packetBytes) 	3788
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[1].ppp 	rcvdPkFromHL:count 	12
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.Marvin.ppp[1].ppp 	rcvdPkFromHL:sum(packetBytes) 	3704
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[1].ppp 	passedUpPk:count 	8
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.Marvin.ppp[1].ppp 	passedUpPk:sum(packetBytes) 	1400
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic tcpApp.Marvin.ppp[2].queue 	queueingTime:histogram
+field count 3
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	3
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar tcpApp.Marvin.ppp[2].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar tcpApp.Marvin.ppp[2].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[2].queue 	queueLength:max 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar tcpApp.Marvin.ppp[2].queue 	queueLength:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar tcpApp.Marvin.ppp[2].queue 	rcvdPk:count 	3
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar tcpApp.Marvin.ppp[2].queue 	rcvdPk:sum(packetBytes) 	660
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[2].ppp 	txState:timeavg 	0.011921337201423
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar tcpApp.Marvin.ppp[2].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar tcpApp.Marvin.ppp[2].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[2].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.Marvin.ppp[2].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[2].ppp 	rxPkOk:count 	6
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar tcpApp.Marvin.ppp[2].ppp 	rxPkOk:sum(packetBytes) 	1894
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[2].ppp 	txPk:count 	3
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar tcpApp.Marvin.ppp[2].ppp 	txPk:sum(packetBytes) 	681
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[2].ppp 	rcvdPkFromHL:count 	3
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.Marvin.ppp[2].ppp 	rcvdPkFromHL:sum(packetBytes) 	660
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.Marvin.ppp[2].ppp 	passedUpPk:count 	6
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.Marvin.ppp[2].ppp 	passedUpPk:sum(packetBytes) 	1852
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar tcpApp.ArturTcp.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar tcpApp.ArturTcp.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar tcpApp.ArturTcp.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar tcpApp.ArturTcp.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar tcpApp.ArturTcp.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar tcpApp.ArturTcp.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.ArturTcp.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.ArturTcp.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.ArturTcp.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.ArturTcp.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.ArturTcp.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic tcpApp.ArturTcp.ppp[0].queue 	queueingTime:histogram
+field count 6
+field mean 0.00084
+field stddev 0.0018793973502163
+field sum 0.00504
+field sqrsum 2.1894272e-05
+field min 0
+field max 0.004664
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.002332	0
+bin	-0.0020210666666667	0
+bin	-0.0017101333333333	0
+bin	-0.0013992	0
+bin	-0.0010882666666667	0
+bin	-0.00077733333333333	0
+bin	-0.0004664	0
+bin	-0.00015546666666667	4
+bin	0.00015546666666667	1
+bin	0.0004664	0
+bin	0.00077733333333333	0
+bin	0.0010882666666667	0
+bin	0.0013992	0
+bin	0.0017101333333333	0
+bin	0.0020210666666667	0
+bin	0.002332	0
+bin	0.0026429333333333	0
+bin	0.0029538666666667	0
+bin	0.0032648	0
+bin	0.0035757333333333	0
+bin	0.0038866666666667	0
+bin	0.0041976	0
+bin	0.0045085333333333	1
+bin	0.0048194666666667	0
+bin	0.0051304	0
+bin	0.0054413333333333	0
+bin	0.0057522666666667	0
+bin	0.0060632	0
+bin	0.0063741333333333	0
+bin	0.0066850666666667	0
+bin	0.006996	0
+scalar tcpApp.ArturTcp.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar tcpApp.ArturTcp.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar tcpApp.ArturTcp.ppp[0].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar tcpApp.ArturTcp.ppp[0].queue 	queueLength:timeavg 	0.011028549833916
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar tcpApp.ArturTcp.ppp[0].queue 	rcvdPk:count 	6
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar tcpApp.ArturTcp.ppp[0].queue 	rcvdPk:sum(packetBytes) 	1852
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	txState:timeavg 	0.033155672040375
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	rxPkOk:count 	3
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	681
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	txPk:count 	6
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	txPk:sum(packetBytes) 	1894
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	rcvdPkFromHL:count 	6
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	1852
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	passedUpPk:count 	3
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.ArturTcp.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	660
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar tcpApp.ArturTcp.tcpApp[0] 	bytesRcvd 	536
+scalar tcpApp.ArturTcp.tcpApp[0] 	bytesSent 	1000000
+scalar tcpApp.ArturTcp.tcpApp[0] 	rcvdPk:count 	1
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar tcpApp.ArturTcp.tcpApp[0] 	rcvdPk:sum(packetBytes) 	536
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic tcpApp.ArturTcp.tcpApp[0] 	endToEndDelay:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar tcpApp.ArturTcp.tcpApp[0] 	sentPk:count 	1
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar tcpApp.ArturTcp.tcpApp[0] 	sentPk:sum(packetBytes) 	1000000
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar tcpApp.Marvin2.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar tcpApp.Marvin2.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar tcpApp.Marvin2.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar tcpApp.Marvin2.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar tcpApp.Marvin2.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar tcpApp.Marvin2.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.Marvin2.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.Marvin2.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.Marvin2.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.Marvin2.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.Marvin2.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic tcpApp.Marvin2.ppp[0].queue 	queueingTime:histogram
+field count 9
+field mean 0.00056
+field stddev 0.0015440155439632
+field sum 0.00504
+field sqrsum 2.1894272e-05
+field min 0
+field max 0.004664
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.002332	0
+bin	-0.0020210666666667	0
+bin	-0.0017101333333333	0
+bin	-0.0013992	0
+bin	-0.0010882666666667	0
+bin	-0.00077733333333333	0
+bin	-0.0004664	0
+bin	-0.00015546666666667	7
+bin	0.00015546666666667	1
+bin	0.0004664	0
+bin	0.00077733333333333	0
+bin	0.0010882666666667	0
+bin	0.0013992	0
+bin	0.0017101333333333	0
+bin	0.0020210666666667	0
+bin	0.002332	0
+bin	0.0026429333333333	0
+bin	0.0029538666666667	0
+bin	0.0032648	0
+bin	0.0035757333333333	0
+bin	0.0038866666666667	0
+bin	0.0041976	0
+bin	0.0045085333333333	1
+bin	0.0048194666666667	0
+bin	0.0051304	0
+bin	0.0054413333333333	0
+bin	0.0057522666666667	0
+bin	0.0060632	0
+bin	0.0063741333333333	0
+bin	0.0066850666666667	0
+bin	0.006996	0
+scalar tcpApp.Marvin2.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar tcpApp.Marvin2.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[0].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar tcpApp.Marvin2.ppp[0].queue 	queueLength:timeavg 	0.017163647816892
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar tcpApp.Marvin2.ppp[0].queue 	rcvdPk:count 	10
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar tcpApp.Marvin2.ppp[0].queue 	rcvdPk:sum(packetBytes) 	2016
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[0].ppp 	txState:timeavg 	0.032446066872461
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar tcpApp.Marvin2.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar tcpApp.Marvin2.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.Marvin2.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[0].ppp 	rxPkOk:count 	12
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar tcpApp.Marvin2.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	3788
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[0].ppp 	txPk:count 	9
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar tcpApp.Marvin2.ppp[0].ppp 	txPk:sum(packetBytes) 	2039
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[0].ppp 	rcvdPkFromHL:count 	9
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.Marvin2.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	1976
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[0].ppp 	passedUpPk:count 	12
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.Marvin2.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	3704
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic tcpApp.Marvin2.ppp[1].queue 	queueingTime:histogram
+field count 5
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	5
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar tcpApp.Marvin2.ppp[1].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar tcpApp.Marvin2.ppp[1].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[1].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar tcpApp.Marvin2.ppp[1].queue 	queueLength:timeavg 	0.0061350979829764
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar tcpApp.Marvin2.ppp[1].queue 	rcvdPk:count 	6
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar tcpApp.Marvin2.ppp[1].queue 	rcvdPk:sum(packetBytes) 	1852
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[1].ppp 	txState:timeavg 	0.029084985018315
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar tcpApp.Marvin2.ppp[1].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar tcpApp.Marvin2.ppp[1].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[1].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.Marvin2.ppp[1].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[1].ppp 	rxPkOk:count 	4
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar tcpApp.Marvin2.ppp[1].ppp 	rxPkOk:sum(packetBytes) 	728
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[1].ppp 	txPk:count 	5
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar tcpApp.Marvin2.ppp[1].ppp 	txPk:sum(packetBytes) 	1847
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[1].ppp 	rcvdPkFromHL:count 	5
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.Marvin2.ppp[1].ppp 	rcvdPkFromHL:sum(packetBytes) 	1812
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[1].ppp 	passedUpPk:count 	4
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.Marvin2.ppp[1].ppp 	passedUpPk:sum(packetBytes) 	700
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic tcpApp.Marvin2.ppp[2].queue 	queueingTime:histogram
+field count 6
+field mean 0.00071466666666667
+field stddev 0.001750568669509
+field sum 0.004288
+field sqrsum 1.8386944e-05
+field min 0
+field max 0.004288
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.002144	0
+bin	-0.0018581333333333	0
+bin	-0.0015722666666667	0
+bin	-0.0012864	0
+bin	-0.0010005333333333	0
+bin	-0.00071466666666667	0
+bin	-0.0004288	0
+bin	-0.00014293333333333	5
+bin	0.00014293333333333	0
+bin	0.0004288	0
+bin	0.00071466666666667	0
+bin	0.0010005333333333	0
+bin	0.0012864	0
+bin	0.0015722666666667	0
+bin	0.0018581333333333	0
+bin	0.002144	0
+bin	0.0024298666666667	0
+bin	0.0027157333333333	0
+bin	0.0030016	0
+bin	0.0032874666666667	0
+bin	0.0035733333333333	0
+bin	0.0038592	0
+bin	0.0041450666666667	1
+bin	0.0044309333333333	0
+bin	0.0047168	0
+bin	0.0050026666666667	0
+bin	0.0052885333333333	0
+bin	0.0055744	0
+bin	0.0058602666666667	0
+bin	0.0061461333333333	0
+bin	0.006432	0
+scalar tcpApp.Marvin2.ppp[2].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar tcpApp.Marvin2.ppp[2].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[2].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar tcpApp.Marvin2.ppp[2].queue 	queueLength:timeavg 	0.0093830201761568
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar tcpApp.Marvin2.ppp[2].queue 	rcvdPk:count 	6
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar tcpApp.Marvin2.ppp[2].queue 	rcvdPk:sum(packetBytes) 	1852
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[2].ppp 	txState:timeavg 	0.033155672040375
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar tcpApp.Marvin2.ppp[2].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar tcpApp.Marvin2.ppp[2].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[2].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.Marvin2.ppp[2].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[2].ppp 	rxPkOk:count 	6
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar tcpApp.Marvin2.ppp[2].ppp 	rxPkOk:sum(packetBytes) 	1358
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[2].ppp 	txPk:count 	6
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar tcpApp.Marvin2.ppp[2].ppp 	txPk:sum(packetBytes) 	1894
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[2].ppp 	rcvdPkFromHL:count 	6
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.Marvin2.ppp[2].ppp 	rcvdPkFromHL:sum(packetBytes) 	1852
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.Marvin2.ppp[2].ppp 	passedUpPk:count 	6
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.Marvin2.ppp[2].ppp 	passedUpPk:sum(packetBytes) 	1316
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar tcpApp.WilhelmTcp.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar tcpApp.WilhelmTcp.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar tcpApp.WilhelmTcp.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar tcpApp.WilhelmTcp.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar tcpApp.WilhelmTcp.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.WilhelmTcp.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.WilhelmTcp.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.WilhelmTcp.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic tcpApp.WilhelmTcp.ppp[0].queue 	queueingTime:histogram
+field count 4
+field mean 9.4e-05
+field stddev 0.000188
+field sum 0.000376
+field sqrsum 1.41376e-07
+field min 0
+field max 0.000376
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.000188	0
+bin	-0.00016293333333333	0
+bin	-0.00013786666666667	0
+bin	-0.0001128	0
+bin	-8.7733333333333e-05	0
+bin	-6.2666666666667e-05	0
+bin	-3.76e-05	0
+bin	-1.2533333333333e-05	3
+bin	1.2533333333333e-05	0
+bin	3.76e-05	0
+bin	6.2666666666667e-05	0
+bin	8.7733333333333e-05	0
+bin	0.0001128	0
+bin	0.00013786666666667	0
+bin	0.00016293333333333	0
+bin	0.000188	0
+bin	0.00021306666666667	0
+bin	0.00023813333333333	0
+bin	0.0002632	0
+bin	0.00028826666666667	0
+bin	0.00031333333333333	0
+bin	0.0003384	0
+bin	0.00036346666666667	1
+bin	0.00038853333333333	0
+bin	0.0004136	0
+bin	0.00043866666666667	0
+bin	0.00046373333333333	0
+bin	0.0004888	0
+bin	0.00051386666666667	0
+bin	0.00053893333333333	0
+bin	0.000564	0
+scalar tcpApp.WilhelmTcp.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar tcpApp.WilhelmTcp.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.ppp[0].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar tcpApp.WilhelmTcp.ppp[0].queue 	queueLength:timeavg 	0.00082276482887942
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar tcpApp.WilhelmTcp.ppp[0].queue 	rcvdPk:count 	4
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar tcpApp.WilhelmTcp.ppp[0].queue 	rcvdPk:sum(packetBytes) 	700
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	txState:timeavg 	0.012744102030302
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	rxPkOk:count 	4
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	1264
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	txPk:count 	4
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	txPk:sum(packetBytes) 	728
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	rcvdPkFromHL:count 	4
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	700
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	passedUpPk:count 	4
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.WilhelmTcp.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	1236
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar tcpApp.WilhelmTcp.tcpApp[0] 	bytesRcvd 	1072
+scalar tcpApp.WilhelmTcp.tcpApp[0] 	bytesSent 	2144
+scalar tcpApp.WilhelmTcp.tcpApp[0] 	rcvdPk:count 	2
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar tcpApp.WilhelmTcp.tcpApp[0] 	rcvdPk:sum(packetBytes) 	1072
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic tcpApp.WilhelmTcp.tcpApp[0] 	endToEndDelay:histogram
+field count 2
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	2
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar tcpApp.WilhelmTcp.tcpApp[0] 	sentPk:count 	2
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar tcpApp.WilhelmTcp.tcpApp[0] 	sentPk:sum(packetBytes) 	2144
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar tcpApp.MarvinTcp.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar tcpApp.MarvinTcp.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar tcpApp.MarvinTcp.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar tcpApp.MarvinTcp.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar tcpApp.MarvinTcp.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.MarvinTcp.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.MarvinTcp.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.MarvinTcp.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic tcpApp.MarvinTcp.ppp[0].queue 	queueingTime:histogram
+field count 7
+field mean 0.00072
+field stddev 0.001744776585507
+field sum 0.00504
+field sqrsum 2.1894272e-05
+field min 0
+field max 0.004664
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.002332	0
+bin	-0.0020210666666667	0
+bin	-0.0017101333333333	0
+bin	-0.0013992	0
+bin	-0.0010882666666667	0
+bin	-0.00077733333333333	0
+bin	-0.0004664	0
+bin	-0.00015546666666667	5
+bin	0.00015546666666667	1
+bin	0.0004664	0
+bin	0.00077733333333333	0
+bin	0.0010882666666667	0
+bin	0.0013992	0
+bin	0.0017101333333333	0
+bin	0.0020210666666667	0
+bin	0.002332	0
+bin	0.0026429333333333	0
+bin	0.0029538666666667	0
+bin	0.0032648	0
+bin	0.0035757333333333	0
+bin	0.0038866666666667	0
+bin	0.0041976	0
+bin	0.0045085333333333	1
+bin	0.0048194666666667	0
+bin	0.0051304	0
+bin	0.0054413333333333	0
+bin	0.0057522666666667	0
+bin	0.0060632	0
+bin	0.0063741333333333	0
+bin	0.0066850666666667	0
+bin	0.006996	0
+scalar tcpApp.MarvinTcp.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar tcpApp.MarvinTcp.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.ppp[0].queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar tcpApp.MarvinTcp.ppp[0].queue 	queueLength:timeavg 	0.011028549833916
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar tcpApp.MarvinTcp.ppp[0].queue 	rcvdPk:count 	7
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar tcpApp.MarvinTcp.ppp[0].queue 	rcvdPk:sum(packetBytes) 	1892
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	txState:timeavg 	0.030730514676074
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	rxPkOk:count 	6
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	1894
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	txPk:count 	7
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	txPk:sum(packetBytes) 	1941
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	rcvdPkFromHL:count 	7
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	1892
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	passedUpPk:count 	6
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar tcpApp.MarvinTcp.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	1852
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar tcpApp.MarvinTcp.tcpApp[0] 	bytesRcvd 	1608
+scalar tcpApp.MarvinTcp.tcpApp[0] 	bytesSent 	3216
+scalar tcpApp.MarvinTcp.tcpApp[0] 	rcvdPk:count 	3
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar tcpApp.MarvinTcp.tcpApp[0] 	rcvdPk:sum(packetBytes) 	1608
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic tcpApp.MarvinTcp.tcpApp[0] 	endToEndDelay:histogram
+field count 3
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, histogram"
+attr unit  s
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	3
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar tcpApp.MarvinTcp.tcpApp[0] 	sentPk:count 	3
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar tcpApp.MarvinTcp.tcpApp[0] 	sentPk:sum(packetBytes) 	3216
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"

@@ -1,0 +1,1009 @@
+version 2
+run Etwas-0-20171110-09:30:46-12913
+attr configname Etwas
+attr datetime 20171110-09:30:46
+attr experiment Etwas
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network sctpApp
+attr processid 12913
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.AlexSctp.numSctpApps 1
+param *.AlexSctp.sctpApp[*].connectAddress "\"MarvinSctp\""
+param *.AlexSctp.sctpApp[*].localAddress "\"AlexSctp\""
+param *.AlexSctp.sctpApp[0].connectPort 6666
+param *.AlexSctp.sctpApp[0].typename "\"SCTPClient\""
+param *.ArturSctp.numSctpApps 1
+param *.ArturSctp.sctpApp[*].connectAddress "\"WilhelmSctp\""
+param *.ArturSctp.sctpApp[*].localAddress "\"ArturSctp\""
+param *.ArturSctp.sctpApp[0].connectPort 6666
+param *.ArturSctp.sctpApp[0].typename "\"SCTPClient\""
+param *.MarvinSctp.numSctpApps 1
+param *.MarvinSctp.sctpApp[*].localAddress "\"MarvinSctp\""
+param *.MarvinSctp.sctpApp[0].localPort 6666
+param *.MarvinSctp.sctpApp[0].typename "\"SCTPServer\""
+param *.WilhelmSctp.numSctpApps 1
+param *.WilhelmSctp.sctpApp[*].localAddress "\"WilhelmSctp\""
+param *.WilhelmSctp.sctpApp[0].localPort 6666
+param *.WilhelmSctp.sctpApp[0].typename "\"SCTPServer\""
+param *.configurator.dumpAddresses true
+param *.configurator.dumpLinks true
+param *.configurator.dumpRoutes true
+param *.configurator.dumpTopology true
+
+vector 8  sctpApp.AlexSctp.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 9  sctpApp.AlexSctp.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 27  sctpApp.Marvin.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 28  sctpApp.Marvin.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 38  sctpApp.Marvin.ppp[1].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 39  sctpApp.Marvin.ppp[1].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 49  sctpApp.Marvin.ppp[2].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 50  sctpApp.Marvin.ppp[2].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 65  sctpApp.ArturSctp.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 66  sctpApp.ArturSctp.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 84  sctpApp.Marvin2.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 85  sctpApp.Marvin2.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 95  sctpApp.Marvin2.ppp[1].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 96  sctpApp.Marvin2.ppp[1].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 106  sctpApp.Marvin2.ppp[2].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 107  sctpApp.Marvin2.ppp[2].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 122  sctpApp.WilhelmSctp.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 123  sctpApp.WilhelmSctp.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 138  sctpApp.MarvinSctp.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 139  sctpApp.MarvinSctp.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 167  sctpApp.WilhelmSctp.sctp  "Throughput of Association 3"  ETV
+vector 189  sctpApp.MarvinSctp.sctp  "Throughput of Association 4"  ETV
+vector 211  sctpApp.AlexSctp.sctp  "Throughput of Association 1"  ETV
+vector 231  sctpApp.AlexSctp.sctp  "Fast Recovery State 1:10.0.0.18"  ETV
+vector 260  sctpApp.ArturSctp.sctp  "Throughput of Association 2"  ETV
+vector 280  sctpApp.ArturSctp.sctp  "Fast Recovery State 2:10.0.0.14"  ETV
+vector 5  sctpApp.AlexSctp.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 7  sctpApp.AlexSctp.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 62  sctpApp.ArturSctp.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 64  sctpApp.ArturSctp.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 14  sctpApp.AlexSctp.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 10  sctpApp.AlexSctp.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 71  sctpApp.ArturSctp.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 67  sctpApp.ArturSctp.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 30  sctpApp.Marvin.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 34  sctpApp.Marvin.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 52  sctpApp.Marvin.ppp[2].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 56  sctpApp.Marvin.ppp[2].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 35  sctpApp.Marvin.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 37  sctpApp.Marvin.ppp[1].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 44  sctpApp.Marvin.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 40  sctpApp.Marvin.ppp[1].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 87  sctpApp.Marvin2.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 91  sctpApp.Marvin2.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 103  sctpApp.Marvin2.ppp[2].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 105  sctpApp.Marvin2.ppp[2].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 112  sctpApp.Marvin2.ppp[2].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 108  sctpApp.Marvin2.ppp[2].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 92  sctpApp.Marvin2.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 94  sctpApp.Marvin2.ppp[1].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 101  sctpApp.Marvin2.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 97  sctpApp.Marvin2.ppp[1].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 141  sctpApp.MarvinSctp.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 145  sctpApp.MarvinSctp.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 309  sctpApp.MarvinSctp.sctp  "Throughput of Association 4"  ETV
+vector 186  sctpApp.MarvinSctp.sctp  "Peer Rwnd 4"  ETV
+vector 329  sctpApp.MarvinSctp.sctp  "Fast Recovery State 5:10.0.0.1"  ETV
+vector 135  sctpApp.MarvinSctp.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 137  sctpApp.MarvinSctp.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 144  sctpApp.MarvinSctp.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 140  sctpApp.MarvinSctp.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 125  sctpApp.WilhelmSctp.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 129  sctpApp.WilhelmSctp.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 358  sctpApp.WilhelmSctp.sctp  "Throughput of Association 3"  ETV
+vector 164  sctpApp.WilhelmSctp.sctp  "Peer Rwnd 3"  ETV
+vector 378  sctpApp.WilhelmSctp.sctp  "Fast Recovery State 6:10.0.0.10"  ETV
+vector 119  sctpApp.WilhelmSctp.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 121  sctpApp.WilhelmSctp.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 128  sctpApp.WilhelmSctp.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 124  sctpApp.WilhelmSctp.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 109  sctpApp.Marvin2.ppp[2].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 113  sctpApp.Marvin2.ppp[2].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 81  sctpApp.Marvin2.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 83  sctpApp.Marvin2.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 90  sctpApp.Marvin2.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 86  sctpApp.Marvin2.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 98  sctpApp.Marvin2.ppp[1].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 102  sctpApp.Marvin2.ppp[1].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 41  sctpApp.Marvin.ppp[1].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 45  sctpApp.Marvin.ppp[1].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 24  sctpApp.Marvin.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 26  sctpApp.Marvin.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 33  sctpApp.Marvin.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 29  sctpApp.Marvin.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 46  sctpApp.Marvin.ppp[2].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 48  sctpApp.Marvin.ppp[2].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 55  sctpApp.Marvin.ppp[2].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 51  sctpApp.Marvin.ppp[2].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 11  sctpApp.AlexSctp.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 15  sctpApp.AlexSctp.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 208  sctpApp.AlexSctp.sctp  "Peer Rwnd 1"  ETV
+vector 68  sctpApp.ArturSctp.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 72  sctpApp.ArturSctp.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 257  sctpApp.ArturSctp.sctp  "Peer Rwnd 2"  ETV
+vector 312  sctpApp.MarvinSctp.sctp  "Slow Start Threshold 5:10.0.0.1"  ETV
+vector 313  sctpApp.MarvinSctp.sctp  "Congestion Window 5:10.0.0.1"  ETV
+vector 314  sctpApp.MarvinSctp.sctp  "Bandwidth 5:10.0.0.1"  ETV
+vector 310  sctpApp.MarvinSctp.sctp  "RTO 5:10.0.0.1"  ETV
+vector 361  sctpApp.WilhelmSctp.sctp  "Slow Start Threshold 6:10.0.0.10"  ETV
+vector 362  sctpApp.WilhelmSctp.sctp  "Congestion Window 6:10.0.0.10"  ETV
+vector 363  sctpApp.WilhelmSctp.sctp  "Bandwidth 6:10.0.0.10"  ETV
+vector 359  sctpApp.WilhelmSctp.sctp  "RTO 6:10.0.0.10"  ETV
+vector 214  sctpApp.AlexSctp.sctp  "Slow Start Threshold 1:10.0.0.18"  ETV
+vector 215  sctpApp.AlexSctp.sctp  "Congestion Window 1:10.0.0.18"  ETV
+vector 216  sctpApp.AlexSctp.sctp  "Bandwidth 1:10.0.0.18"  ETV
+vector 212  sctpApp.AlexSctp.sctp  "RTO 1:10.0.0.18"  ETV
+vector 17  sctpApp.AlexSctp.sctpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 401  sctpApp.AlexSctp.sctp  "SendQueue of Association 1"  ETV
+vector 217  sctpApp.AlexSctp.sctp  "TSN Sent 1:10.0.0.18"  ETV
+vector 224  sctpApp.AlexSctp.sctp  "Outstanding Bytes 1:10.0.0.18"  ETV
+vector 196  sctpApp.AlexSctp.sctp  "Outstanding Bytes 1:Total"  ETV
+vector 223  sctpApp.AlexSctp.sctp  "Queued Sent Bytes 1:10.0.0.18"  ETV
+vector 195  sctpApp.AlexSctp.sctp  "Queued Sent Bytes 1:Total"  ETV
+vector 263  sctpApp.ArturSctp.sctp  "Slow Start Threshold 2:10.0.0.14"  ETV
+vector 264  sctpApp.ArturSctp.sctp  "Congestion Window 2:10.0.0.14"  ETV
+vector 265  sctpApp.ArturSctp.sctp  "Bandwidth 2:10.0.0.14"  ETV
+vector 261  sctpApp.ArturSctp.sctp  "RTO 2:10.0.0.14"  ETV
+vector 74  sctpApp.ArturSctp.sctpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 405  sctpApp.ArturSctp.sctp  "SendQueue of Association 2"  ETV
+vector 266  sctpApp.ArturSctp.sctp  "TSN Sent 2:10.0.0.14"  ETV
+vector 273  sctpApp.ArturSctp.sctp  "Outstanding Bytes 2:10.0.0.14"  ETV
+vector 245  sctpApp.ArturSctp.sctp  "Outstanding Bytes 2:Total"  ETV
+vector 272  sctpApp.ArturSctp.sctp  "Queued Sent Bytes 2:10.0.0.14"  ETV
+vector 244  sctpApp.ArturSctp.sctp  "Queued Sent Bytes 2:Total"  ETV
+vector 316  sctpApp.MarvinSctp.sctp  "TSN Received 5:10.0.0.1"  ETV
+vector 386  sctpApp.MarvinSctp.sctp  "Stream 0 Throughput"  ETV
+vector 172  sctpApp.MarvinSctp.sctp  "Queued Received Bytes 4:Total"  ETV
+vector 168  sctpApp.MarvinSctp.sctp  "Advertised Receiver Window 4"  ETV
+vector 177  sctpApp.MarvinSctp.sctp  "Number of Total Gap Blocks Stored 4"  ETV
+vector 178  sctpApp.MarvinSctp.sctp  "Number of Revokable Gap Blocks Stored 4"  ETV
+vector 179  sctpApp.MarvinSctp.sctp  "Number of Non-Revokable Gap Blocks Stored 4"  ETV
+vector 180  sctpApp.MarvinSctp.sctp  "Number of Duplicate TSNs Stored 4"  ETV
+vector 184  sctpApp.MarvinSctp.sctp  "Length of SACK Sent 4"  ETV
+vector 181  sctpApp.MarvinSctp.sctp  "Number of Revokable Gap Blocks Sent 4"  ETV
+vector 182  sctpApp.MarvinSctp.sctp  "Number of Non-Revokable Gap Blocks Sent 4"  ETV
+vector 183  sctpApp.MarvinSctp.sctp  "Number of Duplicate TSNs Sent 4"  ETV
+vector 188  sctpApp.MarvinSctp.sctp  "End to End Delay of Association 4"  ETV
+vector 390  sctpApp.MarvinSctp.sctpApp[0]  "App: Received Bytes of assoc 5"  ETV
+vector 391  sctpApp.MarvinSctp.sctpApp[0]  "App: EndToEndDelay of assoc 5"  ETV
+vector 365  sctpApp.WilhelmSctp.sctp  "TSN Received 6:10.0.0.10"  ETV
+vector 392  sctpApp.WilhelmSctp.sctp  "Stream 0 Throughput"  ETV
+vector 150  sctpApp.WilhelmSctp.sctp  "Queued Received Bytes 3:Total"  ETV
+vector 146  sctpApp.WilhelmSctp.sctp  "Advertised Receiver Window 3"  ETV
+vector 155  sctpApp.WilhelmSctp.sctp  "Number of Total Gap Blocks Stored 3"  ETV
+vector 156  sctpApp.WilhelmSctp.sctp  "Number of Revokable Gap Blocks Stored 3"  ETV
+vector 157  sctpApp.WilhelmSctp.sctp  "Number of Non-Revokable Gap Blocks Stored 3"  ETV
+vector 158  sctpApp.WilhelmSctp.sctp  "Number of Duplicate TSNs Stored 3"  ETV
+vector 162  sctpApp.WilhelmSctp.sctp  "Length of SACK Sent 3"  ETV
+vector 159  sctpApp.WilhelmSctp.sctp  "Number of Revokable Gap Blocks Sent 3"  ETV
+vector 160  sctpApp.WilhelmSctp.sctp  "Number of Non-Revokable Gap Blocks Sent 3"  ETV
+vector 161  sctpApp.WilhelmSctp.sctp  "Number of Duplicate TSNs Sent 3"  ETV
+vector 166  sctpApp.WilhelmSctp.sctp  "End to End Delay of Association 3"  ETV
+vector 396  sctpApp.WilhelmSctp.sctpApp[0]  "App: Received Bytes of assoc 6"  ETV
+vector 397  sctpApp.WilhelmSctp.sctpApp[0]  "App: EndToEndDelay of assoc 6"  ETV
+vector 400  sctpApp.AlexSctp.sctp  "Number of Gap Blocks in Last SACK of Association 1"  ETV
+vector 197  sctpApp.AlexSctp.sctp  "Number of Revokable Gap Blocks in SACK 1"  ETV
+vector 198  sctpApp.AlexSctp.sctp  "Number of Non-Revokable Gap Blocks in SACK 1"  ETV
+vector 234  sctpApp.AlexSctp.sctp  "TSN Acked CumAck 1:10.0.0.18"  ETV
+vector 213  sctpApp.AlexSctp.sctp  "RTT 1:10.0.0.18"  ETV
+vector 227  sctpApp.AlexSctp.sctp  "Number of Gap Acked Chunks in Last SACK 1:10.0.0.18"  ETV
+vector 228  sctpApp.AlexSctp.sctp  "Number of Non-Revokable Gap Acked Chunks in Last SACK 1:10.0.0.18"  ETV
+vector 229  sctpApp.AlexSctp.sctp  "Number of Gap Missed Chunks in Last SACK 1:10.0.0.18"  ETV
+vector 207  sctpApp.AlexSctp.sctp  "Arwnd in Last SACK 1"  ETV
+vector 236  sctpApp.AlexSctp.sctp  "TSN PseudoCumAck 1:10.0.0.18"  ETV
+vector 237  sctpApp.AlexSctp.sctp  "TSN RTXPseudoCumAck 1:10.0.0.18"  ETV
+vector 230  sctpApp.AlexSctp.sctp  "Partial Bytes Acked 1:10.0.0.18"  ETV
+vector 404  sctpApp.ArturSctp.sctp  "Number of Gap Blocks in Last SACK of Association 2"  ETV
+vector 246  sctpApp.ArturSctp.sctp  "Number of Revokable Gap Blocks in SACK 2"  ETV
+vector 247  sctpApp.ArturSctp.sctp  "Number of Non-Revokable Gap Blocks in SACK 2"  ETV
+vector 283  sctpApp.ArturSctp.sctp  "TSN Acked CumAck 2:10.0.0.14"  ETV
+vector 262  sctpApp.ArturSctp.sctp  "RTT 2:10.0.0.14"  ETV
+vector 276  sctpApp.ArturSctp.sctp  "Number of Gap Acked Chunks in Last SACK 2:10.0.0.14"  ETV
+vector 277  sctpApp.ArturSctp.sctp  "Number of Non-Revokable Gap Acked Chunks in Last SACK 2:10.0.0.14"  ETV
+vector 278  sctpApp.ArturSctp.sctp  "Number of Gap Missed Chunks in Last SACK 2:10.0.0.14"  ETV
+vector 256  sctpApp.ArturSctp.sctp  "Arwnd in Last SACK 2"  ETV
+vector 285  sctpApp.ArturSctp.sctp  "TSN PseudoCumAck 2:10.0.0.14"  ETV
+vector 286  sctpApp.ArturSctp.sctp  "TSN RTXPseudoCumAck 2:10.0.0.14"  ETV
+vector 279  sctpApp.ArturSctp.sctp  "Partial Bytes Acked 2:10.0.0.14"  ETV
+214	165	5.809504	65535
+214	269	8.809504	65535
+215	165	5.809504	8940
+215	269	8.809504	8940
+216	165	5.809504	0.3725
+216	269	8.809504	0.45848505051541
+212	165	5.809504	3
+212	247	8.246992	7.312464
+213	247	8.246992	2.437488
+217	167	5.809504	1000
+223	167	5.809504	1452
+223	247	8.246992	0
+224	167	5.809504	1452
+224	247	8.246992	0
+227	247	8.246992	0
+228	247	8.246992	0
+229	247	8.246992	0
+230	247	8.246992	0
+231	29	1	0
+234	247	8.246992	1000
+236	247	8.246992	0
+237	247	8.246992	0
+400	247	8.246992	0
+401	167	5.809504	1
+401	167	5.809504	0
+196	167	5.809504	1452
+196	247	8.246992	0
+195	167	5.809504	1452
+195	247	8.246992	0
+197	247	8.246992	0
+198	247	8.246992	0
+207	247	8.246992	64083
+208	95	3.40552	65535
+208	247	8.246992	64083
+211	29	1	0
+211	247	8.246992	0.017460911808815
+211	321	10.649152	0.011656176108169
+263	174	5.810744	65535
+263	270	8.810744	65535
+264	174	5.810744	8940
+264	270	8.810744	8940
+265	174	5.810744	0.3725
+265	270	8.810744	0.45644848361074
+261	174	5.810744	3
+261	254	8.259048	7.344912
+262	254	8.259048	2.448304
+266	176	5.810744	1000
+272	176	5.810744	1452
+272	254	8.259048	0
+273	176	5.810744	1452
+273	254	8.259048	0
+276	254	8.259048	0
+277	254	8.259048	0
+278	254	8.259048	0
+279	254	8.259048	0
+280	30	1	0
+283	254	8.259048	1000
+285	254	8.259048	0
+286	254	8.259048	0
+404	254	8.259048	0
+405	176	5.810744	1
+405	176	5.810744	0
+245	176	5.810744	1452
+245	254	8.259048	0
+244	176	5.810744	1452
+244	254	8.259048	0
+246	254	8.259048	0
+247	254	8.259048	0
+256	254	8.259048	64083
+257	102	3.40676	65535
+257	254	8.259048	64083
+260	30	1	0
+260	254	8.259048	0.017435423550027
+260	330	10.661208	0.011656176108169
+312	129	4.608472	65535
+313	129	4.608472	8940
+314	129	4.608472	0.3725
+310	129	4.608472	3
+316	205	7.045672	1000
+329	61	2.2018	0
+168	205	7.045672	64083
+172	205	7.045672	1452
+172	208	7.045672	1452
+177	205	7.045672	0
+178	205	7.045672	0
+179	205	7.045672	0
+180	205	7.045672	0
+181	205	7.045672	0
+182	205	7.045672	0
+183	205	7.045672	0
+184	205	7.045672	16
+186	61	2.2018	65535
+188	208	7.045672	1.236168
+386	205	7.045672	0
+189	22	0	0
+189	205	7.045672	0.020438078866005
+189	283	9.44812	0.61603830759292
+361	137	4.609712	65535
+362	137	4.609712	8940
+363	137	4.609712	0.3725
+359	137	4.609712	3
+365	216	7.057728	1000
+378	67	2.2024	0
+146	216	7.057728	64083
+150	216	7.057728	1452
+150	219	7.057728	1452
+155	216	7.057728	0
+156	216	7.057728	0
+157	216	7.057728	0
+158	216	7.057728	0
+159	216	7.057728	0
+160	216	7.057728	0
+161	216	7.057728	0
+162	216	7.057728	16
+164	67	2.2024	65535
+166	219	7.057728	1.246984
+392	216	7.057728	0
+167	20	0	0
+167	216	7.057728	0.020403166571452
+167	292	9.460176	0.61603830759292
+358	67	2.2024	0
+309	61	2.2018	0
+5	33	1	68
+5	97	3.40552	116
+5	170	5.809504	1500
+5	249	8.246992	40
+5	325	10.649152	36
+7	33	1	0
+7	97	3.40552	0
+7	170	5.809504	0
+7	249	8.246992	0
+7	325	10.649152	0
+8	0	0	0
+9	0	0	0
+9	35	1	1
+9	37	1.0006	0
+9	98	3.40552	1
+9	99	3.406504	0
+9	171	5.809504	1
+9	181	5.82156	0
+9	250	8.246992	1
+9	251	8.247368	0
+9	326	10.649152	1
+9	327	10.649496	0
+10	35	1	75
+10	98	3.40552	123
+10	171	5.809504	1507
+10	250	8.246992	47
+10	326	10.649152	43
+11	93	3.40552	155
+11	163	5.809504	43
+11	245	8.246992	55
+11	319	10.649152	43
+14	35	1	68
+14	98	3.40552	116
+14	171	5.809504	1500
+14	250	8.246992	40
+14	326	10.649152	36
+15	93	3.40552	148
+15	163	5.809504	36
+15	245	8.246992	48
+15	319	10.649152	36
+17	166	5.809504	1452
+24	85	3.00428	148
+24	155	5.40916	36
+24	237	7.846552	48
+24	311	10.248808	36
+26	85	3.00428	0
+26	155	5.40916	0
+26	237	7.846552	0
+26	311	10.248808	0
+27	0	0	0
+28	0	0	0
+28	86	3.00428	1
+28	88	3.00552	0
+28	156	5.40916	1
+28	157	5.409504	0
+28	238	7.846552	1
+28	239	7.846992	0
+28	312	10.248808	1
+28	313	10.249152	0
+29	86	3.00428	155
+29	156	5.40916	43
+29	238	7.846552	55
+29	312	10.248808	43
+30	39	1.4006	75
+30	107	3.806504	123
+30	183	6.22156	1507
+30	259	8.647368	47
+30	337	11.049496	43
+33	86	3.00428	148
+33	156	5.40916	36
+33	238	7.846552	48
+33	312	10.248808	36
+34	39	1.4006	68
+34	107	3.806504	116
+34	183	6.22156	1500
+34	259	8.647368	40
+34	337	11.049496	36
+35	43	1.4006	68
+35	44	1.4006	68
+35	109	3.806504	116
+35	114	3.807744	116
+35	185	6.22156	1500
+35	189	6.2228	1500
+35	261	8.647368	40
+35	266	8.659424	40
+35	339	11.049496	36
+35	344	11.061552	36
+37	43	1.4006	0
+37	46	1.4012	0.0006
+37	109	3.806504	0
+37	114	3.807744	0
+37	185	6.22156	0
+37	190	6.233616	0.010816
+37	261	8.647368	0
+37	266	8.659424	0
+37	339	11.049496	0
+37	344	11.061552	0
+38	0	0	0
+38	44	1.4006	1
+38	46	1.4012	0
+38	189	6.2228	1
+38	190	6.233616	0
+39	0	0	0
+39	45	1.4006	1
+39	46	1.4012	0
+39	47	1.4012	1
+39	48	1.4018	0
+39	110	3.806504	1
+39	111	3.807488	0
+39	115	3.807744	1
+39	116	3.808728	0
+39	186	6.22156	1
+39	190	6.233616	0
+39	191	6.233616	1
+39	192	6.245672	0
+39	262	8.647368	1
+39	263	8.647744	0
+39	267	8.659424	1
+39	268	8.6598	0
+39	340	11.049496	1
+39	341	11.04984	0
+39	345	11.061552	1
+39	346	11.061896	0
+40	45	1.4006	75
+40	47	1.4012	75
+40	110	3.806504	123
+40	115	3.807744	123
+40	186	6.22156	1507
+40	191	6.233616	1507
+40	262	8.647368	47
+40	267	8.659424	47
+40	340	11.049496	43
+40	345	11.061552	43
+41	83	3.00428	155
+41	87	3.00552	155
+41	153	5.40916	43
+41	158	5.4104	43
+41	235	7.846552	55
+41	240	7.858608	55
+41	309	10.248808	43
+41	314	10.260864	43
+44	45	1.4006	68
+44	47	1.4012	68
+44	110	3.806504	116
+44	115	3.807744	116
+44	186	6.22156	1500
+44	191	6.233616	1500
+44	262	8.647368	40
+44	267	8.659424	40
+44	340	11.049496	36
+44	345	11.061552	36
+45	83	3.00428	148
+45	87	3.00552	148
+45	153	5.40916	36
+45	158	5.4104	36
+45	235	7.846552	48
+45	240	7.858608	48
+45	309	10.248808	36
+45	314	10.260864	36
+46	90	3.00552	148
+46	160	5.4104	36
+46	242	7.858608	48
+46	316	10.260864	36
+48	90	3.00552	0
+48	160	5.4104	0
+48	242	7.858608	0
+48	316	10.260864	0
+49	0	0	0
+50	0	0	0
+50	91	3.00552	1
+50	92	3.00676	0
+50	161	5.4104	1
+50	162	5.410744	0
+50	243	7.858608	1
+50	244	7.859048	0
+50	317	10.260864	1
+50	318	10.261208	0
+51	91	3.00552	155
+51	161	5.4104	43
+51	243	7.858608	55
+51	317	10.260864	43
+52	40	1.4006	75
+52	112	3.807744	123
+52	187	6.2228	1507
+52	264	8.659424	47
+52	342	11.061552	43
+55	91	3.00552	148
+55	161	5.4104	36
+55	243	7.858608	48
+55	317	10.260864	36
+56	40	1.4006	68
+56	112	3.807744	116
+56	187	6.2228	1500
+56	264	8.659424	40
+56	342	11.061552	36
+62	34	1	68
+62	104	3.40676	116
+62	179	5.810744	1500
+62	256	8.259048	40
+62	334	10.661208	36
+64	34	1	0
+64	104	3.40676	0
+64	179	5.810744	0
+64	256	8.259048	0
+64	334	10.661208	0
+65	0	0	0
+66	0	0	0
+66	36	1	1
+66	38	1.0006	0
+66	105	3.40676	1
+66	106	3.407744	0
+66	180	5.810744	1
+66	182	5.8228	0
+66	257	8.259048	1
+66	258	8.259424	0
+66	335	10.661208	1
+66	336	10.661552	0
+67	36	1	75
+67	105	3.40676	123
+67	180	5.810744	1507
+67	257	8.259048	47
+67	335	10.661208	43
+68	100	3.40676	155
+68	172	5.810744	43
+68	252	8.259048	55
+68	328	10.661208	43
+71	36	1	68
+71	105	3.40676	116
+71	180	5.810744	1500
+71	257	8.259048	40
+71	335	10.661208	36
+72	100	3.40676	148
+72	172	5.810744	36
+72	252	8.259048	48
+72	328	10.661208	36
+74	175	5.810744	1452
+81	75	2.60304	148
+81	79	2.60364	148
+81	145	5.008816	36
+81	150	5.010056	36
+81	227	7.446112	48
+81	232	7.458168	48
+81	301	9.848464	36
+81	306	9.86052	36
+83	75	2.60304	0
+83	80	2.60428	0.00064
+83	145	5.008816	0
+83	150	5.010056	0
+83	227	7.446112	0
+83	232	7.458168	0
+83	301	9.848464	0
+83	306	9.86052	0
+84	0	0	0
+84	79	2.60364	1
+84	80	2.60428	0
+85	0	0	0
+85	76	2.60304	1
+85	80	2.60428	0
+85	81	2.60428	1
+85	82	2.60552	0
+85	146	5.008816	1
+85	147	5.00916	0
+85	151	5.010056	1
+85	152	5.0104	0
+85	228	7.446112	1
+85	229	7.446552	0
+85	233	7.458168	1
+85	234	7.458608	0
+85	302	9.848464	1
+85	303	9.848808	0
+85	307	9.86052	1
+85	308	9.860864	0
+86	76	2.60304	155
+86	81	2.60428	155
+86	146	5.008816	43
+86	151	5.010056	43
+86	228	7.446112	55
+86	233	7.458168	55
+86	302	9.848464	43
+86	307	9.86052	43
+87	49	1.8012	75
+87	53	1.8018	75
+87	117	4.207488	123
+87	122	4.208728	123
+87	193	6.633616	1507
+87	197	6.645672	1507
+87	271	9.047744	47
+87	276	9.0598	47
+87	347	11.44984	43
+87	352	11.461896	43
+90	76	2.60304	148
+90	81	2.60428	148
+90	146	5.008816	36
+90	151	5.010056	36
+90	228	7.446112	48
+90	233	7.458168	48
+90	302	9.848464	36
+90	307	9.86052	36
+91	49	1.8012	68
+91	53	1.8018	68
+91	117	4.207488	116
+91	122	4.208728	116
+91	193	6.633616	1500
+91	197	6.645672	1500
+91	271	9.047744	40
+91	276	9.0598	40
+91	347	11.44984	36
+91	352	11.461896	36
+92	56	1.8018	68
+92	124	4.208728	116
+92	200	6.645672	1500
+92	278	9.0598	40
+92	354	11.461896	36
+94	56	1.8018	0
+94	124	4.208728	0
+94	200	6.645672	0
+94	278	9.0598	0
+94	354	11.461896	0
+95	0	0	0
+96	0	0	0
+96	57	1.8018	1
+96	58	1.8024	0
+96	125	4.208728	1
+96	126	4.209712	0
+96	201	6.645672	1
+96	202	6.657728	0
+96	279	9.0598	1
+96	280	9.060176	0
+96	355	11.461896	1
+96	356	11.46224	0
+97	57	1.8018	75
+97	125	4.208728	123
+97	201	6.645672	1507
+97	279	9.0598	47
+97	355	11.461896	43
+98	77	2.60364	155
+98	148	5.010056	43
+98	230	7.458168	55
+98	304	9.86052	43
+101	57	1.8018	68
+101	125	4.208728	116
+101	201	6.645672	1500
+101	279	9.0598	40
+101	355	11.461896	36
+102	77	2.60364	148
+102	148	5.010056	36
+102	230	7.458168	48
+102	304	9.86052	36
+103	51	1.8012	68
+103	119	4.207488	116
+103	195	6.633616	1500
+103	273	9.047744	40
+103	349	11.44984	36
+105	51	1.8012	0
+105	119	4.207488	0
+105	195	6.633616	0
+105	273	9.047744	0
+105	349	11.44984	0
+106	0	0	0
+107	0	0	0
+107	52	1.8012	1
+107	54	1.8018	0
+107	120	4.207488	1
+107	121	4.208472	0
+107	196	6.633616	1
+107	198	6.645672	0
+107	274	9.047744	1
+107	275	9.04812	0
+107	350	11.44984	1
+107	351	11.450184	0
+108	52	1.8012	75
+108	120	4.207488	123
+108	196	6.633616	1507
+108	274	9.047744	47
+108	350	11.44984	43
+109	73	2.60304	155
+109	143	5.008816	43
+109	225	7.446112	55
+109	299	9.848464	43
+112	52	1.8012	68
+112	120	4.207488	116
+112	196	6.633616	1500
+112	274	9.047744	40
+112	350	11.44984	36
+113	73	2.60304	148
+113	143	5.008816	36
+113	225	7.446112	48
+113	299	9.848464	36
+119	69	2.2024	148
+119	140	4.609712	36
+119	220	7.057728	48
+119	295	9.460176	36
+121	69	2.2024	0
+121	140	4.609712	0
+121	220	7.057728	0
+121	295	9.460176	0
+122	0	0	0
+123	0	0	0
+123	70	2.2024	1
+123	72	2.20364	0
+123	141	4.609712	1
+123	142	4.610056	0
+123	222	7.057728	1
+123	224	7.058168	0
+123	297	9.460176	1
+123	298	9.46052	0
+124	70	2.2024	155
+124	141	4.609712	43
+124	222	7.057728	55
+124	297	9.460176	43
+125	65	2.2024	75
+125	135	4.609712	123
+125	214	7.057728	1507
+125	290	9.460176	47
+125	362	11.86224	43
+128	70	2.2024	148
+128	141	4.609712	36
+128	222	7.057728	48
+128	297	9.460176	36
+129	65	2.2024	68
+129	135	4.609712	116
+129	214	7.057728	1500
+129	290	9.460176	40
+129	362	11.86224	36
+135	63	2.2018	148
+135	132	4.608472	36
+135	209	7.045672	48
+135	286	9.44812	36
+137	63	2.2018	0
+137	132	4.608472	0
+137	209	7.045672	0
+137	286	9.44812	0
+138	0	0	0
+139	0	0	0
+139	64	2.2018	1
+139	71	2.20304	0
+139	133	4.608472	1
+139	134	4.608816	0
+139	211	7.045672	1
+139	213	7.046112	0
+139	288	9.44812	1
+139	289	9.448464	0
+140	64	2.2018	155
+140	133	4.608472	43
+140	211	7.045672	55
+140	288	9.44812	43
+141	59	2.2018	75
+141	127	4.608472	123
+141	203	7.045672	1507
+141	281	9.44812	47
+141	357	11.850184	43
+144	64	2.2018	148
+144	133	4.608472	36
+144	211	7.045672	48
+144	288	9.44812	36
+145	59	2.2018	68
+145	127	4.608472	116
+145	203	7.045672	1500
+145	281	9.44812	40
+145	357	11.850184	36
+390	210	7.045672	1452
+391	210	7.045672	1.236168
+396	221	7.057728	1452
+397	221	7.057728	1.246984
